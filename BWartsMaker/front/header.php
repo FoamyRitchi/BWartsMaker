@@ -1,0 +1,18 @@
+<?php include "head.php";
+?>
+
+<header class="cabecalho">
+    <nav class="cabecalho__nav">
+        <!-- As classes "texto__laranja" e "texto__cinza" se encontram no arquivo "css/styles.css" -->
+        <a href="index.php" class="cabecalho__nav__titulo"><span class="texto__laranja">BW</span><span class="texto__cinza">arts</span></a>
+        <input type="text" placeholder="Pesquise seu produto!" class="cabecalho__nav__input">
+        
+        <div class="cabecalho__nav__links">
+            <a href="catalogo.php" class="cabecalho__nav__links__link">Catálogo</a>
+            <a href="login.php" class="cabecalho__nav__links__link">Entre</a>
+            <a href="cadastro_usuario.php" class="cabecalho__nav__links__link">Cadastre-se</a>
+            <a href="carrinho.php"><img src="./img/carrinho.svg" alt="Ícone do carrinho"></a>
+        </div>
+    </nav>
+
+  </header>  
