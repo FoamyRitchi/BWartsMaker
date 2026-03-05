@@ -10,9 +10,8 @@
     
 <!-- Inserção do header.html na página -->
 <div id="header"></div>
-
-    <!-- Seção do carrossel principal da página -->
     <main>
+        <!-- Seção do carrossel principal da página -->
         <section class="principal">
             <img src="../img/teste.png" alt="primeira imagem do carrossel" class="principal__imagem__carrossel">
             <!-- #TESTE# Tira a visibilidade do bloco com "display: none;" para futura utilização dos blocos -->
@@ -22,44 +21,95 @@
             </div>
         </section>
 
-    <!-- CARDS: Seção de novidades -->
-    <section class="novidades">
-        <h2 class="cards__titulo">Últimas novidades</h2>
-        <div class="cards">
-            <div class="cards__estrela">
-                <img src="../img/estrela.svg" alt="ícone de uma estrela">
+        <!-- CARDS: Seção de novidades -->
+        <section class="novidades">
+            <h2 class="cards__titulo">Últimas novidades</h2>
+            <div class="cards">
+                <div class="cards__estrela">
+                    <img src="../img/estrela.svg" alt="ícone de uma estrela">
+                </div>
+                <img src="../img/teste2.png" alt="Imagem do produto">
+                <p>Produto legal de mdf com 21mm x 90mm </p>
+                <div class="cards__precos">
+                    <h3 class="cards__preco">R$999,99</h3>
+                    <p class="cards__parcela">p10x s/juros</p>
+                </div>
             </div>
-            <img src="../img/teste2.png" alt="Imagem do produto">
-            <p>Produto legal de mdf com 21mm x 90mm </p>
-            <div class="cards__precos">
-                <h3 class="cards__preco">R$999,99</h3>
-                <p class="cards__parcela">p10x s/juros</p>
-            </div>
-        </div>
-    </section>
-    <section class="pesquisas">
-        <h2 class="cards__titulo__pesquisa">Baseado em suas pesquisas</h2>
-        <div class="cards">
-            <div class="cards__estrela">
-                <img src="../img/estrela.svg" alt="ícone de uma estrela">
-            </div>
-            <img src="../img/teste2.png" alt="Imagem do produto">
-            <p>Produto legal de mdf com 21mm x 90mm </p>
-            <div class="cards__precos">
-                <h3 class="cards__preco">R$999,99</h3>
-                <p class="cards__parcela">p10x s/juros</p>
-            </div>
-        </div>
-    </section>
-    <section class="personalizacao">
-        <img src="../img/personalizacao.svg" alt="Imagem de enfeite para o banner da plataforma de personalização" class="personalizacao__fundo">
-        <div>
-            <a href="personalizacao.html" class="personalizacao__link"><h2>Personalize Aqui!</h2></a>
-            
-        </div>
-    </section>
+        </section>
 
+        <!-- Seção de cards de produtos baseados nas pesquisas do usuário -->
+        <section class="pesquisas">
+            <h2 class="cards__titulo__pesquisa">Baseado em suas pesquisas</h2>
+            <div class="cards">
+                <div class="cards__estrela">
+                    <img src="../img/estrela.svg" alt="ícone de uma estrela">
+                </div>
+                <img src="../img/teste2.png" alt="Imagem do produto">
+                <p>Produto legal de mdf com 21mm x 90mm </p>
+                <div class="cards__precos">
+                    <h3 class="cards__preco">R$999,99</h3>
+                    <p class="cards__parcela">p10x s/juros</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de personalização do projeto -->
+        <section class="personalizacao">
+            <div class="personalizacao__banner">
+                <a href="#"><img src="../img/banner.svg" alt="Imagem do banner da plataforma de pesonalização" class="personalizacao__banner__imagem"></a>
+            </div>
+        </section>
     </main>
+    <footer>
+        <div>
+            <div>
+                <h2><span class="texto__laranja">BW</span><span class="texto__cinza">arts</span></h2>
+                <p>Redes sociais</p>
+                <div>
+                    <a href="#"><img src="../img/instagram.svg" alt="Ícone do Instagram"></a>
+                    <a href="#"><img src="../img/facebook.svg" alt="Ícone do Facebook"></a>
+                    <a href="#"><img src="../img/linkedin.svg" alt="Ícone do Linkedin"></a>
+                </div>
+            </div>
+            <div>
+                <h3>Contatos</h3>
+                <div>
+                    <p>guidobritosantosss@gmail.com</p>
+                    <p>ritchierobert2017@gmail.com</p>
+                </div>
+                <div>
+                    <p>+55 (11) 99608-8706</p>
+                    <p>+55 (11) 92137-2544</p>
+                </div>
+            </div>
+            <div>
+                <h3>Endereço</h3>
+                <div>
+                    <p>Rua Carlos de Carvalho, 200 - Jardim Sao Joao, Ferraz de Vasconcelos - SP, 08545-120</p>
+                </div>
+            </div>
+            <div>
+                <h3>Links Rápidos</h3>
+                <div>
+                    <a href="#">Perguntas frequentes</a>
+                    <a href="#">Termos de uso</a>
+                    <a href="#">Ajuda</a>
+                </div>
+            </div>
+            <div>
+                <h3>Meios de pagamento</h3>
+                <div>
+                    <p>Preços e formas de pagamento são exclusivos para vendas via internet</p>
+                </div>
+                <div>
+                    <img src="../img/cartao.svg" alt="Ícone de cartão de crédito">
+                    <img src="../img/pix.svg" alt="Ícone do pix">
+                    <img src="../img/visa.svg" alt="Ícone do Visa">
+                    <img src="../img/barracod.svg" alt="Ícone do código de barras">
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Javascript para puxar o Header e o Footer -->
 <script>
@@ -69,6 +119,11 @@
         document.getElementById("header").innerHTML = data;
     });
     
+    fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+        doscumento.getElementById("footer").innerHTML = data;
+    });
 </script>
 </body>
 </html>

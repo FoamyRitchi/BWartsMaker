@@ -71,7 +71,12 @@
 
 }
 
-.personalizacao__fundo {
+.personalizacao__banner {
     margin: 0.3rem 0;
-    width: 100%;
+    text-align: center  ;
+    background-image: url(../img/personalizacao.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2rem;
+    box-shadow: 0 0;
 }
