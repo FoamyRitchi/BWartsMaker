@@ -34,6 +34,7 @@
     padding: 0.4rem;
     border-radius: 0.25rem;
     text-align: center;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 
 .cards__estrela {
@@ -45,6 +46,32 @@
     justify-content: space-between;
 }
 
-.cards__subtitulo {
-    font-size: 1,5rem;
+.cards__preco {
+    font-size: 1.5rem;
+}
+
+.cards__parcela {
+
+}
+
+.pesquisas {
+    padding: 5rem;
+}
+
+.cards__titulo__pesquisa {
+    width: 25.3125;
+    height: 2.7rem;
+    font-size: 2rem;
+    color: #FFFFFF;
+}
+
+.personalizacao {
+    border-top: 3px solid;
+    border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
+
+}
+
+.personalizacao__fundo {
+    margin: 0.3rem 0;
+    width: 100%;
 }
