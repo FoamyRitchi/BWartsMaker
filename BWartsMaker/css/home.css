@@ -1,8 +1,13 @@
+:root {
+    --cor--fundo--branco: #F2FAFF;
+}
+
+
 .principal {
     height: 32rem;
     padding: 3.6rem;
     margin: 0.3rem 0;
-    background-color: #F2FAFF;
+    background-color: var(--cor--fundo--branco);
 }
 
 .principal__imagem__carrossel {
@@ -22,7 +27,24 @@
     color: #FFFFFF;
 }
 
+.cards {
+    background-color: var(--cor--fundo--branco);
+    width: 13.5rem;
+    height: 20,0625rem;
+    padding: 0.4rem;
+    border-radius: 0.25rem;
+    text-align: center;
+}
+
 .cards__estrela {
+    text-align: end;
+}
+
+.cards__precos {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+}
+
+.cards__subtitulo {
+    font-size: 1,5rem;
 }

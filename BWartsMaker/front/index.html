@@ -12,25 +12,32 @@
 <div id="header"></div>
 
     <!-- Seção do carrossel principal da página -->
-    <main class="principal">
-        <img src="../img/teste.png" alt="primeira imagem do carrossel" class="principal__imagem__carrossel">
-        <!-- #TESTE# Tira a visibilidade do bloco com "display: none;" para futura utilização dos blocos -->
-        <div style="display: none;">
-            <img src="#" alt="Segunda imagem do carrossel">
-            <img src="#" alt="Terceira imagem do carrossel">
-        </div>
-    </main>
+    <main>
+        <section class="principal">
+            <img src="../img/teste.png" alt="primeira imagem do carrossel" class="principal__imagem__carrossel">
+            <!-- #TESTE# Tira a visibilidade do bloco com "display: none;" para futura utilização dos blocos -->
+            <div style="display: none;">
+                <img src="#" alt="Segunda imagem do carrossel">
+                <img src="#" alt="Terceira imagem do carrossel">
+            </div>
+        </section>
 
     <!-- CARDS: Seção de novidades -->
     <section class="novidades">
         <h2 class="cards__titulo">Novidades</h2>
         <div class="cards">
-            <div>
-
+            <div class="cards__estrela">
+                <img src="../img/estrela.svg" alt="ícone de uma estrela">
             </div>
-
+            <img src="../img/teste2.png" alt="Imagem do produto">
+            <p>Produto legal de mdf com 21mm x 90mm </p>
+            <div class="cards__precos">
+                <h3 class="cards__subtitulo">R$999,99</h3>
+                <p>p10x s/juros</p>
+            </div>
         </div>
     </section>
+    </main>
 
     <!-- Javascript para puxar o Header e o Footer -->
 <script>
