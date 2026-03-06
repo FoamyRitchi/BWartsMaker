@@ -44,14 +44,24 @@
 .cards__precos {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    
 }
 
+.cards__nome__produto {
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+
 .cards__preco {
-    font-size: 1.5rem;
+    font-size: 1.5rem;  
+    margin: 0 0 1rem 0;
 }
 
 .cards__parcela {
-
+    font-size: 0.625rem;
+    margin: 0 0 1rem 0;
 }
 
 .pesquisas {

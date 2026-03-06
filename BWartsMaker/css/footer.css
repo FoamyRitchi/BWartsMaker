@@ -1,0 +1,108 @@
+:root {
+    --cor-texto--branco: #FAFAFA;
+}
+
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rodape__informacoes {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    gap: 6rem;
+}
+
+.rodape__informacoes__container__um {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.rodape__informacoes__container__um__logo {
+    font-size: 5rem;
+    margin: 1rem 0 0 0;
+}
+
+.rodape__informacoes__container__um__redes__sociais__titulo {
+    font-size: 2.25rem;
+    color: #FFFFFF;
+    width: 13rem;
+    border-bottom: solid 2px #FF8000;
+    margin-top: 0;
+}
+
+.rodape__informacoes__container__um__redes__sociais__links {
+    display: flex;
+    gap: 3rem;
+}
+
+.rodape__informacoes__container__dois__titulo, .rodape__informacoes__container__tres__titulo, .rodape__informacoes__container__quatro__titulo, .rodape__informacoes__container__cinco__titulo {
+    color: var(--cor-texto--branco);
+    font-size: 2.5rem;
+    
+}
+
+.rodape__informacoes__container__dois__emails, .rodape__informacoes__container__dois__telefones, .rodape__informacoes__container__tres__endereco {
+    color: var(--cor-texto--branco);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.rodape__informacoes__container__dois__emails, .rodape__informacoes__container__dois__telefones {
+    gap: 0;
+}
+
+.rodape__informacoes__container__tres {
+    width: 14.5rem;
+}
+
+.rodape__informacoes__container__quatro__links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+}
+
+.rodape__informacoes__container__quatro__links__link {
+    color: var(--cor-texto--branco);
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.rodape__informacoes__container__quatro__links__link:hover {
+    text-decoration: underline;
+}
+
+.rodape__informacoes__container__cinco {
+    width: 22rem;
+}
+
+.rodape__informacoes__container__cinco__aviso {
+    color: var(--cor-texto--branco);
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.rodape__informacoes__container__cinco__meios__de__pagamento {
+    display: flex;
+    gap: 3rem;
+    margin-top: 1rem;
+}
+
+.rodape__direitos {
+    border-top: solid 1px #444444; 
+    width: 80%;
+    text-align: center;
+    padding: 1rem;
+}
+
+.rodape__direitos__texto {
+    color:  #5e5e5e;
+    font-size: 1rem;
+}
