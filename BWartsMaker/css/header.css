@@ -1,3 +1,4 @@
+/* Tira a margem do container, cria uma borda na parte inferior, e gera um padding no cabeçalho */
 .cabecalho {
     margin: 0;
     border-bottom: 3px solid;
@@ -5,19 +6,22 @@
     padding: 0.3rem;
 }
 
+/* Navegação do cabeçalho, utiliza flexblox, cria um espaçamento entre os elementos e alinha eles no container */
 .cabecalho__nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.cabecalho__nav__titulo {
-    width: 199px;
-    height: 54px;
+/* Logo do cabeçalho, tira o sublinhado do link, coloca uma argura e altura na logo, e define o tamanho da fonte */
+.cabecalho__nav__logo {
+    width: 12.4rem;
+    height: 3.4rem;
     text-decoration: none;
-    font-size: 50px;
+    font-size: 3.1rem;
 }
 
+/* Barra de pesquisa, define o tamanho e estilo, coloca uma largura e altura na logo, arredonda as bordas e define o estilo do texto */
 .cabecalho__nav__input {
     width: 51.5rem;
     height: 2rem;
@@ -28,12 +32,14 @@
 
 }
 
+/* Container dos links da navegação, utiliza flexbox, alinha eles no container e cria um espaçamento entre os itens */
 .cabecalho__nav__links {
     display: flex;
     align-items: center;
     gap: 3rem;
 }
 
+/* Link da navegação, tira o sublinhado do link, e define a cor e tamanho da fonte */
 .cabecalho__nav__links__link {
     text-decoration: none;
     color: #FFFFFF;

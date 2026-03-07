@@ -1,21 +1,24 @@
+/* Define as variáveis utilizadas */
 :root {
     --cor-texto--branco: #FAFAFA;
 }
 
-
+/* Utiliza flexbox, coloca eles em direção de coluna e alinha os elementos no container */
 .rodape {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Utiliza flexbox, cria um espaçamento com "space-around", aumenta o espaçamento entre os elementos com gap, e coloca um padding */
 .rodape__informacoes {
     display: flex;
     justify-content: space-around;
-    padding: 30px;
+    padding: 1.875rem;
     gap: 6rem;
 }
 
+/* Utiliza flexbox, coloca eles em direção de coluna, e alinha o texto no centro, e os elementos no container */
 .rodape__informacoes__container__um {
     display: flex;
     flex-direction: column;
@@ -23,11 +26,13 @@
     text-align: center;
 }
 
+/* Define um tamanho de fonte, e define uma margem de tamanho de 1rem no topo, e retira de todos os outros lados */
 .rodape__informacoes__container__um__logo {
     font-size: 5rem;
     margin: 1rem 0 0 0;
 }
 
+/* Define o tamanho da fonte, a cor, a largura, cria uma borda abaixo do elemento e tira todas as margens do elemento */
 .rodape__informacoes__container__um__redes__sociais__titulo {
     font-size: 2.25rem;
     color: #FFFFFF;
@@ -36,31 +41,31 @@
     margin-top: 0;
 }
 
+/* Utiliza flexbox e cria um espaçamento entre os elementos */
 .rodape__informacoes__container__um__redes__sociais__links {
     display: flex;
     gap: 3rem;
 }
 
+/* Define a cor do texto e o tamanho da fonte */
 .rodape__informacoes__container__dois__titulo, .rodape__informacoes__container__tres__titulo, .rodape__informacoes__container__quatro__titulo, .rodape__informacoes__container__cinco__titulo {
     color: var(--cor-texto--branco);
     font-size: 2.5rem;
-    
 }
 
+/* Define a cor e tamanho da fonte, e deixa ela em negrito */
 .rodape__informacoes__container__dois__emails, .rodape__informacoes__container__dois__telefones, .rodape__informacoes__container__tres__endereco {
     color: var(--cor-texto--branco);
     font-size: 1rem;
     font-weight: bold;
 }
 
-.rodape__informacoes__container__dois__emails, .rodape__informacoes__container__dois__telefones {
-    gap: 0;
-}
-
+/* Define uma largura para o container de endereço */
 .rodape__informacoes__container__tres {
     width: 14.5rem;
 }
 
+/* Container dos links rápidos da página, utiliza flebox, coloca eles na direção de coluna e cria um espaçamento entre eles */
 .rodape__informacoes__container__quatro__links {
     display: flex;
     flex-direction: column;
@@ -68,33 +73,53 @@
     
 }
 
+/* Links do container de links rápidos, define a cor do texto, o tamanho, deixa em negrito, tira a decoração de link e define uma largura */
 .rodape__informacoes__container__quatro__links__link {
     color: var(--cor-texto--branco);
     font-size: 1rem;
     font-weight: bold;
     text-decoration: none;
+    width: 10rem;
 }
 
+/* Ao passar o mouse em cima, ficará sublinhado */
 .rodape__informacoes__container__quatro__links__link:hover {
     text-decoration: underline;
 }
 
+/* Links com larguras específicas */
+.texto__width1 {
+    width: 9rem;
+}
+
+.texto__width2 {
+    width: 6.3rem;
+}
+
+.texto__width3 {
+    width: 2rem;
+}
+
+/* Container de meios de pagamento, coloca a largura do container */
 .rodape__informacoes__container__cinco {
     width: 22rem;
 }
 
+/* Aviso sobre os meios de pagamento, define a cor, tamanho, e deixa a fonte em negrito */
 .rodape__informacoes__container__cinco__aviso {
     color: var(--cor-texto--branco);
     font-size: 0.875rem;
     font-weight: bold;
 }
 
+/* Ícones dos meios de pagamento, utiliza flexbox, cria uma margem no topo, e define um espaçamento entre os ícones */
 .rodape__informacoes__container__cinco__meios__de__pagamento {
     display: flex;
     gap: 3rem;
     margin-top: 1rem;
 }
 
+/* Container de direitos autorais, cria uma borda no topo do container, tem largura de apenas 80% do container inteiro, alinha o texto no centro e define um padding de 1rem */
 .rodape__direitos {
     border-top: solid 1px #444444; 
     width: 80%;
@@ -102,6 +127,7 @@
     padding: 1rem;
 }
 
+/* Define a cor do textom e o tamanho */
 .rodape__direitos__texto {
     color:  #5e5e5e;
     font-size: 1rem;
