@@ -1,36 +1,111 @@
-# BWartsMaker - Site de E-commerce de MDF
+![Logo da BWartsMaker](BWartsMaker/img/Logo.svg)
 
-Um e-commerce de itens feitos em MDF onde você pode comprar itens ou criar os seus de maneira 100% original, além de personalizar produtos já existentes.
+# BWartsMaker - E-commerce de Produtos em MDF
 
-## Índice
+Este projeto, desenvolvido por alunos da Fatec Ferraz de Vasconcelos, tem como objetivo atender às necessidades de um microempreendedor que possui uma máquina de corte a laser para MDF e busca ampliar seu alcance no mercado e aumentar suas vendas.
 
-- [Sobre](#sobre)
-- [Funcionalidades](#funcionalidades)
-- [Pré-requisitos](#pré-requisitos)
-- [Contato](#contato)
+A proposta consiste no desenvolvimento de uma plataforma digital de e-commerce voltada para a comercialização de produtos em MDF, oferecendo como diferencial um sistema de personalização. Por meio dessa plataforma, os clientes poderão adquirir produtos prontos, personalizar modelos existentes ou criar peças totalmente originais de acordo com suas preferências.
 
-## Sobre
+Dessa forma, o projeto agrega valor aos produtos oferecidos, melhora a experiência do cliente e fortalece a presença digital do empreendedor no mercado.
 
-  O nosso sistema busca facilitar os processos de criação e realização de projetos feitos em mdf, muito comum em diversos locais como lojas, restaurantes, maquetes e afins.
-  A nossa ideia de projeto e realização se iniciou por meio de uma atividade acadêmica, que nos proporcionou iniciar esse projeto.
-
-## Funcionalidades
-
-- [x] Home
-- [x] CRUD perfil
-- [x] CRUD produto
-- [ ] Página do Catálogo
-- [ ] Compra
-- [ ] Carrinho
-- [ ] Banco de dados
-
-## Pré-requisitos
-
-- Navegador web como Chrome, Microsoft Edge, Opera GX, entre outros
-
-## Contato
-
-<p> Guilherme Brito dos Santos - [@pedypowgui](https://github.com/pedypowgui) - guidobritosantosss@gmail.com </p>
-
-<p> Robert Ritchi Alves da Silva - [@foamyritchi](https://github.com/FoamyRitchi) - ritchierobert2017@gmail.com </p>
 ---
+
+# Índice
+
+- [Objetivo Específico](#objetivo-específico)
+- [Funcionalidades](#funcionalidades)
+- [Sobre os Integrantes](#sobre-os-integrantes)
+- [Tecnologias utilizadas](#tecnologias-utilizadas-no-projeto)
+- [Pré-requisitos](#pré-requisitos)
+
+---
+
+# Objetivo Específico
+
+Desenvolver uma plataforma de e-commerce especializada em produtos confeccionados em MDF, permitindo que os usuários:
+
+- Comprem produtos prontos disponíveis no catálogo
+- Personalizem produtos já existentes
+- Criem peças totalmente originais
+
+O sistema oferecerá ferramentas de personalização que possibilitam ao cliente definir detalhes como design, dimensões, gravações e acabamentos, proporcionando uma experiência de compra única e personalizada.
+
+---
+
+# Funcionalidades
+
+- Catálogo de produtos em MDF
+- Sistema de compra online
+- Sistema de personalização de produtos único no mercado de MDF
+- Criação de peças personalizadas pelo usuário
+- Interface simples e acessível
+
+---
+
+# Sobre os Integrantes
+
+## Guilherme Brito dos Santos
+
+3º semestre de Análise e Desenvolvimento de Sistemas na Fatec Ferraz de Vasconcelos. 
+
+### Funções no projeto
+
+- Desenvolvimento Full-stack
+- Organização do projeto (Trello)
+- Design da interface
+- Documentação
+- Modelagem e gerenciamento do banco de dados
+- Elaboração de diagramas
+
+Github: https://github.com/pedypowgui  
+LinkedIn: https://www.linkedin.com/in/guilhermebritodossantos/  
+Email: guidobritosantosss@gmail.com  
+
+---
+
+## Robert Ritchi Alves da Silva
+
+Aluno do 3º semestre de Análise e Desenvolvimento de Sistemas na Fatec Ferraz de Vasconcelos.
+
+### Funções no projeto
+
+- Desenvolvimento Full-stack
+- Organização do projeto (Trello)
+- Elaboração de diagramas
+- Banco de dados
+- Documentação
+
+Github: https://github.com/FoamyRitchi  
+LinkedIn: https://www.linkedin.com/in/robertritchi/  
+Email: ritchierobert2017@gmail.com  
+
+---
+
+# Tecnologias utilizadas no projeto
+
+As principais tecnologias utilizadas para o desenvolvimento desse projeto são
+
+## Desenvolvimento
+- **HTML5** - Estruturação do conteúdo das páginas web;
+- **CSS3** - Estilização das páginas web;
+- **JavaScript** - Interatividade com o sistema pela parte do cliente;
+- **Java SpringBoot** - Integração com o servidor, banco de dados e aplicação de APIs;
+
+## Prototipação/Design
+- **Figma** - Desenvolvimento do protótipo de alta e baixa fidelidade do projeto;
+- **Canva** - Elaboração de banners, logo e imagens para o projeto;
+
+## Gerenciamento de desenvolvimento
+- **Trello** - Atribuição de tarefas
+- **Drive** - Compartilhamento e armazenamento de arquivos relevantes ao projeto
+- **Git/Github** - Versionamento de código e hospedagem de testes
+- **Miro/BRmodelo/Astah** - Elaboração de diagramas e artefatos UML
+
+# Pré-requisitos
+
+Para acessar a plataforma, é necessário apenas um navegador web moderno, como:
+
+- Google Chrome
+- Microsoft Edge
+- Opera GX
+- Mozilla Firefox
