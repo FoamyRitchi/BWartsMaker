@@ -1,6 +1,6 @@
 // Variáveis para cada elemento do carrossel
 const elemSlides = document.querySelector(".carrossel__slides");
-const elemImagens = document.querySelectorAll(".carrossel__slides__img");
+const elemImagens = document.querySelectorAll(".carrossel__slides__container");
 const elemBotaoEsquerdo = document.querySelector(".carrossel__botao__esquerdo");
 const elemBotaoDireito = document.querySelector(".carrossel__botao__direito");
 

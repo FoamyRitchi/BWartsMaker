@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- O include.js vai inserir os dados aqui -->
     <script src="../js/include.js" defer></script>
+    <script src="../js/fetch.js"></script>
+
     <title>Catálogo</title>
 </head>
 <body>
@@ -19,9 +21,9 @@
             <h2 class="cards__titulo">Últimas novidades</h2>
             <div class="cards">
                 <div class="cards__estrela">
-                    <img src="../img/estrela.svg" alt="ícone de uma estrela">
+                    <img src="../img/assets/estrela.svg" alt="Ícone de uma estrela">
                 </div>
-                <img src="../img/teste2.png" alt="Imagem do produto">
+                <img src="../img/assets/produto.png" alt="Imagem do produto">
                 <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
                 <div class="cards__precos">
                     <h3 class="cards__preco">R$999,99</h3>
@@ -34,9 +36,9 @@
             <h2 class="cards__titulo__pesquisa">Baseado em suas pesquisas</h2>
             <div class="cards">
                 <div class="cards__estrela">
-                    <img src="../img/estrela.svg" alt="ícone de uma estrela">
+                    <img src="../img/assets/estrela.svg" alt="Ícone de uma estrela">
                 </div>
-                <img src="../img/teste2.png" alt="Imagem do produto">
+                <img src="../img/assets/produto.png" alt="Imagem do produto">
                 <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
                 <div class="cards__precos">
                     <h3 class="cards__preco">R$999,99</h3>
@@ -49,9 +51,9 @@
             <h2 class="cards__titulo">Últimas novidades</h2>
             <div class="cards">
                 <div class="cards__estrela">
-                    <img src="../img/estrela.svg" alt="ícone de uma estrela">
+                    <img src="../img/assets/estrela.svg" alt="Ícone de uma estrela">
                 </div>
-                <img src="../img/teste2.png" alt="Imagem do produto">
+                <img src="../img/assets/produto.png" alt="Imagem do produto">
                 <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
                 <div class="cards__precos">
                     <h3 class="cards__preco">R$999,99</h3>
@@ -64,9 +66,9 @@
             <h2 class="cards__titulo__pesquisa">Baseado em suas pesquisas</h2>
             <div class="cards">
                 <div class="cards__estrela">
-                    <img src="../img/estrela.svg" alt="ícone de uma estrela">
+                    <img src="../img/assets/estrela.svg" alt="Ícone de uma estrela">
                 </div>
-                <img src="../img/teste2.png" alt="Imagem do produto">
+                <img src="../img/assets/produto.png" alt="Imagem do produto">
                 <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
                 <div class="cards__precos">
                     <h3 class="cards__preco">R$999,99</h3>
@@ -75,25 +77,6 @@
             </div>
         </section>
     </main>
-
-
-
-
-
     <div id="footer"></div>
-    <!-- Javascript para puxar o Header e o Footer -->
-    <script>
-        fetch("header.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("header").innerHTML = data;
-        });
-        
-        fetch("footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer").innerHTML = data;
-        });
-    </script>
 </body>
 </html>

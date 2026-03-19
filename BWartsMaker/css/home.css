@@ -20,11 +20,16 @@
 }
 
 /* Imagens do carrossel principal, centraliza elas no meio do carrossel e define seus tamanhos */
-.carrossel__slides__img {
+.carrossel__slides__container {
     display: flex;
     min-width: 100%;
     max-width: 100%;
     justify-content: center;
+}
+
+.carrossel__slides__container__img {
+    background-image: cover !important;
+    border-radius: 3rem;
 }
 
 /* Botões do carrossel principal, estilza com fundo transparente, borda laranja e também posiciona os botões ao centro vertical do carrossel*/
@@ -74,7 +79,7 @@
 .personalizacao__banner {
     margin: 0.3rem 0;
     text-align: center  ;
-    background-image: url(../img/personalizacao.svg);
+    background-image: url(../img/home/personalizacao.svg);
     background-size: cover;
     background-repeat: no-repeat;
     padding: 2rem;
