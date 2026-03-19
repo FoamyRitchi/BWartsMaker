@@ -1,0 +1,82 @@
+/* Define as variáveis utilizadas */
+:root {
+    --cor--fundo--branco: #F2FAFF;
+}
+
+/* Carrossel principal, posiciona as imagens, os botões e define o tamanho do container do carrossel. Cria um fundo branco*/
+.carrossel {
+    margin: 0.3rem 0;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--cor--fundo--branco);
+}
+
+/* Passagens do carrossel, dispõe as imagens lado a lado com um espaçamento, suaviza as transições de cada imagem */
+.carrossel__slides {
+    display: flex;
+    padding: 5rem 0 5rem 0;
+    transition: transform 0.5s ease;
+}
+
+/* Imagens do carrossel principal, centraliza elas no meio do carrossel e define seus tamanhos */
+.carrossel__slides__img {
+    display: flex;
+    min-width: 100%;
+    max-width: 100%;
+    justify-content: center;
+}
+
+/* Botões do carrossel principal, estilza com fundo transparente, borda laranja e também posiciona os botões ao centro vertical do carrossel*/
+.carrossel__botao__direito, .carrossel__botao__esquerdo {
+    top: 50%;
+	cursor:pointer;
+	color:#333333;
+    position: absolute;
+	font-size: 1.49rem;
+	padding: 2rem 0.75rem;
+    border-radius: 0.875rem;
+    transform: translateY(-50%);
+    background-color:transparent;
+	border: 0.2rem solid #ffaa22;
+}
+
+/* Efeito de hover nos botões do carrossel principal */
+.carrossel__botao__direito:hover, .carrossel__botao__esquerdo:hover {
+    background-color: #ffaa22;
+}
+
+/* Alinha o botão direito do carrossel principal à direita */
+.carrossel__botao__direito {
+    right: 2.5rem;
+}
+
+/* Alinha o botão esquerdo do carrossel principal à esquerda */
+.carrossel__botao__esquerdo {
+    left: 2.5rem;
+}
+
+/* Cria uma borda no topo, e cria um padding para separar os cards */
+.novidades {
+    border-top: 3px solid;
+    border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
+    padding: 5rem;
+}
+
+/* Seção de personalização, cria uma borda em cima da seção */
+.personalizacao {
+    border-top: 3px solid;
+    border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
+
+}
+
+/* Banner da seção de personalização. Faz com que a imagem cubra 100% da largura e altura do container, e coloca uma imagem de fundo previamente exportada */
+.personalizacao__banner {
+    margin: 0.3rem 0;
+    text-align: center  ;
+    background-image: url(../img/personalizacao.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2rem;
+    box-shadow: 0 0;
+}

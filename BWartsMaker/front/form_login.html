@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/include.js" defer></script>
+    <title>Login</title>
+</head>
+<body class="fundo__form">
+    <main>
+        <section>
+            <div class="form">
+                <h1 class="form__logo"><span class="texto__laranja">BW</span><span class="texto__cinza">arts</span></h1>
+                <h2 class="form__titulo margin__bottom__zero margin__top__zero">Faça Login</h2>
+                <form action="/login_usuario" method="post" class="form__login">
+                    <input type="text" id="cpf__user" name="cpf" placeholder="CPF" required class="form__input__cpf__login">
+                    <input type="password" id="senha__user" name="senha" placeholder="Senha" required class="form__input__senha__login">
+
+                    <div class="form__login__container__botao">
+                        <button type="submit" class="form__login__botao">Entrar</button>
+                    </div>
+                    <div>
+                        <p class="form__cadastro__texto margin__bottom__zero margin__top__zero">Não possui conta? <a href="form_cadastro_usuario.html" class="form__faca__login">Cadastre-se</a></p>
+                        <p class="linhas__lados margin__top__zero margin__bottom__zero">Ou</p>
+                        <div class="form__cadastro__redes">
+                            <button type="button" class="form__cadastro__redes__botao"><img src="../img/google.svg" alt="Google" class="form__redes__icone"> Entre com Google</button>
+                            <button type="button" class="form__cadastro__redes__botao"><img src="../img/facebook_cadastro.svg" alt="Facebook" class="form__redes__icone"> Entre com Facebook</button>
+                        </div>
+                    </div>
+                </form>         
+            </div>  
+        </section>
+    </main>
+</body>
+</html>

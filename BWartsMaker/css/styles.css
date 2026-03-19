@@ -1,0 +1,93 @@
+/* Define a cor de fundo do body, e tira todas as margens */
+body {
+    background-color: #343434;
+    margin: 0
+}
+
+/* Define a cor do texto de laranja */
+.texto__laranja {
+    color: #FF6200;
+}
+
+/* Define a cor do texto de cinza */
+.texto__cinza {
+    color: #B5B5B5;
+}
+
+/* Tira a margem de baixo do elemento */
+.margin__bottom__zero {
+    margin-bottom: 0;
+}
+
+/* Tira a margem de cima do elemento */
+.margin__top__zero {
+    margin-top: 0;
+}
+
+.divisoria__bottom {
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
+}
+
+/* Título dos cards */
+.cards__titulo {
+    width: 16.5rem;
+    height: 2.7rem;
+    font-size: 2rem;
+    color: #FFFFFF;
+}
+
+/* Cria um fundo branco para os cards,  limita os width e height, cria uma sombra */
+.cards {
+    background-color: var(--cor--fundo--branco);
+    width: 13.5rem;
+    height: 20.0625rem;
+    padding: 0.4rem;
+    border-radius: 0.25rem;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+/* Alinha o ícone da estrela no final do bloco */
+.cards__estrela {
+    text-align: end;
+}
+
+/* Alinha a flexbox como coluna e alinha os itens no centro */
+.cards__precos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+/* Faz a fonte ter 12px (1rem = 16px) e deixa ela em negrito */
+.cards__nome__produto {
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* Cria uma margem para baixo */
+.cards__preco {
+    font-size: 1.5rem;  
+    margin: 0 0 1rem 0;
+}
+
+/* Cria uma margem para baixo */
+.cards__parcela {
+    font-size: 0.625rem;
+    margin: 0 0 1rem 0;
+}
+
+/* Espaçamento interno de 5rem (ou 80px) */
+.pesquisas {
+    padding: 5rem;
+}
+
+/* Título da seção de cards de pesquisas */
+.cards__titulo__pesquisa {
+    width: 25.3125;
+    height: 2.7rem;
+    font-size: 2rem;
+    color: #FFFFFF;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <script src="../js/include.js" defer></script>
+</head>
+<body class="fundo__form">
+    <main>
+        <section>
+            <div class="form">
+                <h1 class="form__logo"><span class="texto__laranja">BW</span><span class="texto__cinza">arts</span></h1>
+                <h2 class="form__titulo margin__bottom__zero margin__top__zero">Cadastre-se</h2>
+                <form action="/cadastro_usuario" method="post" class="form__cadastro">
+                    <input type="text" id="nome__user" name="nome" placeholder="Nome de usuário" required class="form__input_nome">
+                    <input type="email" id="email" name="email" placeholder="Email" required class="form__input__email">
+                    <div class="form__container__informacoes">
+                        <input type="text" id="cpf_user" name="cpf" placeholder="CPF" class="form__input__cpf">
+                        <div class="form__container__contato">
+                            <input type="text" id="ddd_user" name="ddd" placeholder="DDD" required class="form__input__ddd">
+                            <input type="text" id="telefone_user" name="telefone" placeholder="Telefone" required class="form__input__telefone">
+                        </div>
+                    </div>
+                    <div class="form__container__senha">
+                        <input type="password" id="senha__user" name="senha" placeholder="Senha" required class="form__input__senha">
+                        <input type="password" id="confirmar_senha" name="confirmar_senha" placeholder="Confirmar senha" required class="form__input__confirmar_senha">
+                    </div>
+                    <div class="form__captcha__container">
+                        <img src="../img/captcha.svg" alt="placeholder do captcha" class="form__captcha">
+                    </div>
+                    
+                    <div class="form__cadastro__container__botao">
+                        <button type="submit" class="form__cadastro__botao">Cadastrar</button>
+                    </div>
+                    <div>
+                        <p class="form__cadastro__texto margin__bottom__zero margin__top__zero">Já possui uma conta? <a href="form_login.html" class="form__faca__login">Faça Login</a></p>
+                        <p class="linhas__lados margin__top__zero margin__bottom__zero">Ou</p>
+                        <div class="form__cadastro__redes">
+                            <button type="button" class="form__cadastro__redes__botao"><img src="../img/google.svg" alt="Google" class="form__redes__icone"> Entre com Google</button>
+                            <button type="button" class="form__cadastro__redes__botao"><img src="../img/facebook_cadastro.svg" alt="Facebook" class="form__redes__icone"> Entre com Facebook</button>
+                        </div>
+                    </div>
+                </form>         
+            </div>  
+        </section>
+    </main>
+</body>
+</html>
