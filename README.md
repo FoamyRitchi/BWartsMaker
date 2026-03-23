@@ -1,4 +1,4 @@
-![Logo da BWartsMaker](BWartsMaker/img/Logo.svg)
+![Logo da BWartsMaker](BWartsMaker/img/assets/Logo.svg)
 
 # BWartsMaker - E-commerce de Produtos em MDF
 
