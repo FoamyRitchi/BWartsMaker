@@ -65,7 +65,7 @@
 .novidades {
     border-top: 3px solid;
     border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
-    padding: 5rem;
+    padding: 3rem 5rem; 
 }
 
 /* Seção de personalização, cria uma borda em cima da seção */

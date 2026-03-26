@@ -81,7 +81,7 @@ body {
 
 /* Espaçamento interno de 5rem (ou 80px) */
 .pesquisas {
-    padding: 5rem;
+    padding: 1rem 0 3rem 5rem;
 }
 
 /* Título da seção de cards de pesquisas */
