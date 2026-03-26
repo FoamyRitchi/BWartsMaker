@@ -1,0 +1,22 @@
+.produto{
+    padding: 2vh;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    justify-content: space-around;
+}
+
+.produto__imagens{
+    gap: 2.8vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .produto__imagem__principal{
+
+}
+
+.produto__compra{
+
+} */
