@@ -63,9 +63,73 @@
 
 /* Cria uma borda no topo, e cria um padding para separar os cards */
 .novidades {
+    padding: 3rem 5rem;
     border-top: 3px solid;
     border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
-    padding: 3rem 5rem; 
+}
+
+.cards__slides {
+    width: 100%;
+    margin: 0.3rem 0;
+    overflow: hidden;
+    position: relative;
+
+    /* width: 100%;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    padding: 5rem 0 5rem 0; */
+}
+
+/* Imagens do carrossel principal, centraliza elas no meio do carrossel e define seus tamanhos */
+.cards__slides__container {
+    display: flex;
+    padding: 5rem 0 5rem 0;
+    transition: transform 0.5s ease;
+
+    /* gap: 3vw;
+    display: flex;
+    min-width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    transition: transform 0.5s ease; */
+}
+
+.cards__slides__container__produtos{
+    gap: 3vw;
+    display: flex;
+    min-width: 100%;
+    max-width: 100%;
+    justify-content: center;
+}
+
+.cards__botao__direito__cards, .cards__botao__esquerdo__cards {
+    top: 50%;
+	cursor:pointer;
+	color:#333333;
+    position: absolute;
+	font-size: 1.49rem;
+	padding: 2rem 0.75rem;
+    border-radius: 0.875rem;
+    transform: translateY(-50%);
+    background-color: white;
+	border: 0.2rem solid ;
+}
+
+/* Efeito de hover nos botões do carrossel principal */
+.cards__botao__direito__cards:hover, .cards__botao__esquerdo__cards:hover {
+    color: #333333;
+    background-color: #ffaa22;
+}
+
+/* Alinha o botão direito do carrossel principal à direita */
+.cards__botao__direito__cards {
+    right: 0rem;
+}
+
+/* Alinha o botão esquerdo do cards principal à esquerda */
+.cards__botao__esquerdo__cards {
+    left: 0rem;
 }
 
 /* Seção de personalização, cria uma borda em cima da seção */
