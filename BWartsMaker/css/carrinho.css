@@ -1,8 +1,30 @@
 .secao__carrinho {
     padding: 3rem;
     background-color: #F2FAFF;
+    display: flex;
+    justify-content: space-around;
 }
 
-.carrinho__titulo {
+.secao__carrinho__bloco__tabela {
     width: 100%;
 }
+
+.carrinho__tabela {
+    width: 100%;
+    border-collapse: collapse; /* Bordas unidas */
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center;
+}
+
+.carrinho__tabela__cabecalho {
+    background-color: #ff8000;
+    font-size: 1.3rem;
+}
+
+.carrinho__tabela__cabecalho__item {
+    padding: 1rem;
+}
+
+
