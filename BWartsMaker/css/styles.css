@@ -79,11 +79,6 @@ body {
     margin: 0 0 1rem 0;
 }
 
-/* Espaçamento interno de 5rem (ou 80px) */
-.pesquisas {
-    padding: 1rem 0 3rem 5rem;
-}
-
 /* Título da seção de cards de pesquisas */
 .cards__titulo__pesquisa {
     width: 25.3125;

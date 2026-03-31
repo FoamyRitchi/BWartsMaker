@@ -1,34 +1,63 @@
 // Variáveis para cada elemento do carrossel
-const elemSlidesCards = document.querySelector(".cards__slides__container");
+const elemSlidesCards = document.querySelectorAll(".cards__slides__container");
+// Todos os conjuntos de 5 produtos
 const elemImagensCards = document.querySelectorAll(".cards__slides__container__produtos");
-const elemBotaoDireitoCards = document.querySelector(".cards__botao__direito__cards");
-const elemBotaoEsquerdoCards = document.querySelector(".cards__botao__esquerdo__cards");
+// Pegando todos os botões pelo ID
+const botoesDireita = document.querySelectorAll("#botao__direito__cards");
+const botoesEsquerda = document.querySelectorAll("#botao__esquerdo__cards");
+// Movimento que o slide vai fazer, no caso, 100%
+const moviment = -100;
 
-// Variáveis da posição do carrossel principal e quanto deve ser o movimento executado
-let indeX = 0;
-let moviment = -100;
+// Index das sessões novidade, e pesquisas
+let iNovidades = 0;
+let iPesquisas = 0;
+// Arrays com os cards das sessões
+let sessaoNovidades = [elemImagensCards[0], elemImagensCards[1], elemImagensCards[2]];
+let sessaoPesquisas = [elemImagensCards[3], elemImagensCards[4], elemImagensCards[5]];
+let indexDoBotaoEsquerdo, indexDoBotaoDireito;
 
-//Função do botão esquerdo, quando clicado move para o slide anterior, caso seja o primeiro slide, ele vai para o último
-elemBotaoEsquerdoCards.addEventListener("click", () => {
-    indeX--;
-    
-    if(indeX < 0){
-        indeX = elemImagensCards.length - 1;
-    }
-    atualizarCards();
+// Identificar e realizar o movimento dos botões esquerdo das sessões com carrossels de produtos
+botoesEsquerda.forEach((botao, index) => {
+    botao.addEventListener("click", () => {
+        // Move a sessão das novidades
+        if (index === 0) {
+            iNovidades--;
+            if (iNovidades < 0) {
+                iNovidades = sessaoNovidades.length - 1;
+            }
+            // Move a sessão das pesquisas
+        } else if (index === 1) {
+            iPesquisas--;
+            if (iPesquisas < 0) {
+                iPesquisas = sessaoPesquisas.length - 1;
+            }
+        }
+        
+        atualizarCards();
+    });
 });
 
-//Função do botão direito, quando clicado move para o slide posterior, caso seja o último slide, ele vai para o primeiro
-elemBotaoDireitoCards.addEventListener("click", () => {
-    indeX++;
+// Identificar e realizar o movimento dos botões direitos das sessões com carrossels de produtos
+botoesDireita.forEach((botao, index) => {
+        botao.addEventListener("click", () => {
+            if (index === 0) {
+                iNovidades++;
+                if (iNovidades >= sessaoNovidades.length) {
+                    iNovidades = 0;
+                }
+            } else if (index === 1) {
+                iPesquisas++;
+                if (iPesquisas >= sessaoPesquisas.length) {
+                    iPesquisas = 0;
+                }
+            }
 
-    if(indeX == elemImagensCards.length){
-        indeX = 0;
-    }
-    atualizarCards();
+            atualizarCards();
+        });
 });
 
-// Função que realiza o movimento no slide, para frente ou para trás
+// Realiza o movimento das sessões com os cards
 const atualizarCards = () => {
-    elemSlidesCards.style.transform = `translateX(${indeX * moviment}%)`;
+        elemImagensCards[0].style.transform = `translateX(${iNovidades * moviment}%)`;
+        elemImagensCards[3].style.transform = `translateX(${iPesquisas * moviment}%)`;
 };

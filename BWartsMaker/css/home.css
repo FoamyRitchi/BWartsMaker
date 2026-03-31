@@ -62,8 +62,11 @@
 }
 
 /* Cria uma borda no topo, e cria um padding para separar os cards */
-.novidades {
+.novidades, .pesquisas {
     padding: 3rem 5rem;
+}
+
+.novidades {
     border-top: 3px solid;
     border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
 }
@@ -73,12 +76,6 @@
     margin: 0.3rem 0;
     overflow: hidden;
     position: relative;
-
-    /* width: 100%;
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    padding: 5rem 0 5rem 0; */
 }
 
 /* Imagens do carrossel principal, centraliza elas no meio do carrossel e define seus tamanhos */
@@ -86,13 +83,6 @@
     display: flex;
     padding: 5rem 0 5rem 0;
     transition: transform 0.5s ease;
-
-    /* gap: 3vw;
-    display: flex;
-    min-width: 100%;
-    max-width: 100%;
-    justify-content: center;
-    transition: transform 0.5s ease; */
 }
 
 .cards__slides__container__produtos{
