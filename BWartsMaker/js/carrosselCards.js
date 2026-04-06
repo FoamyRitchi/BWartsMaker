@@ -1,6 +1,6 @@
-// Variáveis para cada elemento do carrossel
+// Container dos 5 produtos
 const elemSlidesCards = document.querySelectorAll(".cards__slides__container");
-// Todos os conjuntos de 5 produtos
+// Lista de 3 conjuntos de 5 produtos
 const elemImagensCards = document.querySelectorAll(".cards__slides__container__produtos");
 // Pegando todos os botões pelo ID
 const botoesDireita = document.querySelectorAll("#botao__direito__cards");
@@ -12,8 +12,8 @@ const moviment = -100;
 let iNovidades = 0;
 let iPesquisas = 0;
 // Arrays com os cards das sessões
-let sessaoNovidades = [elemImagensCards[0], elemImagensCards[1], elemImagensCards[2]];
-let sessaoPesquisas = [elemImagensCards[3], elemImagensCards[4], elemImagensCards[5]];
+let sessaoNovidades = [elemImagensCards, elemImagensCards[1], elemImagensCards[2]];
+let sessaoPesquisas = [elemImagensCards, elemImagensCards[4], elemImagensCards[5]];
 let indexDoBotaoEsquerdo, indexDoBotaoDireito;
 
 // Identificar e realizar o movimento dos botões esquerdo das sessões com carrossels de produtos
@@ -58,6 +58,6 @@ botoesDireita.forEach((botao, index) => {
 
 // Realiza o movimento das sessões com os cards
 const atualizarCards = () => {
-        elemImagensCards[0].style.transform = `translateX(${iNovidades * moviment}%)`;
-        elemImagensCards[3].style.transform = `translateX(${iPesquisas * moviment}%)`;
+    elemSlidesCards[0].style.transform = `translateX(${iNovidades * moviment}%)`;
+    elemSlidesCards[1].style.transform = `translateX(${iPesquisas * moviment}%)`;
 };

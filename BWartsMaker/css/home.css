@@ -5,9 +5,9 @@
 
 /* Carrossel principal, posiciona as imagens, os botões e define o tamanho do container do carrossel. Cria um fundo branco*/
 .carrossel {
-    margin: 0.3rem 0;
     width: 100%;
     overflow: hidden;
+    margin: 0.3rem 0;
     position: relative;
     background-color: var(--cor--fundo--branco);
 }
@@ -28,7 +28,6 @@
 }
 
 .carrossel__slides__container__img {
-    background-image: cover !important;
     border-radius: 3rem;
 }
 
@@ -95,15 +94,15 @@
 
 .cards__botao__direito__cards, .cards__botao__esquerdo__cards {
     top: 50%;
-	cursor:pointer;
+	cursor:pointer; 
 	color:#333333;
     position: absolute;
 	font-size: 1.49rem;
+	border: 0.2rem solid;
 	padding: 2rem 0.75rem;
     border-radius: 0.875rem;
-    transform: translateY(-50%);
     background-color: white;
-	border: 0.2rem solid ;
+    transform: translateY(-50%);
 }
 
 /* Efeito de hover nos botões do carrossel principal */

@@ -39,13 +39,19 @@ body {
 
 /* Cria um fundo branco para os cards,  limita os width e height, cria uma sombra */
 .cards {
-    background-color: var(--cor--fundo--branco);
     width: 13.5rem;
-    height: 20.0625rem;
     padding: 0.4rem;
-    border-radius: 0.25rem;
+    height: 20.0625rem;
     text-align: center;
+    border-radius: 0.25rem;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    background-color: var(--cor--fundo--branco);
+}
+
+.cards:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.4s ease;
 }
 
 /* Alinha o ícone da estrela no final do bloco */
