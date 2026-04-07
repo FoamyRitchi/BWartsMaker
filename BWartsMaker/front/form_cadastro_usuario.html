@@ -15,17 +15,25 @@
                 <h2 class="form__titulo margin__bottom__zero margin__top__zero">Cadastre-se</h2>
                 
                 <form action="/cadastro_usuario" method="post" class="form__cadastro">
-                
+                    <!-- Entrada nome -->
                     <input type="text" id="nome_user" name="nome" placeholder="Nome de usuário" required class="form__input_nome">
+                    <span id="erro_nome" class="erro"></span>
+                    <!-- Entrada email -->
                     <input type="email" id="email_user" name="email" placeholder="Email" required class="form__input__email">
-                
+                    <span id="erro_email" class="erro"></span>
+                    <!-- Container de CPF e telefone -->
                     <div class="form__container__informacoes">
-                        <input type="text" id="cpf_user" name="cpf" placeholder="CPF" class="form__input__cpf">
+                        <!-- Entrada CPF -->
+                        <input type="text" id="cpf_user" name="cpf" placeholder="Nº CPF" class="form__input__cpf">
+                        <!-- Entrada Telefone -->
                         <div class="form__container__contato">
                             <input type="text" id="ddd_user" name="ddd" placeholder="DDD" required class="form__input__ddd">
                             <input type="text" id="telefone_user" name="telefone" placeholder="Telefone" required class="form__input__telefone">
                         </div>
                     </div>
+                    <span id="erro_cpf" class="erro"></span>
+                    <span id="erro_ddd" class="erro"></span>
+
                     <div class="form__container__senha">
                         <input type="password" id="senha__user" name="senha" placeholder="Senha" required class="form__input__senha">
                         <input type="password" id="confirmar_senha" name="confirmar_senha" placeholder="Confirmar senha" required class="form__input__confirmar_senha">

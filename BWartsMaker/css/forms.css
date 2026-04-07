@@ -206,3 +206,9 @@
 .form__login__botao:hover {
     background-color: #f58d24;
 }
+
+.erro{
+    font-size: 1rem;
+    font-family: sans-serif;
+    color: rgb(255, 43, 43);
+}
