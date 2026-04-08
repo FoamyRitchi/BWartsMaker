@@ -31,13 +31,22 @@
                             <input type="text" id="telefone_user" name="telefone" placeholder="Telefone" required class="form__input__telefone">
                         </div>
                     </div>
+                    <!-- Mensagens de erro -->
                     <span id="erro_cpf" class="erro"></span>
                     <span id="erro_ddd" class="erro"></span>
+                    <span id="erro_telefone" class="erro"></span>
 
                     <div class="form__container__senha">
-                        <input type="password" id="senha__user" name="senha" placeholder="Senha" required class="form__input__senha">
+                        <!-- Entrada senha -->
+                        <input type="password" id="senha_user" name="senha" placeholder="Senha" required class="form__input__senha">
+                        <!-- Confirmação de senha -->
                         <input type="password" id="confirmar_senha" name="confirmar_senha" placeholder="Confirmar senha" required class="form__input__confirmar_senha">
                     </div>
+                    <span class="form__obs__senha">Senha deve ter no mínimo: 8 caracteres, um número, uma letra minúscula, uma letra maiúscula.</span>
+                    <span id="erro_senha_fraca" class="erro"></span>
+                    <span id="erro_senha_tamanho" class="erro"></span>
+                    <span id="erro_confirmar" class="erro"></span>
+
                     <div class="form__captcha__container">
                         <img src="../img/forms/captcha.svg" alt="Placeholder do captcha" class="form__captcha">
                     </div>
