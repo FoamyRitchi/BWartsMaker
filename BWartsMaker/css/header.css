@@ -3,8 +3,7 @@
     margin: 0;
     border-bottom: 3px solid;
     border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
-    padding: 1vh;
-    width: 100vw;
+    width: 100%;
 }
 
 /* Navegação do cabeçalho, utiliza flexblox, cria um espaçamento entre os elementos e alinha eles no container */

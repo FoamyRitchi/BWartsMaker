@@ -3,6 +3,7 @@
     background-color: #F2FAFF;
     display: flex;
     justify-content: space-around;
+    gap: 20vw;
 }
 
 .secao__carrinho__bloco__tabela {
@@ -27,4 +28,32 @@
     padding: 1rem;
 }
 
+.carrinho__tabela__informacoes__descricao {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.carrinho__tabela__informacoes__quantidade {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.carrinho__tabela__informacoes__quantidade__numero {
+    border: solid 0.185rem #cecece;
+    border-radius: 1.5rem;
+    padding: 2rem;
+}
+
+.carrinho__tabela__informacoes__remover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.carrinho__tabela__informacoes__remover__lixeira {
+    height: 2rem;
+}
 
