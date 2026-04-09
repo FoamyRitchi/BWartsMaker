@@ -18,6 +18,7 @@
     justify-content: space-around;
     padding: 1.875rem;
     gap: 6rem;
+    flex-wrap: wrap;
 }
 
 /* Utiliza flexbox, coloca eles em direção de coluna, e alinha o texto no centro, e os elementos no container */
@@ -64,7 +65,7 @@
 
 /* Define uma largura para o container de endereço */
 .rodape__informacoes__container__tres {
-    width: 14.5rem;
+    max-width: 14.5rem;
 }
 
 /* Container dos links rápidos da página, utiliza flebox, coloca eles na direção de coluna e cria um espaçamento entre eles */
@@ -89,22 +90,22 @@
     text-decoration: underline;
 }
 
-/* Links com larguras específicas */
+/* Links com larguras máximas específicas, para não quebrar layout */
 .texto__width1 {
-    width: 9rem;
+    width: auto;
 }
 
 .texto__width2 {
-    width: 6.3rem;
+    width: auto;
 }
 
 .texto__width3 {
-    width: 2rem;
+    width: auto;
 }
 
 /* Container de meios de pagamento, coloca a largura do container */
 .rodape__informacoes__container__cinco {
-    width: 22rem;
+    max-width: 22rem;
 }
 
 /* Aviso sobre os meios de pagamento, define a cor, tamanho, e deixa a fonte em negrito */
@@ -133,4 +134,11 @@
 .rodape__direitos__texto {
     color:  #5e5e5e;
     font-size: 1rem;
+}
+
+/* Permitir que haja quebra de linhas, para não quebrar o layout */
+.rodape__informacoes__container__tres__endereco p,
+.rodape__informacoes__container__cinco__aviso p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }

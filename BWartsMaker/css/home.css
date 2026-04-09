@@ -28,7 +28,9 @@
 }
 
 .carrossel__slides__container__img {
-    border-radius: 3rem;
+    border-radius: 40px;
+    max-width: 100%;
+    height: auto;
 }
 
 /* Botões do carrossel principal, estilza com fundo transparente, borda laranja e também posiciona os botões ao centro vertical do carrossel*/
@@ -80,7 +82,7 @@
 /* Imagens do carrossel principal, centraliza elas no meio do carrossel e define seus tamanhos */
 .cards__slides__container {
     display: flex;
-    padding: 5rem 0 5rem 0;
+    padding: 3rem 0 5rem 0;
     transition: transform 0.5s ease;
 }
 
@@ -131,10 +133,15 @@
 /* Banner da seção de personalização. Faz com que a imagem cubra 100% da largura e altura do container, e coloca uma imagem de fundo previamente exportada */
 .personalizacao__banner {
     margin: 0.3rem 0;
-    text-align: center  ;
+    text-align: center;
     background-image: url(../img/home/personalizacao.svg);
     background-size: cover;
     background-repeat: no-repeat;
     padding: 2rem;
     box-shadow: 0 0;
+}
+
+.personalizacao__banner__imagem{
+    max-width: 100%;
+    height: auto;
 }

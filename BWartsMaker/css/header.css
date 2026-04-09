@@ -3,7 +3,8 @@
     margin: 0;
     border-bottom: 3px solid;
     border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
-    padding: 0.3rem;
+    padding: 1vh;
+    width: 100vw;
 }
 
 /* Navegação do cabeçalho, utiliza flexblox, cria um espaçamento entre os elementos e alinha eles no container */
@@ -15,8 +16,6 @@
 
 /* Logo do cabeçalho, tira o sublinhado do link, coloca uma argura e altura na logo, e define o tamanho da fonte */
 .cabecalho__nav__logo {
-    width: 12.4rem;
-    height: 3.4rem;
     text-decoration: none;
     font-size: 3.1rem;
 }
@@ -36,7 +35,7 @@
 .cabecalho__nav__links {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 2vw;
 }
 
 /* Link da navegação, tira o sublinhado do link, e define a cor e tamanho da fonte */
@@ -44,4 +43,9 @@
     text-decoration: none;
     color: #FFFFFF;
     font-size: 0.875rem;
+}
+
+/* Efeito hover sobre os links de outras páginas */
+.cabecalho__nav__links__link:hover {
+    color: #FF8000;
 }
