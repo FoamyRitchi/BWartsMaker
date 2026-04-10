@@ -5,6 +5,7 @@
 
 /* Utiliza flexbox, coloca eles em direção de coluna e alinha os elementos no container */
 .rodape {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,22 +1,41 @@
-.produto{
-    padding: 2vh;
-    display: flex;
-    align-items: center;
+.produto {
+    width: 100%;
     background-color: white;
-    justify-content: space-around;
+}
+
+.produto__container {
+    gap: 2rem;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 3rem 2rem;
+    align-items: center;
 }
 
 .produto__imagens{
-    gap: 2.8vh;
-    margin: 0;
+    gap: 1rem;
     display: flex;
-    flex-direction: column;
+    flex: 0.2;
+    flex-direction: column;     
 }
 
-/* .produto__imagem__principal{
+.produto__imagem, .produto__principal__imagem{
+    height: auto;
+    max-width: 100%;
+}
 
+.produto__principal{
+    flex: 1;
 }
 
 .produto__compra{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-} */
+.teste{
+    max-width: 100%;
+    height: auto;
+}
