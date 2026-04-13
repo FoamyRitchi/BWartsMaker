@@ -23,27 +23,58 @@
                         <img src="../img/assets/produto.png" alt="Imagem do produto" class="produto__imagem">
                     </div>
                     <div class="produto__principal">
-                        <img src="../img/compras/mesaEnfeite.webp" alt="Imagem do produto" class="produto__principal__imagem">
+                        <img src="../img/compras/decoracao1.png" alt="Imagem do produto" class="produto__principal__imagem">
                     </div>
                     <div class="produto__compra">
-                        <div></div> <!-- Nome do produto -->
-                        <div> <!-- Avaliação -->
-                            <div> <!-- 5.0 -->
+                        <div>
+                            <h1 class="produto__compra__titulo">Produto muito legal e bom de 21mmX30mm - MDF</h1>
+                        </div>
+                        <div class="produto__compra__avaliacao flex"> <!-- Avaliação -->
+                            <div>
+                                <span>5.0</span>
                             </div>
-                            
-                            <div> <!-- Estrelas -->
+                            <div>
+                                <span>⭐⭐⭐⭐⭐</span>
                             </div>
-
-                            <div> <!-- (100) -->
+                            <div>
+                                <span>(100)</span>
                             </div>
                         </div>
-                        <div></div> <!-- Valor -->
-                        <button></button> <!-- Comprar -->
-                        <button></button> <!-- Adicionar ao carrinho -->
-                        <div> <!-- Quantidades -->
-                            <div></div> <!-- Unidades -->
+                        <div>
+                            <h2>R$999,99</h2>
+                        </div>
+                        <button>Comprar agora</button> <!-- Comprar -->
+                        <button>Adicionar ao carrinho</button> <!-- Adicionar ao carrinho -->
+                        <div class="produto__compra__quantidade flex__between"> 
+                            <div>
+                                <span>unidade</span>
+                                <input type="number" min="1" style="width: 2rem;">
+                            </div> 
+                            <div>
+                                <span>Disponível(500)</span>
+                            </div>
                         </div> 
-                        <img src="../INFOSPRODUTO.svg" class="teste">
+                        <div class="produto__compra__loja flex"> <!-- Infos loja-->
+                            <div style="width: 100px; height: 100px; background-color: black;">
+                            </div>
+                            <div class="produto__compra__loja__infos flex__between">
+                                <div class="produto__compra__loja__infos__nome flex__col">
+                                    <span>BWartsMaker</span>
+                                    <span>Loja oficial</span>
+                                </div>
+                                <div class="produto__compra__loja__infos__garantia">
+                                    <span>12 meses de garantia</span>
+                                    <span>Compra segura</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="produto__compra__cep flex__between">
+                            <div class="produto__compra__cep__numero flex__col">
+                                <label for="cep">Informe seu CEP:</label>
+                                <input type="text" id="cep"></input> <!-- Informar CEP -->
+                            </div>
+                            <button>Calcular frete</button> <!-- Calcular frete -->
+                        </div>
                     </div>
                 </div>
             </section>

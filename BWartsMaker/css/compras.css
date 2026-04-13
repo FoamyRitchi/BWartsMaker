@@ -1,43 +1,78 @@
+/* Seção com imagens do produto e ações de compra */
 .produto {
     width: 100%;
     background-color: white;
 }
 
+/* Div com os elementos da seção produtos */
 .produto__container {
     gap: 2rem;
     display: flex;
     margin: 0 auto;
     max-width: 1200px;
-    padding: 3rem 2rem;
+    padding: 1rem 2rem;
     align-items: center;
 }
 
+/* Div das imagens do produto alinhadas à esquerda*/
 .produto__imagens{
+    flex: 0.2;
     gap: 1rem;
     display: flex;
-    flex: 0.2;
     flex-direction: column;     
 }
 
+/* Estilização de tamanho das imagens para não haver quebra de layout */
 .produto__imagem, .produto__principal__imagem{
     height: auto;
     max-width: 100%;
 }
 
+/* Estilização da div da imagem principal do produto, para não haver quebra de layout */
 .produto__principal{
     flex: 1;
 }
 
+/* Container com as ações para compra do produto */
 .produto__compra{
-    flex: 1;
+    flex: 0.6;
     height: auto;
     display: flex;
     max-width: 100%;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
 }
 
-.teste{
-    max-width: 100%;
-    height: auto;
+/* Estilização do nome do produto em h1*/
+.produto__compra__titulo{
+    margin: 0;
+    padding: 0;
 }
+
+/* Classe padrão para aplicar display flex horizontal*/
+.flex{
+    display: flex;
+}
+
+/* Classe padrão para aplicar display flex horizontal e em coluna */
+.flex__col{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Classe padrão para aplicar display flex horizontal com espaçamento nas bordas */
+.flex__between{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Alinhas a div da avaliação à esquerda */
+.produto__compra__avaliacao{
+    justify-content: left;
+}
+
+/* Alinhas informações sobre a loja do produto em coluna */
+.produto__compra__loja__infos{
+    flex-direction: column;
+}
+
