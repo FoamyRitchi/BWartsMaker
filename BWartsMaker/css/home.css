@@ -67,11 +67,13 @@
     padding: 3rem 5rem;
 }
 
+/* Seção das novidades */
 .novidades {
     border-top: 3px solid;
     border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
 }
 
+/* Seção dos cards que aparecem */
 .cards__slides {
     width: 100%;
     margin: 0.3rem 0;
@@ -86,6 +88,7 @@
     transition: transform 0.5s ease;
 }
 
+/* Seção dos 5 cards juntos */
 .cards__slides__container__produtos{
     gap: 3vw;
     display: flex;
@@ -94,6 +97,13 @@
     justify-content: center;
 }
 
+/* Tirar os estilos que é aplicado aos textos dos cards, pois são links */
+.cards__slides__container__produtos a {
+    text-decoration: none;
+    color: #333333;
+}
+
+/* Botões dos carrosseis dos produtos */
 .cards__botao__direito__cards, .cards__botao__esquerdo__cards {
     top: 50%;
 	cursor:pointer; 

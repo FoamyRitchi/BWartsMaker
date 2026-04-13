@@ -37,8 +37,8 @@ nome_user.addEventListener("input", () => {
 });
 
 // Não permitir que o usuario digite um nome com menos de 3 letras ou um nome com mais de 50 letras
-nome_user.addEventListener("keydown", (tecla) => {
-    if((tecla.key === "Enter" || tecla.key === "Tab") && nome_user.value.length < 3){
+nome_user.addEventListener("change", () => {
+    if(nome_user.value.length < 3){
         erro_nome.style.display = "block";
         erro_nome.textContent = "ERRO: Nome deve ter mais de 3 letras";
     } else if (nome_user.value.length > 50){
@@ -50,15 +50,14 @@ nome_user.addEventListener("keydown", (tecla) => {
 });
 
 // Verificar se o email tem o formato de um email verdadeiro
-email_user.addEventListener("keydown", (tecla) => {
-    if((tecla.key === "Enter" || tecla.key === "Tab")){
-        const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;  
-        if(!regex.test(email_user.value)){
-            erro_email.style.display = "block";
-            erro_email.textContent = "ERRO: Email inválido, formato esperado -> email@example.com";
-        } else {
-            erro_email.style.display = "none";
-        }
+email_user.addEventListener("change", () => {
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;  
+
+    if(!regex.test(email_user.value)){
+        erro_email.style.display = "block";
+        erro_email.textContent = "ERRO: Email inválido, formato esperado -> email@example.com";
+    } else {
+        erro_email.style.display = "none";
     }
 });
 
@@ -73,11 +72,9 @@ cpf_user.addEventListener("input", () => {
 });
 
 // Limitar o CPF a apenas 11 caracteres
-cpf_user.addEventListener("keydown", (tecla) => {
+cpf_user.addEventListener("change", () => {
     const mensagemErro = "CPF deve ter 11 números";
-    if((tecla.key === "Enter" || tecla.key === "Tab")){
-        limitarTamanhoInput(erro_cpf, cpf_user.value, mensagemErro, 11);
-    }
+    limitarTamanhoInput(erro_cpf, cpf_user.value, mensagemErro, 11);
 });
 
 // Permitir que o usuário digite apenas números no DDD
@@ -91,11 +88,9 @@ ddd_user.addEventListener("input", () => {
 })
 
 // Limitar o DDD apenas para 2 dígitos(Todos os DDD do Brasil têm apenas 2 dígitos)
-ddd_user.addEventListener("keydown", (tecla) => {
+ddd_user.addEventListener("change", () => {
     const mensagemErro = "DDD teve ter apenas 2 números";
-    if((tecla.key === "Enter" || tecla.key === "Tab")){
-        limitarTamanhoInput(erro_ddd, ddd_user.value, mensagemErro, 2);
-    }
+    limitarTamanhoInput(erro_ddd, ddd_user.value, mensagemErro, 2);
 });
 
 // Limitar o telefone apenas para números
@@ -109,18 +104,16 @@ telefone_user.addEventListener("input", () => {
 })
 
 // Limitar o tamanho do telefone apenas para 11 números
-telefone_user.addEventListener("keydown", (tecla) => {
+telefone_user.addEventListener("change", () => {
     const mensagemErro = "Telefone deve ter 11 números";
-    if((tecla.key === "Enter" || tecla.key === "Tab")){
-        limitarTamanhoInput(erro_telefone, telefone_user.value, mensagemErro, 11);
-    }
+    limitarTamanhoInput(erro_telefone, telefone_user.value, mensagemErro, 11);
 });
 
 // Verificar força da senha, se tem ao menos 1 número, uma letra maiúscula, uma letra minúscula
-senha_user.addEventListener("keydown", (tecla) => {
+senha_user.addEventListener("change", () => {
     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
     
-    if((tecla.key === "Enter" || tecla.key === "Tab") && !regex.test(senha_user.value)){
+    if(!regex.test(senha_user.value)){
         erro_senha_fraca.style.display = "block";
         erro_senha_fraca.textContent = "ERRO: Senha fraca";
     } else {
@@ -129,8 +122,8 @@ senha_user.addEventListener("keydown", (tecla) => {
 });
 
 // Verificar se a senha tem menos de 8 caracteres
-senha_user.addEventListener("keydown", (tecla) => {  
-    if((tecla.key === "Enter" || tecla.key === "Tab") && senha_user.value.length < 8){
+senha_user.addEventListener("change", () => {  
+    if(senha_user.value.length < 8){
         erro_senha_tamanho.style.display = "block";
         erro_senha_tamanho.textContent = "ERRO: A senha deve ter no mínimo 8 caracteres";
     } else {
@@ -138,8 +131,8 @@ senha_user.addEventListener("keydown", (tecla) => {
     }
 })
 
-confirmar_senha.addEventListener("keydown", (tecla) => {  
-    if((tecla.key === "Enter" || tecla.key === "Tab") && confirmar_senha.value !== senha_user.value){    
+confirmar_senha.addEventListener("change", () => {  
+    if(confirmar_senha.value !== senha_user.value){    
         erro_confirmar.style.display = "block";
         erro_confirmar.textContent = "ERRO: Senhas digitadas não são iguais";
     } else {

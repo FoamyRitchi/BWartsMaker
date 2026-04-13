@@ -18,7 +18,7 @@
     display: flex;
     justify-content: space-around;
     padding: 1.875rem;
-    gap: 6rem;
+    gap: 3rem;
     flex-wrap: wrap;
 }
 
@@ -38,11 +38,10 @@
 
 /* Define o tamanho da fonte, a cor, a largura, cria uma borda abaixo do elemento e tira todas as margens do elemento */
 .rodape__informacoes__container__um__redes__sociais__titulo {
-    font-size: 2.25rem;
+    margin-bottom: 1rem;
     color: #FFFFFF;
-    width: 13rem;
+    font-size: 1.75rem;
     border-bottom: solid 2px #FF8000;
-    margin-top: 0;
 }
 
 /* Utiliza flexbox e cria um espaçamento entre os elementos */
