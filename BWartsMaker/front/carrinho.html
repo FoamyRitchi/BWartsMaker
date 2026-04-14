@@ -1,58 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../js/include.js" defer></script>
     <script src="../js/fetch.js" defer></script>
     <link rel="stylesheet" href="../css/carrinho.css">
-    <title>Document</title>
+    <title>Carrinho</title>
 </head>
 <body>
-    <div id="header"></div>
-    <main>
-        <section class="secao__carrinho">
-            <div class="secao__carrinho__bloco__tabela">
-                <h1 class="carrinho__titulo">Meu carrinho</h1>
-                <table class="carrinho__tabela">
+
+<div id="header"></div>
+
+<main class="carrinho">
+    <section class="secao__carrinho">
+
+        <!-- TABELA -->
+        <div class="secao__carrinho__bloco__tabela">
+            <h1 class="carrinho__titulo">Meu carrinho</h1>
+
+            <table class="carrinho__tabela">
+                <thead>
                     <tr class="carrinho__tabela__cabecalho">
-                        <th class="carrinho__tabela__cabecalho__item">Produto</th>
-                        <th class="carrinho__tabela__cabecalho__item">Frete</th>
-                        <th class="carrinho__tabela__cabecalho__item">Quantidade</th>
-                        <th class="carrinho__tabela__cabecalho__item">Total</th>
+                        <th>Produto</th>
+                        <th>Frete</th>
+                        <th>Quantidade</th>
+                        <th>Total</th>
                     </tr>
+                </thead>
+
+                <tbody>
+
+                    <!-- ITEM 1 -->
                     <tr class="carrinho__tabela__informacoes">
                         <td>
                             <div class="carrinho__tabela__informacoes__descricao">
-                                <img src="../img/assets/produto.png" alt="Imagem do produto">
+                                <img src="../img/assets/produto.png">
                                 <p>Produto muito legal e bom de 21mmx30mm - mdf</p>
                             </div>
                         </td>
-                        <td>
-                            <p>R$10,00</p>
-                        </td>
+
+                        <td>R$10,00</td>
+
                         <td>
                             <div class="carrinho__tabela__informacoes__quantidade">
-                                <button>-</button>
-                                <p class="carrinho__tabela__informacoes__quantidade__numero">1</p>
-                                <button>+</button>
+                                <button class="btn__menos">-</button>
+                                <p class="numero">1</p>
+                                <button class="btn__mais">+</button>
                             </div>
+
                             <div class="carrinho__tabela__informacoes__remover">
-                                <img src="../img/assets/lixeira.svg" alt="Imagem de uma lixeira" class="carrinho__tabela__informacoes__remover__lixeira">
+                                <img src="../img/assets/lixeira.svg">
                                 <p>Remover</p>
                             </div>
                         </td>
-                        <td>
-                            <p>R$110,00</p>
-                        </td>
+
+                        <td>R$110,00</td>
                     </tr>
-                </table>
+
+                    <!-- ITEM 2 -->
+                    <tr class="carrinho__tabela__informacoes">
+                        <td>
+                            <div class="carrinho__tabela__informacoes__descricao">
+                                <img src="../img/assets/produto.png">
+                                <p>Produto muito legal e bom de 21mmx30mm - mdf</p>
+                            </div>
+                        </td>
+
+                        <td>R$10,00</td>
+
+                        <td>
+                            <div class="carrinho__tabela__informacoes__quantidade">
+                                <button class="btn__menos">-</button>
+                                <p class="numero">1</p>
+                                <button class="btn__mais">+</button>
+                            </div>
+
+                            <div class="carrinho__tabela__informacoes__remover">
+                                <img src="../img/assets/lixeira.svg">
+                                <p>Remover</p>
+                            </div>
+                        </td>
+
+                        <td>R$110,00</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- LATERAL -->
+        <div class="secao__carrinho__bloco__informacoes">
+
+            <h2 class="carrinho__titulo">Valor total</h2>
+            <h2 class="carrinho__titulo__preco">R$999,99</h2>
+
+            <button class="btn__compra">Finalizar compra</button>
+
+            <div class="seccao__carrinho__bloco__informacoes__frete">
+                <p>Informe seu CEP:</p>
+                <input type="text" placeholder="CEP">
+                <button class="btn__frete">Calcular frete</button>
             </div>
-            <div>
-                <h2>Valor total</h2>
+
+            <div class="removidos">
+                <h3>Últimos produtos retirados</h3>
+
+                <div class="item__removido">
+                    <img src="../img/assets/produto.png">
+                    <p>Produto muito legal e bom de 21mmx30mm - mdf</p>
+                </div>
+
+                <div class="item__removido">
+                    <img src="../img/assets/produto.png">
+                    <p>Produto muito legal e bom de 21mmx30mm - mdf</p>
+                </div>
+
+                <div class="item__removido">
+                    <img src="../img/assets/produto.png">
+                    <p>Produto muito legal e bom de 21mmx30mm - mdf</p>
+                </div>
             </div>
-        </section>
-    </main>
-    <div id="footer"></div>
+
+        </div>
+
+    </section>
+</main>
+
+<div id="footer"></div>
+
 </body>
 </html>
