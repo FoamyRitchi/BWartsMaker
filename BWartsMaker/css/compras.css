@@ -202,6 +202,15 @@
     border: 2px solid var(--laranja--detalhes);
 }
 
+.erro__cep, .erro__cep__tamanho{
+    margin: 0;
+    padding: 0;
+    height: 1px;
+    color: red;
+    font-size: 0.8rem;
+}
+
+
 
 /* Seção que contém a descrição e avaliações do produto */
 .descricao{
