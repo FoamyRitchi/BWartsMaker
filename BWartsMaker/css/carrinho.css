@@ -17,12 +17,13 @@
 /* TABELA */
 .carrinho__titulo {
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin: 0.5rem 0;
+    border-bottom: solid 0.1rem #747474;
 }
 
 .carrinho__titulo__preco {
     font-size: 3rem;
-    margin: 1rem 0;
+    
 }
 
 .carrinho__tabela {
@@ -117,16 +118,21 @@
 }
 
 /* CEP */
-.cep input {
-    width: 100%;
-    padding: 0.5rem;
-    margin: 0.5rem 0;
+.cep {
+    width: 150%;
+    height: 2.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #ccc;
 }
 
 .btn__frete {
-    width: 100%;
-    padding: 0.5rem;
-    cursor: pointer;
+    background-color: #000000;
+    color: white;
+    border: solid 0.2rem #FF8000;
+    border-radius: 0.5rem;
+    width: 30%;
+    height: 2.5rem;
 }
 
 /* REMOVIDOS */
@@ -134,13 +140,39 @@
     margin-top: 2rem;
 }
 
-.item__removido {
+.removidos__titulo {
+    font-size: 1.5rem;
+    margin: 0;
+    background-color: #ff8000;
+    text-align: center;
+    padding: 0.3rem;
+}   
+
+.removidos__itens {
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.removidos__itens__item {
     display: flex;
     align-items: center;
     gap: 1rem;
     margin: 0.5rem 0;
 }
 
-.item__removido img {
+.removidos__itens__item img {
     width: 3rem;
+}
+
+.secao__carrinho__bloco__informacoes__frete {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10rem;
+}
+
+.informe__cep {
+    font-size: 1.2rem;
+    margin-bottom: 0;
 }
