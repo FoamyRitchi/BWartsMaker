@@ -7,6 +7,7 @@
         <script src="../js/include.js" defer></script>
         <script src="../js/fetch.js"></script>
         <script src="../js/carrosselCards.js"></script>
+        <script src="../js/validacaoCepCompras.js" defer></script>
     </head>
     <body>
         
@@ -81,10 +82,12 @@
                         <div class="produto__compra__cep flex__between">
                             <div class="flex__col">
                                 <label for="cep" class="label__cep">Informe seu CEP:</label>
-                                <input type="text" id="cep" class="input__cep"></input>
+                                <input type="text" id="cep" class="input__cep">
                             </div>
                             <button class="botao__cep">Calcular frete</button>
                         </div>
+                        <span class="erro__cep" id="erro_cep_tamanho"></span>
+                        <span class="erro__cep" id="erro_cep"></span>
                     </div>
                 </div>
             </section>
