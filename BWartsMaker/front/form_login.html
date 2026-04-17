@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../js/include.js" defer></script>
-    <title>Login</title>
-</head>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="../js/include.js" defer></script>
+        <script src="../js/validacoes/validacaoLogin.js" defer></script>
+        <title>Login</title>
+    </head>
+
 <body class="fundo__form">
     <main>
         <section>
             <div class="form">
                 <h1 class="form__logo"><span class="texto__laranja">BW</span><span class="texto__cinza">arts</span></h1>
                 <h2 class="form__titulo margin__bottom__zero margin__top__zero">Faça Login</h2>
+
                 <form action="/login_usuario" method="post" class="form__login">
-                    <input type="text" id="cpf__user" name="cpf" placeholder="CPF" required class="form__input__cpf__login">
-                    <input type="password" id="senha__user" name="senha" placeholder="Senha" required class="form__input__senha__login">
+                    <input type="text" id="cpf_user" name="cpf" placeholder="CPF" required class="form__input__cpf__login">
+                    <span class="erro" id="cpf_erro"></span>
+
+                    <input type="password" id="senha_user" name="senha" placeholder="Senha" required class="form__input__senha__login">
+                    <span class="erro" id="senha_erro"></span>
 
                     <div class="form__login__container__botao">
                         <button type="submit" class="form__login__botao">Entrar</button>
