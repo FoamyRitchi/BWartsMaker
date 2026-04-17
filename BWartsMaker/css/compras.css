@@ -1,9 +1,3 @@
-:root{
-    --fundo--branco: #F2FAFF;
-    --laranja--detalhes: #FF8000;
-    --cinza--textos: rgb(80, 80, 80);
-}
-
 /* Classe padrão para aplicar display flex horizontal*/
 .flex{
     display: flex;

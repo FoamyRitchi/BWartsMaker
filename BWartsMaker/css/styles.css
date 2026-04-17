@@ -1,3 +1,10 @@
+:root{
+    --cor--fundo--branco: #F2FAFF;
+    --cor-texto--branco: #FAFAFA;
+    --laranja--detalhes: #FF8000;
+    --cinza--textos: rgb(80, 80, 80);
+}
+
 /* Define a cor de fundo do body, e tira todas as margens */
 body {
     background-color: #343434;
