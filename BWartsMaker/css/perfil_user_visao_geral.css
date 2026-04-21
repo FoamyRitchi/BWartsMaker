@@ -1,0 +1,106 @@
+/* === INFORMAÇÕES DO PERFIL === */
+.perfil__conteudo__infos__container{
+    width: 100%;
+    justify-content: space-between;
+}
+
+.perfil__conteudo__container__imagem{
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteudo__imagem__perfil{
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px 1px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/* === FORMULÁRIOS === */
+.dados__pessoais{
+    width: 45%;
+}
+
+.dados__endereco{
+    width: 45%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.form__dados__endereco__duas__colunas{
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__dados__endereco__duas__colunas div{
+    width: 48%;
+}
+
+.form__dados__pessoais, .form__dados__endereco{
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.form__dados__pessoais input, .form__dados__endereco input{
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: #D9D9D9;
+}
+
+.form__dados__pessoais label, .form__dados__endereco label{
+    color: #545759;
+    font-size: 1.2rem;
+}
+
+.dados__pessoais__titulo, .dados__endereco__titulo{
+    width: 100%;
+    border-bottom: 2px solid #D2D2D2;
+}
+
+.dados__pessoais__titulo h2, .dados__endereco__titulo h2{
+    margin-bottom: 0.5rem;
+    color: var(--cinza--textos);
+}
+
+.botao__editar__container{
+    justify-content: right;
+}
+
+.botao__editar{
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    padding: 0.8rem 3rem;
+    background-color: #343434;
+    border: 2px solid var(--laranja--detalhes);
+}
+
+.botao__editar:hover{
+    cursor: pointer;
+    transition: 0.2s ease;
+    background-color: var(--laranja--detalhes);
+}
+
+.seguranca__dados{
+    font-size: 0.8rem;
+    color: var(--cinza--textos);
+}
+
+
+
+/* === MEDIA QUERIES === */
+@media screen and (max-width: 1023px){
+    .form__dados__endereco__duas__colunas{
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .form__dados__endereco__duas__colunas div{
+        width: 100%;
+    }
+}

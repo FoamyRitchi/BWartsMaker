@@ -24,7 +24,7 @@
 /* Seção com imagens do produto e ações de compra */
 .produto {
     width: 100%;
-    background-color: var(--fundo--branco);
+    background-color: var(--cor--fundo--branco);
 }
 
 /* Div com os elementos da seção produtos */
@@ -116,13 +116,13 @@
     font-size: 1.5rem;
     border-radius: 5px;
     transition: 0.2s ease;
-    color: var(--fundo--branco);
+    color: var(--cor--fundo--branco);
 }
 
 /* Estilização do botão de compra */
 .produto__botao__compra{
     border: none;
-    color: var(--fundo--branco);
+    color: var(--cor--fundo--branco);
     background-color: var(--laranja--detalhes);
 }
 
@@ -191,7 +191,7 @@
     height: 3.2rem;
     border-radius: 8px;
     transition: 0.1s ease;
-    color: var(--fundo--branco);
+    color: var(--cor--fundo--branco);
     background-color: rgb(52, 52, 52);
     border: 2px solid var(--laranja--detalhes);
 }
@@ -210,7 +210,7 @@
 .descricao{
     width: 100%;
     padding: 1rem 0;
-    background: var(--fundo--branco);
+    background: var(--cor--fundo--branco);
     justify-content: space-around;
     border-top: 3px solid;
     border-image: linear-gradient(to right, #d36a00, #ff8f1e, #BD5E00) 1;

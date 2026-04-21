@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="../js/include.js" defer></script>
+        <script src="../js/fetch.js" defer></script>
+        
+        <link rel="stylesheet" href="../css/perfil.css">
+        <link rel="stylesheet" href="../css/perfil_user_visao_geral.css">
+
+        <title>Visão geral</title>
+    </head>
+
+    <body>
+        <div id="header"></div>
+        
+        <main>
+            <section class="perfil">
+                <!-- Barra de navegação lateral direita -->
+                <nav class="nav flex">
+                    <div class="nav__imagem__container flex">
+                        <img src="../img/perfil/perfil.jpg" alt="Imagem de perfil de homem" class="nav__imagem__perfil">
+                    </div>
+
+                    <div class="nav__links">
+                        <a href="#">
+                            <div class="nav__link selecionado">
+                                <h2>Visão geral</h2>
+                            </div>
+                        </a>
+                        <a href="minhas_compras.html">
+                            <div class="nav__link">
+                                <h2>Minhas compras</h2>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="nav__link">
+                                <h2>Suporte</h2>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="nav__link">
+                                <h2>Configurações</h2>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="nav__link">
+                                <h2>Sair da conta</h2>
+                            </div>
+                        </a>
+                    </div>
+                </nav>
+
+                <div class="perfil__conteudo flex__col">
+                    <div class="perfil__conteudo__titulo">
+                        <h1>Visão geral</h1>
+                    </div>
+                    <div class="perfil__conteudo__container__imagem flex">
+                        <img src="../img/perfil/perfil.jpg" alt="Imagem de perfil de homem" class="conteudo__imagem__perfil">
+                    </div>
+                    <div class="perfil__conteudo__infos__container flex">
+                        <!-- Dados pessoais -->
+                        <div class="dados__pessoais">
+                            <div class="dados__pessoais__titulo">
+                                <h2>Dados pessoais</h2>
+                            </div>
+                            <form action="/editar_perfil" id="form__dados__pessoais" method="post" class="form__dados__pessoais flex__col">
+                                <div class="label__input">
+                                    <label for="">Nome</label>
+                                    <input type="text" placeholder="LebronZika123" disabled>
+                                </div>
+
+                                <div class="label__input">
+                                    <label for="">E-mail</label>
+                                    <input type="email" placeholder="LebronZika123@nike.com" disabled>
+                                </div>
+                                
+                                <div class="label__input">
+                                    <label for="">Telefone</label>
+                                    <input type="tel" placeholder="(11) 91212-3267" disabled>
+                                </div>
+                                
+                                
+                                <div class="label__input">
+                                    <label for="">CPF</label>
+                                    <input type="text" placeholder="123.123.123-32" disabled>
+                                </div>
+
+                                <div class="label__input">
+                                    <label for="">Data de nascimento</label>
+                                    <input type="date" placeholder="06/07/1967" disabled>
+                                </div>
+
+                                <div class="label__input">
+                                    <label for="">Gênero</label>
+                                    <input type="text" placeholder="Masculino" disabled></input>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Dados de endereço -->
+                        <div class="dados__endereco flex__col">
+                            <div>
+                                <div class="dados__endereco__titulo">
+                                    <h2>Endereço</h2>
+                                </div>
+                                <form action="/editar_perfil" id="form__dados__pessoais" method="post" class="form__dados__endereco flex__col">
+                                    <div class="form__dados__endereco__duas__colunas">
+                                        <div class="label__input">
+                                            <label for="">CEP</label>
+                                            <input type="text" placeholder="12312-123" disabled>
+                                        </div>
+                                        <div class="label__input">
+                                            <label for="">Número</label>
+                                            <input type="text" placeholder="67" disabled>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="label__input">
+                                        <label for="">Rua</label>
+                                        <input type="text" placeholder="Rua dos bobos" disabled>
+                                    </div>
+                                    
+                                    <div class="form__dados__endereco__duas__colunas">
+                                        <div class="label__input">
+                                            <label for="">Estado</label>
+                                            <input type="text" placeholder="Bahia" disabled>
+                                        </div>
+                                        <div class="label__input">
+                                            <label for="">Cidade</label>
+                                            <input type="text" placeholder="xique-xique" disabled>
+                                        </div>
+                                    </div>
+
+                                    <div class="label__input">
+                                        <label for="">Bairro</label>
+                                        <input type="text" placeholder="Jardim das rosas" disabled>
+                                    </div>
+                                </form>
+                                
+                                <p class="seguranca__dados">
+                                    As informações do cliente são tratadas em conformidade a Lei Geral de Proteção de Dados (LGPD – Lei nº 13.709/2018) e 
+                                    demais legislações aplicáveis.
+                                </p>
+                            </div>
+
+                            
+
+                            <div class="botao__editar__container flex">
+                                
+                                <button class="botao__editar">Editar perfil</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div id="footer"></div>
+    </body>
