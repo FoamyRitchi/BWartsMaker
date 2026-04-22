@@ -6,6 +6,8 @@
 
         <script src="../js/include.js" defer></script>
         <script src="../js/fetch.js" defer></script>
+        <script src="../js/acessibilidade/alterarFonte.js" defer></script>
+        <script src="../js/acessibilidade/alterarTamanhoFonte.js" defer></script>
         
         <link rel="stylesheet" href="../css/perfil.css">
         <link rel="stylesheet" href="../css/perfil_configuracoes.css">
@@ -98,45 +100,45 @@
                     <!-- Exibição de leitura -->
                     <div>
                         <h3 class="perfil__conteudo__subtitulo__configuracao">Alterar tamanho da fonte</h3>
-                        <form action="/alterar_tamanho_fonte" class="form__tamanho__fonte flex">
+                        <form action="#" class="form__tamanho__fonte flex">
                             <div class="radio__estilo flex__col">
                                 <label for="#">Padrão</label>
-                                <input type="radio" name="tamanho_fonte" checked>
+                                <input type="radio" name="tamanho_fonte" value="tamanho_padrao" checked>
                                 <span></span>
                             </div>
 
                             <div class="radio__estilo flex__col">
                                 <label for="#" class="selecao__texto__grande">Grande</label>
-                                <input type="radio" name="tamanho_fonte">
+                                <input type="radio" name="tamanho_fonte" value="tamanho_grande">
                             </div>
                             
                             <div class="radio__estilo flex__col">
                                 <label for="#" class="selecao__texto__extra__grande">Extra grande</label>
-                                <input type="radio" name="tamanho_fonte">
+                                <input type="radio" name="tamanho_fonte"  value="tamanho_extra_grande">
                             </div>
                         </form>
                     </div>
 
-                    <!-- Fonte open dyslexic -->
+                    <!-- Fontes de acessibilidade -->
                     <div>
-                        <h3 class="perfil__conteudo__subtitulo__configuracao">Alterar para tipo de fonte mais legível  </h3>
-                        <form action="/alterar_tipo_fonte" class="form__tipo__fonte flex">
+                        <h3 class="perfil__conteudo__subtitulo__configuracao">Alterar para tipo de fonte mais legível</h3>
+                        <form action="#" class="form__tipo__fonte flex">
                             <!-- Fonte padrão do site, Sans serif -->
                             <div class="radio__estilo flex__col">
-                                <label for="#" class="fonte__padrao">Padrão</label>
-                                <input type="radio" name="tipo_fonte" checked>
+                                <label for="fonte_padrao" class="fonte__padrao">Padrão</label>
+                                <input type="radio" name="tipo_fonte" value="fonte_padrao" checked>
                                 <span></span>
                             </div>
                             <!-- Fonte serifada, Times New Roman -->
                             <div class="radio__estilo flex__col">
-                                <label for="#" class="fonte__serifada">Serifada</label>
-                                <input type="radio" name="tipo_fonte">
+                                <label for="fonte_serifada" class="fonte__serifada">Serifada</label>
+                                <input type="radio" name="tipo_fonte" value="fonte_serifada">
                                 <span></span>
                             </div>
                             <!-- Fonte acessível, Open Dyslexic -->
                             <div class="radio__estilo flex__col">
-                                <label for="#" class="fonte__dyslexic">Open dyslexic</label>
-                                <input type="radio" name="tipo_fonte">
+                                <label for="fonte_dyslexic" class="fonte__dyslexic">Open dyslexic</label>
+                                <input type="radio" name="tipo_fonte" value="fonte_dyslexic">
                                 <span></span>
                             </div>
                             

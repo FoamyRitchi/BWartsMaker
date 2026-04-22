@@ -128,7 +128,7 @@
 
 
 /* === MEDIA QUERIES === */
-@media screen and (max-width: 1023px){
+@media screen and (max-width: 1024px){
     .form__selecao__tema{
         width: 40%;
         gap: 1.5rem;
@@ -139,5 +139,9 @@
     .selecao__tema{
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    .excluir__conta__botao{
+        padding: 1rem 2rem;
     }
 }
