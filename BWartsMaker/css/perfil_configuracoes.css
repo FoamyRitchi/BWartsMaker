@@ -28,7 +28,7 @@
 }
 
 .perfil__conteudo{
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .perfil__conteudo__subtitulo__configuracao{
@@ -41,6 +41,7 @@
 /* === Alteração de tema === */
 .form__selecao__tema{
     width: 80%;
+    gap: 10px;
     justify-content: space-between;
 }
 
@@ -129,11 +130,16 @@
 
 /* === MEDIA QUERIES === */
 @media screen and (max-width: 1024px){
-    .form__selecao__tema{
+    .form__selecao__tema, .form__tamanho__fonte, .form__tipo__fonte{
         width: 40%;
         gap: 1.5rem;
         flex-direction: column;
         justify-content: center;
+    }
+
+    .radio__estilo{
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .selecao__tema{
