@@ -1,0 +1,143 @@
+/* === CLASSES PADRÃO === */
+/* Classes com estilos padrões para diversas seções */
+.radio__estilo{
+    gap: 5px;
+}
+
+.radio__estilo label{
+    color: var(--cinza--textos);
+}
+
+.radio__estilo input{
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+
+
+/* === Títulos de seções === */
+.perfil__conteudo__subtitulo{
+    width: 100%;
+    margin-top: 1rem;
+    border-bottom: 2px solid #D9D9D9;
+}
+
+.perfil__conteudo__subtitulo h2{
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.perfil__conteudo{
+    gap: 1rem;
+}
+
+.perfil__conteudo__subtitulo__configuracao{
+    font-weight: 200;
+    color: var(--cinza--textos);
+}
+
+
+
+/* === Alteração de tema === */
+.form__selecao__tema{
+    width: 80%;
+    justify-content: space-between;
+}
+
+
+
+/* === EXIBIÇÃO DE LEITURA === */
+.form__tamanho__fonte{
+    width: 50%;
+    justify-content: space-between;
+}
+
+.selecao__texto__grande{
+    font-size: 1.3rem;
+}
+
+.selecao__texto__extra__grande{
+    font-size: 1.8rem;
+}
+
+
+
+/* Mudar tipo de fonte */
+.form__tipo__fonte{
+    width: 30%;
+    justify-content: space-between;
+}
+
+.fonte__padrao{
+    font-family: sans-serif;
+}
+
+.fonte__dyslexic{
+    font-size: 0.8rem;
+    letter-spacing: 0px;
+    font-family: 'OpenDyslexic';
+}
+
+.fonte__serifada{
+    letter-spacing: 0.8px;
+    font-family:'Times New Roman';
+}
+
+
+
+/* === EXCLUIR CONTA === */
+.excluir__conta__subtitulo{
+    width: 100%;
+    margin-top: 1rem;
+    border-bottom: 2px solid red;
+}
+
+.excluir__conta__subtitulo h2{
+    color: red;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.excluir__conta{
+    align-items: top;
+    justify-content: space-between;
+}
+
+.excluir__conta__botao{
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 1rem 4rem;
+    background-color: red;
+    box-shadow: 0px 1px 10px 0px rgba(133, 0, 0, 0.603);
+}
+
+.excluir__conta__botao:hover{
+    cursor: pointer;
+    background-color: rgb(255, 89, 23);
+}
+
+.excluir__conta__aviso{
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--cinza--textos);
+}
+
+
+
+/* === MEDIA QUERIES === */
+@media screen and (max-width: 1023px){
+    .form__selecao__tema{
+        width: 40%;
+        gap: 1.5rem;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .selecao__tema{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="../js/include.js" defer></script>
+        <script src="../js/fetch.js" defer></script>
+        
+        <link rel="stylesheet" href="../css/perfil.css">
+        <link rel="stylesheet" href="../css/perfil_configuracoes.css">
+
+        <title>Visão geral</title>
+    </head>
+
+    <body>
+        <div id="header"></div>
+        
+        <main>
+            <section class="perfil">
+                <!-- Barra de navegação lateral direita -->
+                <nav class="nav flex">
+                    <div class="nav__imagem__container flex">
+                        <img src="../img/perfil/perfil.jpg" alt="Imagem de perfil de homem" class="nav__imagem__perfil">
+                    </div>
+
+                    <div class="nav__links">
+                        <a href="user_visao_geral.html">
+                            <div class="nav__link">
+                                <h2>Visão geral</h2>
+                            </div>
+                        </a>
+                        <a href="minhas_compras.html">
+                            <div class="nav__link">
+                                <h2>Minhas compras</h2>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="nav__link">
+                                <h2>Suporte</h2>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="nav__link selecionado">
+                                <h2>Configurações</h2>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div class="nav__link">
+                                <h2>Sair da conta</h2>
+                            </div>
+                        </a>
+                    </div>
+                </nav>
+
+                <div class="perfil__conteudo flex__col">
+
+                    <div class="perfil__conteudo__titulo">
+                        <h1>Configurações</h1>
+                    </div>
+                    
+                    <div class="perfil__conteudo__subtitulo">
+                        <h2>Acesibilidade</h2>
+                    </div>
+                    
+                    <!-- Alterar o tema da plataforma -->
+                    <div>
+                        <h3 class="perfil__conteudo__subtitulo__configuracao">Alterar o tema da plataforma</h3>
+                        <form action="/alterar_tema" class="form__selecao__tema flex">
+                            <div class="radio__estilo flex__col">
+                                <label for="#">Padrão</label>
+                                <input type="radio" name="tema">
+                                <span></span>
+                            </div>
+
+                            <div class="radio__estilo flex__col">
+                                <label for="#">Alto contraste</label>
+                                <input type="radio" name="tema">
+                            </div>
+                            
+                            <div class="radio__estilo flex__col">
+                                <label for="#">Protanomalia</label>
+                                <input type="radio" name="tema">
+                            </div>
+
+                            <div class="radio__estilo flex__col">
+                                <label for="#">Deuteranomalia</label>
+                                <input type="radio" name="tema">
+                            </div>
+
+                            <div class="radio__estilo flex__col">
+                                <label for="#">Tritanomalia</label>
+                                <input type="radio" name="tema">
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Exibição de leitura -->
+                    <div>
+                        <h3 class="perfil__conteudo__subtitulo__configuracao">Alterar tamanho da fonte</h3>
+                        <form action="/alterar_tamanho_fonte" class="form__tamanho__fonte flex">
+                            <div class="radio__estilo flex__col">
+                                <label for="#">Padrão</label>
+                                <input type="radio" name="tamanho_fonte">
+                                <span></span>
+                            </div>
+
+                            <div class="radio__estilo flex__col">
+                                <label for="#" class="selecao__texto__grande">Grande</label>
+                                <input type="radio" name="tamanho_fonte">
+                            </div>
+                            
+                            <div class="radio__estilo flex__col">
+                                <label for="#" class="selecao__texto__extra__grande">Extra grande</label>
+                                <input type="radio" name="tamanho_fonte">
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Fonte open dyslexic -->
+                    <div>
+                        <h3 class="perfil__conteudo__subtitulo__configuracao">Alterar para tipo de fonte mais legível  </h3>
+                        <form action="/alterar_tipo_fonte" class="form__tipo__fonte flex">
+                            <!-- Fonte padrão do site, Sans serif -->
+                            <div class="radio__estilo flex__col">
+                                <label for="#" class="fonte__padrao">Padrão</label>
+                                <input type="radio" name="tipo_fonte">
+                                <span></span>
+                            </div>
+                            <!-- Fonte serifada, Times New Roman -->
+                            <div class="radio__estilo flex__col">
+                                <label for="#" class="fonte__serifada">Serifada</label>
+                                <input type="radio" name="tipo_fonte">
+                                <span></span>
+                            </div>
+                            <!-- Fonte acessível, Open Dyslexic -->
+                            <div class="radio__estilo flex__col">
+                                <label for="#" class="fonte__dyslexic">Open dyslexic</label>
+                                <input type="radio" name="tipo_fonte">
+                                <span></span>
+                            </div>
+                            
+                        </form>
+                    </div>
+
+                    <div class="excluir__conta__subtitulo">
+                        <h2>Excluir conta</h2>
+                    </div>
+
+                    <div class="excluir__conta flex">
+                        <button class="excluir__conta__botao">Excluir conta permanentemente</button>
+                        <p class="excluir__conta__aviso">
+                            ATENÇÃO: Essa ação excluirá, PERMANENTEMENTE, TODAS as informações da sua conta, não sendo possível recuperar os dados.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div id="footer"></div>
+    </body>

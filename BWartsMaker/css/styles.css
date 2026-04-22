@@ -5,11 +5,17 @@
     --cinza--textos: rgb(80, 80, 80);
 }
 
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url(../fonts/opendyslexic-0.92/OpenDyslexic-Regular.otf);
+}
+
+
 /* Define a cor de fundo do body, e tira todas as margens */
 body {
-    background-color: #343434;
     margin: 0;
     font-family: sans-serif;
+    background-color: #343434;
 }
 
 /* Define a cor do texto de laranja */
