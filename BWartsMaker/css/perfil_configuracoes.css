@@ -16,17 +16,6 @@
 
 
 /* === Títulos de seções === */
-.perfil__conteudo__subtitulo{
-    width: 100%;
-    margin-top: 1rem;
-    border-bottom: 2px solid #D9D9D9;
-}
-
-.perfil__conteudo__subtitulo h2{
-    font-weight: 400;
-    margin-bottom: 0.5rem;
-}
-
 .perfil__conteudo{
     gap: 2rem;
 }
@@ -35,8 +24,6 @@
     font-weight: 200;
     color: var(--cinza--textos);
 }
-
-
 
 /* === Alteração de tema === */
 .form__selecao__tema{

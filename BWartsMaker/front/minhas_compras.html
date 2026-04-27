@@ -9,8 +9,7 @@
         <script src="../js/global/preferenciaFonte.js" defer></script>
         
         <link rel="stylesheet" href="../css/perfil.css">
-
-        <title>Visão geral</title>
+        <link rel="stylesheet" href="../css/perfil_minhas_compras.css">
     </head>
 
     <body>
@@ -52,8 +51,64 @@
                         </a>
                     </div>
                 </nav>
+
                 <div class="perfil__conteudo">
-                    
+                    <div class="perfil__conteudo__subtitulo">
+                        <h2>Minhas compras</h2>
+                    </div>
+
+                    <!-- Compra atual que está em andamento -->
+                    <div class="minhas__compras flex">
+                        <!-- CARD -->
+                        <div>
+                            <a href="compras.html">
+                                <div class="cards">
+                                    <div class="cards__estrela">
+                                        <img src="../img/assets/estrela.svg" alt="Ícone de estrela">
+                                    </div>
+                                    <img src="../img/assets/produto.png" alt="Imagem do produto" class="cards__imagem">
+                                    <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
+                                    <div class="cards__precos">
+                                        <h3 class="cards__preco">R$999,99</h3>
+                                        <p class="cards__parcela">10x s/juros</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class="andamento__pedido">
+                            <h3>Pedido saiu da distribuidora</h3>
+                            <p>Seu pedido saiu da distribuidora e em breve irá para seu endereço</p>
+
+                            <div class="timeline">
+                                <div class="etapa">
+                                    <div class="ponto"></div>
+                                    <div class="label">Pedido separado</div>
+                                </div>
+                                <div class="etapa">
+                                    <div class="ponto"></div>
+                                    <div class="label">Pedido chegou na distribuidora de Mogi</div>
+                                </div>
+                                <div class="etapa">
+                                    <div class="ponto"></div>
+                                    <div class="label">Pedido chegou na distribuidora de Poá</div>
+                                </div>
+                                <div class="etapa atual">
+                                    <div class="ponto"></div>
+                                    <div class="label">Pedido saiu da distribuidora</div>
+                                </div>
+                                <div class="etapa pendente">
+                                    <div class="ponto"></div>
+                                    <div class="label">Pedido saiu para seu endereço</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="perfil__conteudo__subtitulo">
+                        <h2>Histórico de compras</h2>
+                    </div>
                 </div>
             </section>
         </main>

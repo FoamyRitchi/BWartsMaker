@@ -10,7 +10,6 @@
     src: url(../fonts/opendyslexic-0.92/OpenDyslexic-Regular.otf);
 }
 
-
 /* Define a cor de fundo do body, e tira todas as margens */
 body {
     margin: 0;
@@ -45,16 +44,17 @@ body {
 
 /* Título dos cards */
 .cards__titulo {
-    font-size: 2rem;
+    font-size: 1rem;
     color: #FFFFFF;
 }
 
 /* Cria um fundo branco para os cards,  limita os width e height, cria uma sombra */
 .cards {
-    max-width: 13.5rem;
-    padding: 0.4rem;
-    height: 20.0625rem;
+    padding: 0.8rem;
+    max-width: 13rem;
+    color: #333333;
     text-align: center;
+    transition: 0.3s ease;
     border-radius: 0.25rem;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
     background-color: var(--cor--fundo--branco);
@@ -63,7 +63,6 @@ body {
 .cards:hover {
     cursor: pointer;
     transform: scale(1.05);
-    transition: 0.4s ease;
 }
 
 /* Alinha o ícone da estrela no final do bloco */
@@ -71,18 +70,23 @@ body {
     text-align: end;
 }
 
+/* Torna a imagem responsiva */
+.cards__imagem{
+    width: 100%;
+    height: auto;
+}
+
 /* Alinha a flexbox como coluna e alinha os itens no centro */
 .cards__precos {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 /* Faz a fonte ter 12px (1rem = 16px) e deixa ela em negrito */
 .cards__nome__produto {
-    font-size: 0.75rem;
-    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: left;
 }
 
 /* Cria uma margem para baixo */
@@ -110,3 +114,4 @@ body {
     font-size: 1rem;
     color: rgb(255, 43, 43);
 }
+

@@ -95,7 +95,6 @@
 /* Tirar os estilos que é aplicado aos textos dos cards, pois são links */
 .cards__slides__container__produtos a {
     text-decoration: none;
-    color: #333333;
 }
 
 /* Botões dos carrosseis dos produtos */
