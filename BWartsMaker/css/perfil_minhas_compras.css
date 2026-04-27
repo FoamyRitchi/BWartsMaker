@@ -13,7 +13,7 @@
     text-align: center;
     border-radius: 20px;
     background: var(--cor--fundo--branco);
-    padding: 3% 48px 64px;
+    padding: 3% 12px 54px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.326);
 }
 
@@ -83,16 +83,26 @@
 }
 
 .label {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #4b4b4b;
     max-width: 140px;
-    margin: 15px 2.5px 0 2.5px;
+    margin: 15px 3px 0 3px;
 }
 
 @media screen and (max-width: 1023px){
+    .andamento__pedido p{
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .andamento__pedido h3{
+        font-size: 1.2rem;
+    }
+
     .timeline{
         gap: 10px;
         display: flex;
+        padding-left: 25%;
         flex-direction: column;
     }
 
@@ -100,13 +110,10 @@
         flex-direction: row;
     }
 
-    .andamento__pedido p{
-        margin-bottom: 20px;
-    }
-
     .label{
-        margin: 0 0 0 10px;
         text-align: left;
+        margin: 0 0 0 6px;
+        font-size: 0.8rem;
     }  
 
     .etapa:not(:last-child)::after {
