@@ -7,6 +7,9 @@
     justify-content: space-between;
 }
 
+
+
+/* === ANDAMENTO DO PEDIDO ATUAL === */
 .andamento__pedido {
     width: 67%;
     /* max-height: 280px; */
@@ -88,6 +91,13 @@
     max-width: 140px;
     margin: 15px 3px 0 3px;
 }
+
+
+
+/* === HISTÓRICO DE COMPRA === */
+.perfil__conteudo__historico{
+}
+
 
 @media screen and (max-width: 1023px){
     .andamento__pedido p{
