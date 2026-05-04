@@ -59,7 +59,7 @@
 
 /* Cria uma borda no topo, e cria um padding para separar os cards */
 .novidades, .pesquisas {
-    padding: 3rem 5rem;
+    padding: 1rem 5rem;
 }
 
 /* Seção das novidades */
@@ -87,7 +87,7 @@
 .cards__slides__container__produtos{
     gap: 50px;
     display: flex;
-    min-width: 100%;
+    min-width: 100%;      
     max-width: 100%;
     justify-content: center;
 }

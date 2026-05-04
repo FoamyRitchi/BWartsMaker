@@ -7,7 +7,6 @@
 /* === CONTEÚDO === */
 /* Seção completa do perfil do usuário */
 .perfil{
-    width: 100%;
     display: flex;
     min-height: 100vh;
     background-color: var(--cor--fundo--branco);
@@ -16,7 +15,7 @@
 /* Conteúdo principal do perfil */
 .perfil__conteudo{
     flex: 1;
-    margin: 1rem 3rem;
+    padding: 1rem 3rem;
 }
 
 .perfil__conteudo__titulo{
