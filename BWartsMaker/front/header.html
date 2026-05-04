@@ -4,12 +4,20 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- O include.js vai inserir os dados aqui -->
-        <script src="../js/include.js" defer></script>
-        <script src="../js/global/preferenciaFonte.js" defer></script>
+    
+        <!-- Acessibilidade -->
+        <script src="../js/acessibilidade/alterarTema.js" defer></script>
+        <script src="../js/acessibilidade/alterarFonte.js" defer></script>
+        <script src="../js/acessibilidade/alterarTamanhoFonte.js" defer></script>
     </head>
         
     <body>
+        <section class="cabecalho__acessibilidade">
+            <button title="Alto contraste" id="alto_contraste"><img src="../img/header/alto_contraste.png" alt="ícone de alto contraste"></button>
+            <button title="Diminuir fonte" id="diminuir_fonte"><img src="../img/header/diminuir_fonte.png" alt="ícone de diminuir fonte"></button>
+            <button title="Aumentar fonte" id="aumentar_fonte"><img src="../img/header/aumentar_fonte.png" alt="ícone de aumentar fonte"></button>
+            <button title="Alterar fonte" id="estilo_fonte"><img src="../img/header/estilo-de-fonte.png" alt="ícone de alterar fonte"></button>
+        </section>
         <header class="cabecalho">
             <nav class="cabecalho__nav">
                 <!-- As classes "texto__laranja" e "texto__cinza" se encontram no arquivo "css/styles.css" -->

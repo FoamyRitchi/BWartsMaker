@@ -1,21 +1,14 @@
-// Selecionando todos os inputs com o name Tamanho_fonte
-const selecaoTamanhoFonte = document.querySelectorAll('input[name="tamanho_fonte"]');
-// Seleciona todos os documentos html
-document.documentElement = "html";
+// Capturando os botões de aumentar e diminuir a fonte
+const aumentarFonte = document.getElementById("aumentar_fonte");
+const diminuirFonte = document.getElementById("diminuir_fonte");
+console.log(document.getElementById("aumentar_fonte"));
 
-// Percorrendo os inputs e verificando qual está selecionado
-selecaoTamanhoFonte.forEach(opc => {
-    opc.addEventListener("change", () => {
-        if(opc.value === "tamanho_padrao"){
-            document.documentElement.style.fontSize = "16px";
-        }
-        
-        if(opc.value === "tamanho_grande"){
-            document.documentElement.style.fontSize = "24px";
-        }   
+// Aumentar fonte
+aumentarFonte.addEventListener("click", () => {
+    alert("Aumenta");
+});
 
-        if(opc.value === "tamanho_extra_grande"){
-            document.documentElement.style.fontSize = "32px";
-        }
-    });
+// Diminuir fonte
+diminuirFonte.addEventListener("click", () => {
+    alert("Diminui");
 });

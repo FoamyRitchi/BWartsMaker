@@ -6,6 +6,32 @@
     width: 100%;
 }
 
+
+/* === ACESSIBILIDADE === */
+.cabecalho__acessibilidade{
+    gap: 2rem;
+    display: flex;
+    padding: 0.5rem 2rem;
+    justify-content: flex-end;
+    background-color: #696969;
+}
+
+.cabecalho__acessibilidade img{
+    width: 22px;
+    height: 22px;
+}
+
+.cabecalho__acessibilidade button{
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    background: none;
+    z-index: 1;
+}
+
+
+
+/* === LINKS DE NAVEGAÇÃO=== */
 /* Navegação do cabeçalho, utiliza flexblox, cria um espaçamento entre os elementos e alinha eles no container */
 .cabecalho__nav {
     display: flex;
