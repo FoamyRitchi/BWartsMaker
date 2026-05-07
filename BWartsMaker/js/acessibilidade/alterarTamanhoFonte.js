@@ -1,14 +1,31 @@
 // Capturando os botões de aumentar e diminuir a fonte
 const aumentarFonte = document.getElementById("aumentar_fonte");
 const diminuirFonte = document.getElementById("diminuir_fonte");
-console.log(document.getElementById("aumentar_fonte"));
+// Capturando a tag HTML
+const html = document.documentElement;
+
+// Configurações do limite de tamanho da fonte
+let tamanhoInicial = 16;
+let tamanhoMaximo = 48;
+let tamanhoMinimo = 8;
+// Quantidade de pixels que a fonte vai aumentar a cada click no botão
+let passo = 6;
+
+// Tamanho atual da fonte
+let tamanhoAtual = tamanhoInicial;
 
 // Aumentar fonte
 aumentarFonte.addEventListener("click", () => {
-    alert("Aumenta");
+    if(tamanhoAtual < tamanhoMaximo){
+        tamanhoAtual += passo;
+        html.style.fontSize = tamanhoAtual + "px";
+    }  
 });
 
 // Diminuir fonte
 diminuirFonte.addEventListener("click", () => {
-    alert("Diminui");
+    if(tamanhoAtual > tamanhoMinimo){
+        tamanhoAtual -= passo;
+        html.style.fontSize = tamanhoAtual + "px";
+    } 
 });
