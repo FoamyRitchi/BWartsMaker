@@ -1,6 +1,7 @@
 // Capturando os botões de aumentar e diminuir a fonte
 const aumentarFonte = document.getElementById("aumentar_fonte");
 const diminuirFonte = document.getElementById("diminuir_fonte");
+const retomarFonte = document.getElementById("retomar_fonte");
 // Capturando a tag HTML
 const html = document.documentElement;
 
@@ -13,6 +14,12 @@ let passo = 6;
 
 // Tamanho atual da fonte
 let tamanhoAtual = tamanhoInicial;
+
+// Retomar a fonte ao tamanho original
+retomarFonte.addEventListener("click", () => {
+    tamanhoAtual = 16;
+    html.style.fontSize = "16px"; 
+});
 
 // Aumentar fonte
 aumentarFonte.addEventListener("click", () => {

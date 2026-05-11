@@ -1,46 +1,76 @@
-// Retorna o caminho relativo baseado na profundidade da página
 function getRelativePart() {
-    // Caminho atual da URL
     const path = window.location.pathname;
-    // Procura a página "pages"
     const pagesIndex = path.indexOf('/pages/');
-    
-    // Verifica existe "pages", se não, retorna uma string vazia
+
     if (pagesIndex === -1) return '';
 
-    // Pega tudo que vem depois de pages
     const afterPages = path.slice(pagesIndex + '/pages/'.length);
-    // Conta quantos níveis de pasta existem
     const depth = afterPages.split('/').length - 1;
-    
-    // Retorna "../" para cada nível
+
     return '../'.repeat(depth);
 }
 
-// Inserir os elementos do head
-function inserirHead(data, baseUrl) {
-    // Cria parse HTML
-    const parser = new DOMParser();
-    // Converte o parse em documento
-    const doc = parser.parseFromString(data, 'text/html');
+function resolverCaminhosRelativos(doc, baseUrl) {
+    const elementos = Array.from(doc.querySelectorAll('link[href], script[src], img[src], a[href], source[src], video[src]'));
 
-    // Junta head e body
-    const headElements = Array.from(doc.head.children).concat(Array.from(doc.body.children));
+    elementos.forEach(elemento => {
+        const atributo = elemento.hasAttribute('href') ? 'href' : 'src';
+        const valor = elemento.getAttribute(atributo);
 
-    // Adiciona os elementos ao head
-    headElements.forEach(element => {
-        document.head.appendChild(element.cloneNode(true));
+        if (!valor) return;
+        if (/^(?:[a-zA-Z][a-zA-Z\d+-.]*:|\/\/|#)/.test(valor)) return;
+
+        elemento.setAttribute(atributo, new URL(valor, baseUrl).href);
     });
 }
 
-// Função para incluir o head nas próximas páginas
+function copiarAtributos(origem, destino) {
+    Array.from(origem.attributes).forEach(atributo => {
+        destino.setAttribute(atributo.name, atributo.value);
+    });
+}
+
+function adicionarElementoAoHead(elemento) {
+    if (elemento.tagName === 'TITLE') {
+        document.title = elemento.textContent;
+        return;
+    }
+
+    if (elemento.tagName === 'LINK' && elemento.href) {
+        const linkJaIncluido = Array.from(document.querySelectorAll('link[href]')).some(link => link.href === elemento.href);
+        if (linkJaIncluido) return;
+    }
+
+    if (elemento.tagName === 'SCRIPT') {
+        const scriptJaIncluido = elemento.src
+            && Array.from(document.querySelectorAll('script[src]')).some(script => script.src === elemento.src);
+
+        if (scriptJaIncluido) return;
+
+        const novoScript = document.createElement('script');
+        copiarAtributos(elemento, novoScript);
+        novoScript.textContent = elemento.textContent;
+        document.head.appendChild(novoScript);
+        return;
+    }
+
+    document.head.appendChild(elemento.cloneNode(true));
+}
+
+function inserirHead(data, baseUrl) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(data, 'text/html');
+
+    resolverCaminhosRelativos(doc, baseUrl);
+
+    const headElements = Array.from(doc.head.children).concat(Array.from(doc.body.children));
+    headElements.forEach(elemento => adicionarElementoAoHead(elemento));
+}
+
 function incluirHead() {
-    // Caminho relativo do arquivo
     const headPath = getRelativePart() + 'global/head.html';
-    // URL absoluta base
     const headUrl = new URL(headPath, window.location.href).href;
 
-    // Busca o arquivo
     fetch(headPath)
         .then(response => {
             if (!response.ok) throw new Error(`Erro ${response.status} ao carregar ${headPath}`);
@@ -52,5 +82,4 @@ function incluirHead() {
         .catch(error => console.error('Erro ao carregar o head:', error));
 }
 
-// Executa a função quando o DOM estiver pronto
 document.addEventListener('DOMContentLoaded', incluirHead);

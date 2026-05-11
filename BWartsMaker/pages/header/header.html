@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <!-- Acessibilidade -->
-        <script src="../../js/acessibilidade/alterarTema.js" defer></script>
-        <script src="../../js/acessibilidade/alterarFonte.js" defer></script>
-        <script src="../../js/acessibilidade/alterarTamanhoFonte.js" defer></script>
+        
     </head>
         
     <body>
-        <header class="cabecalho">
+        
+        <!-- Cabeçalho de acessbilidade -->
+        <div class="cabecalho__acessibilidade container text-end">
+
+            <button type="button" class="btn btn-outline-light" id="alto_contraste"><img src="../../img/header/alto_contraste.svg" alt="Ícone de alto contraste"></button>
+            <button type="button" class="btn btn-outline-light" id="diminuir_fonte"><img src="../../img/header/diminuir_fonte.svg" alt="Ícone de diminuir fonte"></button>
+            <button type="button" class="btn btn-outline-light" id="retomar_fonte"><img src="../../img/header/retomar_fonte.svg" alt="Ícone de retomar fonte"></button>
+            <button type="button" class="btn btn-outline-light" id="aumentar_fonte"><img src="../../img/header/aumentar_fonte.svg" alt="Ícone de aumentar fonte"></button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Alterar fonte
+                </button>
+                <ul class="dropdown-menu">
+                    <li><button class="dropdown-item" type="button">Action</button></li>
+                    <li><button class="dropdown-item" type="button">Action</button></li>
+                    <li><button class="dropdown-item" type="button">Action</button></li>
+                </ul>
+            </div>
+        </div>
+        
+        <header class="cabecalho container">
+            
+
             <nav class="cabecalho__nav">
                 <!-- As classes "texto__laranja" e "texto__cinza" se encontram no arquivo "css/styles.css" -->
                 <a href="../../pages/global/index.html" class="cabecalho__nav__logo"><span class="texto__laranja">BW</span><span class="texto__cinza">arts</span></a>
