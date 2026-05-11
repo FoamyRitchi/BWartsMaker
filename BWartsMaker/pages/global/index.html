@@ -17,21 +17,31 @@
 <body>    
 <!-- Inserção do header.html na página -->
 <div id="header"></div>
-    <main>
-        <section class="carrossel">
-            <div class="carrossel__slides">
-                <div class="carrossel__slides__container">
-                    <img src="../../img/home/slide1.png" alt="Slide de promoDay" class="carrossel__slides__container__img">
+    <main class="container p-0">
+        <!-- Carrossel principal -->
+        <section id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <!-- Slides do carrossel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                <img src="../../img/home/slide1.png" class="d-block w-100" alt="...">
                 </div>
-                <div class="carrossel__slides__container">
-                    <img src="../../img/home/slide2.png" alt="Slide de novidades do dia" class="carrossel__slides__container__img">
+                <div class="carousel-item">
+                <img src="../../img/home/slide2.png" class="d-block w-100" alt="...">
                 </div>
-                <div class="carrossel__slides__container">
-                    <img src="../../img/home/slide3.png" alt="Slide de frete grátis" class="carrossel__slides__container__img">
+                <div class="carousel-item">
+                <img src="../../img/home/slide3.png" class="d-block w-100" alt="...">
                 </div>
             </div>
-            <button class="carrossel__botao__esquerdo">&#10094;</button>
-            <button class="carrossel__botao__direito">&#10095;</button>
+            <!-- Botão esquerdo -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <!-- Botão direito -->
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </section>
 
         <!-- CARDS: Seção de novidades -->
