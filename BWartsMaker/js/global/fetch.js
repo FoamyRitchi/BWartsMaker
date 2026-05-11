@@ -37,5 +37,5 @@ function carreagarHeadComScripts(url, targetId) {
         .catch(error => console.error('Erro ao carregar:', error));
 }
 
-carreagarHeadComScripts("header.html", "header");
-carreagarHeadComScripts("footer.html", "footer");
+carreagarHeadComScripts("header/header.html", "header");
+carreagarHeadComScripts("footer/footer.html", "footer");

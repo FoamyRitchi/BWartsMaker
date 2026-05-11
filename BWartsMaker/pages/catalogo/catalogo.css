@@ -1,0 +1,31 @@
+.filtros {
+    background-color: #FF6200;
+    margin-top: 0.4rem;
+    display: flex;
+    padding: 0.2rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.filtros__botao {
+    background-color: transparent;
+    border: none;
+    max-width: fit-content;
+    max-height: fit-content;
+    color: white;
+    padding: 0.2rem;
+    cursor: pointer;
+    margin-left: 2rem;
+}
+
+.filtros__texto {
+    font-size: 1.25rem;
+    color: white;
+    margin: 0;
+}
+
+
+.produtos {
+    padding: 5rem;
+}
+

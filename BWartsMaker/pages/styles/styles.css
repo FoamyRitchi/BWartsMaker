@@ -1,0 +1,117 @@
+:root{
+    --cor--fundo--branco: #F2FAFF;
+    --cor-texto--branco: #FAFAFA;
+    --laranja--detalhes: #FF8000;
+    --cinza--textos: rgb(80, 80, 80);
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url(../../fonts/opendyslexic-0.92/OpenDyslexic-Regular.otf);
+}
+
+/* Define a cor de fundo do body, e tira todas as margens */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #343434;
+}
+
+/* Define a cor do texto de laranja */
+.texto__laranja {
+    color: #FF6200;
+}
+
+/* Define a cor do texto de cinza */
+.texto__cinza {
+    color: #B5B5B5;
+}
+
+/* Tira a margem de baixo do elemento */
+.margin__bottom__zero {
+    margin-bottom: 0;
+}
+
+/* Tira a margem de cima do elemento */
+.margin__top__zero {
+    margin-top: 0;
+}
+
+.divisoria__bottom {
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
+}
+
+/* Título dos cards */
+.cards__titulo {
+    color: #FFFFFF;
+    font-size: 2.5rem;
+}
+
+/* Cria um fundo branco para os cards,  limita os width e height, cria uma sombra */
+.cards {
+    padding: 0.8rem;
+    max-width: 13rem;
+    color: #333333;
+    text-align: center;
+    transition: 0.3s ease;
+    border-radius: 0.25rem;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    background-color: var(--cor--fundo--branco);
+}
+
+.cards:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/* Alinha o ícone da estrela no final do bloco */
+.cards__estrela {
+    text-align: end;
+}
+
+/* Torna a imagem responsiva */
+.cards__imagem{
+    width: 100%;
+    height: auto;
+}
+
+/* Alinha a flexbox como coluna e alinha os itens no centro */
+.cards__precos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Faz a fonte ter 12px (1rem = 16px) e deixa ela em negrito */
+.cards__nome__produto {
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+/* Cria uma margem para baixo */
+.cards__preco {
+    font-size: 1.5rem;  
+    margin: 0 0 1rem 0;
+}
+
+/* Cria uma margem para baixo */
+.cards__parcela {
+    font-size: 0.625rem;
+    margin: 0 0 1rem 0;
+}
+
+/* Título da seção de cards de pesquisas */
+.cards__titulo__pesquisa {
+    width: 25.3125;
+    height: 2.7rem;
+    font-size: 2rem;
+    color: #FFFFFF;
+}
+
+/* Mensagens de erro para verificações do JS */
+.erro{
+    font-size: 1rem;
+    color: rgb(255, 43, 43);
+}
+
