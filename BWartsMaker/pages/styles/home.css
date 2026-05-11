@@ -138,7 +138,7 @@
 .personalizacao__banner {
     margin: 0.3rem 0;
     text-align: center;
-    background-image: url(../img/home/personalizacao.svg);
+    background-image: url(../../img/home/personalizacao.svg);
     background-size: cover;
     background-repeat: no-repeat;
     padding: 2rem;

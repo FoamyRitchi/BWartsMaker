@@ -1,36 +1,56 @@
+// Retorna o caminho relativo baseado na profundidade da página
 function getRelativePart() {
+    // Caminho atual da URL
     const path = window.location.pathname;
+    // Procura a página "pages"
     const pagesIndex = path.indexOf('/pages/');
+    
+    // Verifica existe "pages", se não, retorna uma string vazia
+    if (pagesIndex === -1) return '';
 
-    if (pagesIndex === -1) {
-        return '';
-    }
-
+    // Pega tudo que vem depois de pages
     const afterPages = path.slice(pagesIndex + '/pages/'.length);
+    // Conta quantos níveis de pasta existem
     const depth = afterPages.split('/').length - 1;
+    
+    // Retorna "../" para cada nível
     return '../'.repeat(depth);
 }
 
-function normalizeResourcePaths(html) {
-    const base = getRelativePart();
-    return html.replace(/(href|src)="(styles\/[^"']+|header\/[^"']+|footer\/[^"']+)"/g, (match, attr, value) => {
-        return `${attr}="${base}${value}"`;
+// Inserir os elementos do head
+function inserirHead(data, baseUrl) {
+    // Cria parse HTML
+    const parser = new DOMParser();
+    // Converte o parse em documento
+    const doc = parser.parseFromString(data, 'text/html');
+
+    // Junta head e body
+    const headElements = Array.from(doc.head.children).concat(Array.from(doc.body.children));
+
+    // Adiciona os elementos ao head
+    headElements.forEach(element => {
+        document.head.appendChild(element.cloneNode(true));
     });
 }
 
 // Função para incluir o head nas próximas páginas
 function incluirHead() {
-    const headPath = getRelativePart() + 'head.html';
+    // Caminho relativo do arquivo
+    const headPath = getRelativePart() + 'global/head.html';
+    // URL absoluta base
+    const headUrl = new URL(headPath, window.location.href).href;
 
+    // Busca o arquivo
     fetch(headPath)
-        .then(response => response.text())
-        .then(data => {
-            const normalized = normalizeResourcePaths(data);
-            document.head.insertAdjacentHTML('beforeend', normalized);
+        .then(response => {
+            if (!response.ok) throw new Error(`Erro ${response.status} ao carregar ${headPath}`);
+            return response.text();
         })
-        // Mensagem de erro caso aconteça algo inesperado
+        .then(data => {
+            inserirHead(data, headUrl);
+        })
         .catch(error => console.error('Erro ao carregar o head:', error));
 }
 
 // Executa a função quando o DOM estiver pronto
-document.addEventListener("DOMContentLoaded", incluirHead);
+document.addEventListener('DOMContentLoaded', incluirHead);
