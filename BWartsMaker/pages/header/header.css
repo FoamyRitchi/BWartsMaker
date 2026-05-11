@@ -1,9 +1,8 @@
-/* Tira a margem do container, cria uma borda na parte inferior, e gera um padding no cabeçalho */
+/* Container do header */
 .cabecalho {
-    padding: 0;
     border-bottom: 3px solid;
-    border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
     background-color: var(--cor--fundo--preto);
+    border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
 }
 
 
@@ -14,63 +13,36 @@
     background-color: #252525;
 }
 
-.cabecalho__acessibilidade__titulo{
-    flex: 1;
-    text-align: center;
-}
-
-.cabecalho__acessibilidade__titulo h3{
-    margin: 0;
-}
-
 .cabecalho__acessibilidade img{
-    width: 22px;
-    height: 22px;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 
 
-/* === LINKS DE NAVEGAÇÃO=== */
-/* Navegação do cabeçalho, utiliza flexblox, cria um espaçamento entre os elementos e alinha eles no container */
-.cabecalho__nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+/* === NAVBAR === */
+.cabecalho__logo{
+    width: 10rem;
 }
 
-/* Logo do cabeçalho, tira o sublinhado do link, coloca uma argura e altura na logo, e define o tamanho da fonte */
-.cabecalho__nav__logo {
-    padding: 0.2rem;
-    text-decoration: none;
-    font-size: 3.1rem;
+.cabecalho__link:hover{
+    color: #FF8000 !important;
 }
 
-/* Barra de pesquisa, define o tamanho e estilo, coloca uma largura e altura na logo, arredonda as bordas e define o estilo do texto */
-.cabecalho__nav__input {
-    width: 51.5rem;
-    height: 2rem;
-    background-color: #8f8f8fb8;
-    color: #ffffff;
-    border-radius: 0.18rem;
-    border: none;
-
+.cabecalho__icone{
+    width: 1.8rem;
+    height: 1.8rem;
 }
 
-/* Container dos links da navegação, utiliza flexbox, alinha eles no container e cria um espaçamento entre os itens */
-.cabecalho__nav__links {
-    display: flex;
-    align-items: center;
-    gap: 2vw;
+.navbar-toggler{
+    filter: invert(1);
 }
 
-/* Link da navegação, tira o sublinhado do link, e define a cor e tamanho da fonte */
-.cabecalho__nav__links__link {
-    text-decoration: none;
-    color: #FFFFFF;
-    font-size: 0.875rem;
-}
 
-/* Efeito hover sobre os links de outras páginas */
-.cabecalho__nav__links__link:hover {
-    color: #FF8000;
+
+/* Retirar visibilidade do link da menu bar quando estiver na tela do desktop*/
+@media (min-width: 992px) {
+    #navbarSupportedContent {
+        display: none !important;
+    }
 }

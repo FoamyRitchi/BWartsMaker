@@ -5,7 +5,7 @@ const retomarFonte = document.getElementById("retomar_fonte");
 
 // Configurações do limite de tamanho da fonte
 let tamanhoInicial = 16;
-let tamanhoMaximo = 48;
+let tamanhoMaximo = 34;
 let tamanhoMinimo = 8;
 // Quantidade de pixels que a fonte vai aumentar a cada click no botão
 let passo = 6;
@@ -30,7 +30,7 @@ aumentarFonte.addEventListener("click", () => {
 // Diminuir fonte
 diminuirFonte.addEventListener("click", () => {
     if(tamanhoAtual > tamanhoMinimo){
-        tamanhoAtual -= passo;
+        tamanhoAtual -= passo / 2;
         document.documentElement.style.fontSize = tamanhoAtual + "px";
     } 
 });

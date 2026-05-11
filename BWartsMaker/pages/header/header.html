@@ -8,10 +8,8 @@
     </head>
         
     <body>
-        
-        <!-- Cabeçalho de acessbilidade -->
-        <div class="cabecalho__acessibilidade container text-end">
-
+        <!-- Cabeçalho de acessibilidade -->
+        <section class="cabecalho__acessibilidade container text-end">
             <button type="button" class="btn btn-outline-light" id="alto_contraste"><img src="../../img/header/alto_contraste.svg" alt="Ícone de alto contraste"></button>
             <button type="button" class="btn btn-outline-light" id="diminuir_fonte"><img src="../../img/header/diminuir_fonte.svg" alt="Ícone de diminuir fonte"></button>
             <button type="button" class="btn btn-outline-light" id="retomar_fonte"><img src="../../img/header/retomar_fonte.svg" alt="Ícone de retomar fonte"></button>
@@ -26,24 +24,82 @@
                     <li><button class="dropdown-item" type="button" id="fonte_open" style="font-family: OpenDyslexic;">Open Dyslexic</button></li>
                 </ul>
             </div>
-        </div>
-        
-        <header class="cabecalho container">
-            
+        </section>
 
-            <nav class="cabecalho__nav">
-                <!-- As classes "texto__laranja" e "texto__cinza" se encontram no arquivo "css/styles.css" -->
-                <a href="../../pages/global/index.html" class="cabecalho__nav__logo"><span class="texto__laranja">BW</span><span class="texto__cinza">arts</span></a>
-                <input type="text" placeholder="Pesquise seu produto!" class="cabecalho__nav__input">
-                <!-- Container dos links do cabeçalho -->
-                <div class="cabecalho__nav__links">
-                    <a href="../forms/form_cadastro_usuario.html" class="cabecalho__nav__links__link">Cadastre-se</a>
-                    <a href="../forms/form_login.html" class="cabecalho__nav__links__link">Entre</a>
-                    <a href="../catalogo/catalogo.html" class="cabecalho__nav__links__link">Catálogo</a>
-                    <a href="../carrinho/carrinho.html"><img src="../../img/header/carrinho.svg" alt="Ícone do carrinho"></a>
+        <header class="cabecalho container">
+            <nav class="navbar navbar-expand-lg bg-body-transparent">
+                <!-- Alinhar os itens -->
+                <div class="container-fluid d-flex align-items-center">
+
+                    <!-- Logo -->
+                    <div class="d-flex" style="flex: 1;">
+                        <a class="navbar-brand" href="../global/index.html">
+                            <img src="../../img/assets/Logo.svg" alt="Logo BWarts" class="cabecalho__logo">
+                        </a>
+                    </div>
+
+                    <!-- Search bar -->
+                    <div class="d-none d-lg-flex justify-content-center" style="flex: 1;">
+                        <form class="d-flex px-0 py-1 w-100" role="search">
+                            <input class="form-control me-2 opacity-75 w-100" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn btn-outline-light flex-shrink-0" type="submit">
+                                <img src="../../img/header/lupa.svg" alt="Ícone de lupa" class="cabecalho__icone">
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Links de acesso para outras páginas -->
+                    <div class="d-flex justify-content-end align-items-center" style="flex: 1;">
+
+                        <!-- Links visíveis só no desktop -->
+                        <ul class="navbar-nav mb-0 d-none d-lg-flex">
+                            <li class="nav-item">
+                                <a class="nav-link active text-white cabecalho__link" aria-current="page" href="../catalogo/catalogo.html">Catálogo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white cabecalho__link" href="../forms/form_cadastro_usuario.html">Cadastre-se</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../carrinho/carrinho.html">
+                                    <img src="../../img/header/carrinho.svg" alt="Ícone de carrinho" class="cabecalho__icone">
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- Botão hamburguer visível só no mobile -->
+                        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                    </div>
+                </div>
+
+                <!-- Menu de links mobile -->
+                <div class="collapse navbar-collapse d-lg-none" id="navbarSupportedContent">
+                    <ul class="navbar-nav w-100 pb-2">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white cabecalho__link" aria-current="page" href="../catalogo/catalogo.html">Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white cabecalho__link" href="../forms/form_cadastro_usuario.html">Cadastre-se</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white cabecalho__link" href="../carrinho/carrinho.html">Carrinho</a>
+                        </li>
+                        <!-- Search bar -->
+                        <div class="d-flex justify-content-center" style="flex: 1;">
+                            <form class="d-flex px-0 py-1 w-100" role="search">
+                                <input class="form-control me-2 opacity-75 w-100" type="search" placeholder="Search" aria-label="Search"/>
+                                <button class="btn btn-outline-light flex-shrink-0" type="submit">
+                                    <img src="../../img/header/lupa.svg" alt="Ícone de lupa" class="cabecalho__icone">
+                                </button>
+                            </form>
+                        </div>
+                    </ul>
                 </div>
             </nav>
-        </header>   
+        </header> 
+        
     </body>
 </html>
 
