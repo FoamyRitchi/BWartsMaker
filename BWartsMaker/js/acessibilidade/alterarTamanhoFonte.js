@@ -2,8 +2,6 @@
 const aumentarFonte = document.getElementById("aumentar_fonte");
 const diminuirFonte = document.getElementById("diminuir_fonte");
 const retomarFonte = document.getElementById("retomar_fonte");
-// Capturando a tag HTML
-const html = document.documentElement;
 
 // Configurações do limite de tamanho da fonte
 let tamanhoInicial = 16;
@@ -18,14 +16,14 @@ let tamanhoAtual = tamanhoInicial;
 // Retomar a fonte ao tamanho original
 retomarFonte.addEventListener("click", () => {
     tamanhoAtual = 16;
-    html.style.fontSize = "16px"; 
+    document.documentElement.style.fontSize = "16px"; 
 });
 
 // Aumentar fonte
 aumentarFonte.addEventListener("click", () => {
     if(tamanhoAtual < tamanhoMaximo){
         tamanhoAtual += passo;
-        html.style.fontSize = tamanhoAtual + "px";
+        document.documentElement.style.fontSize = tamanhoAtual + "px";
     }  
 });
 
@@ -33,6 +31,6 @@ aumentarFonte.addEventListener("click", () => {
 diminuirFonte.addEventListener("click", () => {
     if(tamanhoAtual > tamanhoMinimo){
         tamanhoAtual -= passo;
-        html.style.fontSize = tamanhoAtual + "px";
+        document.documentElement.style.fontSize = tamanhoAtual + "px";
     } 
 });

@@ -1,17 +1,15 @@
-// Pega a seleção de fonte que está aplicada no momento
-const fonteSalva = localStorage.getItem("fonte");
+const fonteSelecionada = localStorage.getItem('fonteSelecionada');
 
-// Aplicar a fonte selecionada ao site todo
-if(fonteSalva === "fonte_padrao"){
-    document.body.style.fontFamily = "sans-serif";
-} else if(fonteSalva === "fonte_serifada"){
-    document.body.style.fontFamily = "Times New Roman";
-} if(fonteSalva === "fonte_dyslexic"){
-    document.body.style.fontFamily = "OpenDyslexic";
-} 
+if (fonteSelecionada) {
+    document.documentElement.style.fontFamily = fonteSelecionada;
+    document.documentElement.style.setProperty('--bs-body-font-family', fonteSelecionada);
+    document.documentElement.style.setProperty('--bs-font-sans-serif', fonteSelecionada);
 
-// Marca, na página de seleção, qual a opção está selecionada
-const fonteSelecionada = document.querySelector(`input[value="${fonteSalva}"]`);
-if(fonteSelecionada) {
-    fonteSelecionada.checked = true;
+    if (document.body) {
+        document.body.style.fontFamily = fonteSelecionada;
+    } else {
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.style.fontFamily = fonteSelecionada;
+        });
+    }
 }
