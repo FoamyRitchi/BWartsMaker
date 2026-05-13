@@ -1,9 +1,5 @@
-/* Carrossel principal, posiciona as imagens, os botões e define o tamanho do container do carrossel. Cria um fundo branco*/
-.carrossel {
-    width: 100%;
-    overflow: hidden;
-    margin: 0.3rem 0;
-    position: relative;
+/* === CARROSSEL === */
+.carrossel__fundo{
     background-color: var(--cor--fundo--branco);
 }
 

@@ -8,28 +8,32 @@
     </head>
         
     <body>
-        <!-- Cabeçalho de acessibilidade -->
-        <section class="cabecalho__acessibilidade container text-end">
-            <button type="button" class="btn btn-outline-light" id="alto_contraste"><img src="../../img/header/alto_contraste.svg" alt="Ícone de alto contraste"></button>
-            <button type="button" class="btn btn-outline-light" id="diminuir_fonte"><img src="../../img/header/diminuir_fonte.svg" alt="Ícone de diminuir fonte"></button>
-            <button type="button" class="btn btn-outline-light" id="retomar_fonte"><img src="../../img/header/retomar_fonte.svg" alt="Ícone de retomar fonte"></button>
-            <button type="button" class="btn btn-outline-light" id="aumentar_fonte"><img src="../../img/header/aumentar_fonte.svg" alt="Ícone de aumentar fonte"></button>
-            <div class="btn-group">
-                <button type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Alterar fonte
-                </button>
-                <ul class="dropdown-menu">
-                    <li><button class="dropdown-item" type="button" id="fonte_padrao" style="font-family: sans-serif;">Padrão</button></li>
-                    <li><button class="dropdown-item" type="button" id="fonte_serifada" style="font-family: Times New Roman;">Serifada</button></li>
-                    <li><button class="dropdown-item" type="button" id="fonte_open" style="font-family: OpenDyslexic;">Open Dyslexic</button></li>
-                </ul>
+        <!-- === ACESSIBILIDADE === -->
+        <section class="cabecalho__acessibilidade">
+            <div class="text-end container-xxl">
+                <button type="button" class="btn btn-outline-light" id="alto_contraste"><img src="../../img/header/alto_contraste.svg" alt="Ícone de alto contraste"></button>
+                <button type="button" class="btn btn-outline-light" id="diminuir_fonte"><img src="../../img/header/diminuir_fonte.svg" alt="Ícone de diminuir fonte"></button>
+                <button type="button" class="btn btn-outline-light" id="retomar_fonte"><img src="../../img/header/retomar_fonte.svg" alt="Ícone de retomar fonte"></button>
+                <button type="button" class="btn btn-outline-light" id="aumentar_fonte"><img src="../../img/header/aumentar_fonte.svg" alt="Ícone de aumentar fonte"></button>
+                
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Alterar fonte
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><button class="dropdown-item" type="button" id="fonte_padrao" style="font-family: sans-serif;">Padrão</button></li>
+                        <li><button class="dropdown-item" type="button" id="fonte_serifada" style="font-family: Times New Roman;">Serifada</button></li>
+                        <li><button class="dropdown-item" type="button" id="fonte_open" style="font-family: OpenDyslexic;">Open Dyslexic</button></li>
+                    </ul>
+                </div>
             </div>
         </section>
-
-        <header class="cabecalho container">
+            
+        <header class="cabecalho">
+            <!-- === NAVBAR === -->
             <nav class="navbar navbar-expand-lg bg-body-transparent">
                 <!-- Alinhar os itens -->
-                <div class="container-fluid d-flex align-items-center">
+                <div class="container-xxl d-flex align-items-center">
 
                     <!-- Logo -->
                     <div class="d-flex" style="flex: 1;">
