@@ -13,17 +13,36 @@ let passo = 6;
 // Tamanho atual da fonte
 let tamanhoAtual = tamanhoInicial;
 
+// Aplica o tamanho salvo no sistema
+function aplicarTamanho(tamanho){
+    document.documentElement.style.fontSize = `${tamanho}px`;
+    localStorage.setItem('tamanhoFonte', tamanhoAtual);
+}
+
+// Recupera a fonte salva e aplica
+function restaurarTamanhoFonte(){
+    const tamanhoSalvo = parseInt(localStorage.getItem('tamanhoFonte'));
+
+    // Verifica se existe valor salvo
+    if(tamanhoSalvo){
+        tamanhoAtual = tamanhoSalvo;
+        aplicarTamanho(tamanhoAtual);
+    }
+}
+
 // Retomar a fonte ao tamanho original
 retomarFonte.addEventListener("click", () => {
-    tamanhoAtual = 16;
-    document.documentElement.style.fontSize = "16px"; 
+    tamanhoAtual = tamanhoInicial;
+
+    aplicarTamanho(tamanhoAtual);    
 });
 
 // Aumentar fonte
 aumentarFonte.addEventListener("click", () => {
     if(tamanhoAtual < tamanhoMaximo){
         tamanhoAtual += passo;
-        document.documentElement.style.fontSize = tamanhoAtual + "px";
+        
+        aplicarTamanho(tamanhoAtual);
     }  
 });
 
@@ -31,6 +50,9 @@ aumentarFonte.addEventListener("click", () => {
 diminuirFonte.addEventListener("click", () => {
     if(tamanhoAtual > tamanhoMinimo){
         tamanhoAtual -= passo / 2;
-        document.documentElement.style.fontSize = tamanhoAtual + "px";
+        
+        aplicarTamanho(tamanhoAtual);
     } 
 });
+
+restaurarTamanhoFonte();
