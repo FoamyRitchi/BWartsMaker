@@ -10,14 +10,20 @@ new Swiper('.card-wrapper', {
 
   // Define quantos cards aparecem por vez, dependendo do tamanho da tela
   breakpoints: {
-    768:{
-        slidesPerView: 3
+    480: { 
+      slidesPerView: 2.5
+    },
+    640: {
+      slidesPerView: 3.5
+    },
+    800: {
+      slidesPerView: 3.5
     },
     1024: {
-        slidesPerView: 4
+      slidesPerView: 4.5
     },
-    1440: {
-        slidesPerView: 4
+    1280: {
+      slidesPerView: 5.5
     }
   }
 });

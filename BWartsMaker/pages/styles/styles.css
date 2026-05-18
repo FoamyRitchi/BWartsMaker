@@ -1,3 +1,4 @@
+/* === CLASSES GERAIS === */
 /* Variáveis padrão de cores */
 :root{
     --cor--fundo--branco: #F2FAFF;
@@ -18,29 +19,8 @@
     font-family: inherit;
 }
 
-/* Aplicar fundo preto a todo o site */
 body{
     background-color: var(--cor--fundo--preto);
-}
-
-/* Define a cor do texto de laranja */
-.texto__laranja {
-    color: #FF6200;
-}
-
-/* Define a cor do texto de cinza */
-.texto__cinza {
-    color: #B5B5B5;
-}
-
-/* Tira a margem de baixo do elemento */
-.margin__bottom__zero {
-    margin-bottom: 0;
-}
-
-/* Tira a margem de cima do elemento */
-.margin__top__zero {
-    margin-top: 0;
 }
 
 .divisoria__bottom {
@@ -48,31 +28,52 @@ body{
     border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
 }
 
-/* Título dos cards */
-.cards__titulo {
-    color: #FFFFFF;
-    font-size: 2.5rem;
+.fundo__escuro {
+    background-color: var(--cor--fundo--preto);
 }
 
 
-
 /* === CARDS === */
-.cards:hover {
+.card{
+    box-shadow: 0px 0px 10px 1px rgb(0, 0, 0);
+}
+
+.card a{
+    text-decoration: none;
+}
+
+.card:hover {
     cursor: pointer;
     transform: scale(1.05);
 }
 
 .card__imagem{
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    object-fit: cover;
 }
 
+.card__preco{
+    font-size: 1.5rem;
+}
 
+.card__titulo{
+    font-size: 1rem;
+}
 
+.card__parcela{
+    font-size: 0.8rem;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+    --swiper-navigation-color: var(--laranja--detalhes);
+    --swiper-navigation-size: 30px;
+    top: 57% !important;
+    font-weight: bold;    
+}
 
 /* === MENSAGEM DE ERRO PARA VERIFICAÇÕES JS === */
 .erro{
     font-size: 1rem;
     color: rgb(255, 43, 43);
 }
-
