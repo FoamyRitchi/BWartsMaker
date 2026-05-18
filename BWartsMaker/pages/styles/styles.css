@@ -19,7 +19,7 @@
 }
 
 /* Aplicar fundo preto a todo o site */
-html{
+body{
     background-color: var(--cor--fundo--preto);
 }
 
