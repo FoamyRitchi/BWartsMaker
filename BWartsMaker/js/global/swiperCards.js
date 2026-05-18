@@ -14,16 +14,16 @@ new Swiper('.card-wrapper', {
       slidesPerView: 2.5
     },
     640: {
-      slidesPerView: 3.5
+      slidesPerView: 3
     },
     800: {
       slidesPerView: 3.5
     },
     1024: {
-      slidesPerView: 4.5
+      slidesPerView: 4
     },
     1280: {
-      slidesPerView: 5.5
+      slidesPerView: 5
     }
   }
 });

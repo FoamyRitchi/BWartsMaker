@@ -1,5 +1,4 @@
 /* === CLASSES GERAIS === */
-/* Variáveis padrão de cores */
 :root{
     --cor--fundo--branco: #F2FAFF;
     --cor--fundo--preto: #343434;
@@ -14,7 +13,7 @@
     src: url(../../fonts/opendyslexic-0.92/OpenDyslexic-Regular.otf);
 }
 
-/* Garantir herança da troca de fonte em todos os elementos */
+/* Garantindo a herança da troca de fonte em todos os elementos */
 *, *::before, *::after {
     font-family: inherit;
 }
@@ -31,6 +30,7 @@ body{
 .fundo__escuro {
     background-color: var(--cor--fundo--preto);
 }
+
 
 
 /* === CARDS === */
@@ -71,6 +71,8 @@ body{
     top: 57% !important;
     font-weight: bold;    
 }
+
+
 
 /* === MENSAGEM DE ERRO PARA VERIFICAÇÕES JS === */
 .erro{

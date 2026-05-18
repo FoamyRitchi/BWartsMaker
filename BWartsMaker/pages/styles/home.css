@@ -1,18 +1,10 @@
 /* === BANNER DE PERSONALIZAÇÃO === */
 .personalizacao {
-    border-top: 3px solid;
-    border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
-}
-
-/* Banner da seção de personalização. Faz com que a imagem cubra 100% da largura e altura do container, e coloca uma imagem de fundo previamente exportada */
-.personalizacao__banner {
-    padding: 2rem;
-    margin: 0.3rem 0;
     background-size: cover;
     background-image: url(../../img/home/personalizacao.svg);
 }
 
-.personalizacao__banner__imagem{
-    max-width: 100%;
+/* .personalizacao__banner__imagem{
     height: auto;
-}
+    max-width: 100%;
+} */

@@ -1,12 +1,3 @@
-/* Container do header */
-.cabecalho {
-    border-bottom: 3px solid;
-    background-color: var(--cor--fundo--preto);
-    border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
-}
-
-
-
 /* === ACESSIBILIDADE === */
 .cabecalho__acessibilidade{
     padding: 0.3rem;
