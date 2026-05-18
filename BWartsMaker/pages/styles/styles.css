@@ -54,68 +54,23 @@ body{
     font-size: 2.5rem;
 }
 
-/* Cria um fundo branco para os cards,  limita os width e height, cria uma sombra */
-.cards {
-    padding: 0.8rem;
-    max-width: 13rem;
-    color: #333333;
-    text-align: center;
-    transition: 0.3s ease;
-    border-radius: 0.25rem;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-    background-color: var(--cor--fundo--branco);
-}
 
+
+/* === CARDS === */
 .cards:hover {
     cursor: pointer;
     transform: scale(1.05);
 }
 
-/* Alinha o ícone da estrela no final do bloco */
-.cards__estrela {
-    text-align: end;
-}
-
-/* Torna a imagem responsiva */
-.cards__imagem{
+.card__imagem{
     width: 100%;
     height: auto;
 }
 
-/* Alinha a flexbox como coluna e alinha os itens no centro */
-.cards__precos {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-/* Faz a fonte ter 12px (1rem = 16px) e deixa ela em negrito */
-.cards__nome__produto {
-    font-size: 0.9rem;
-    text-align: left;
-}
 
-/* Cria uma margem para baixo */
-.cards__preco {
-    font-size: 1.5rem;  
-    margin: 0 0 1rem 0;
-}
 
-/* Cria uma margem para baixo */
-.cards__parcela {
-    font-size: 0.625rem;
-    margin: 0 0 1rem 0;
-}
-
-/* Título da seção de cards de pesquisas */
-.cards__titulo__pesquisa {
-    width: 25.3125;
-    height: 2.7rem;
-    font-size: 2rem;
-    color: #FFFFFF;
-}
-
-/* Mensagens de erro para verificações do JS */
+/* === MENSAGEM DE ERRO PARA VERIFICAÇÕES JS === */
 .erro{
     font-size: 1rem;
     color: rgb(255, 43, 43);

@@ -3,6 +3,9 @@
     background-color: var(--cor--fundo--branco);
 }
 
+
+
+
 /* Passagens do carrossel, dispõe as imagens lado a lado com um espaçamento, suaviza as transições de cada imagem */
 .carrossel__slides {
     display: flex;
@@ -123,22 +126,21 @@
     left: 0rem;
 }
 
-/* Seção de personalização, cria uma borda em cima da seção */
+
+
+
+/* === BANNER DE PERSONALIZAÇÃO === */
 .personalizacao {
     border-top: 3px solid;
     border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
-
 }
 
 /* Banner da seção de personalização. Faz com que a imagem cubra 100% da largura e altura do container, e coloca uma imagem de fundo previamente exportada */
 .personalizacao__banner {
-    margin: 0.3rem 0;
-    text-align: center;
-    background-image: url(../../img/home/personalizacao.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
     padding: 2rem;
-    box-shadow: 0 0;
+    margin: 0.3rem 0;
+    background-size: cover;
+    background-image: url(../../img/home/personalizacao.svg);
 }
 
 .personalizacao__banner__imagem{
