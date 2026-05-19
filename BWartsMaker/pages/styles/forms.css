@@ -22,11 +22,11 @@
     margin-right: 1rem;
 }
 
-.botao__cadastrar{
+.botao__confirmar{
     border-color: var(--laranja--detalhes) !important;
 }
 
-.botao__cadastrar:hover{
+.botao__confirmar:hover{
     background-color: var(--laranja--detalhes) !important;
 }
 
