@@ -42,3 +42,10 @@ setInterval(() => {
     }
     atualizarCarrossel();
  }, 3000); 
+
+ // Verifica se o HTML já carregou
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', restaurarFonteSalva);
+} else {
+    restaurarFonteSalva();
+}

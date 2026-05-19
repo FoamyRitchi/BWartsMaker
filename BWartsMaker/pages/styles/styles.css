@@ -76,6 +76,7 @@ body{
 
 /* === MENSAGEM DE ERRO PARA VERIFICAÇÕES JS === */
 .erro{
-    font-size: 1rem;
-    color: rgb(255, 43, 43);
+    text-align: left;
+    font-size: 0.9rem;
+    color: rgb(255, 0, 0);
 }

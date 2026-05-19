@@ -13,23 +13,6 @@ let passo = 6;
 // Tamanho atual da fonte
 let tamanhoAtual = tamanhoInicial;
 
-// Aplica o tamanho salvo no sistema
-function aplicarTamanho(tamanho){
-    document.documentElement.style.fontSize = `${tamanho}px`;
-    localStorage.setItem('tamanhoFonte', tamanhoAtual);
-}
-
-// Recupera a fonte salva e aplica
-function restaurarTamanhoFonte(){
-    const tamanhoSalvo = parseInt(localStorage.getItem('tamanhoFonte'));
-
-    // Verifica se existe valor salvo
-    if(tamanhoSalvo){
-        tamanhoAtual = tamanhoSalvo;
-        aplicarTamanho(tamanhoAtual);
-    }
-}
-
 // Retomar a fonte ao tamanho original
 retomarFonte.addEventListener("click", () => {
     tamanhoAtual = tamanhoInicial;
@@ -54,5 +37,22 @@ diminuirFonte.addEventListener("click", () => {
         aplicarTamanho(tamanhoAtual);
     } 
 });
+
+// Aplica o tamanho salvo no sistema
+function aplicarTamanho(tamanho){
+    document.documentElement.style.fontSize = `${tamanho}px`;
+    localStorage.setItem('tamanhoFonte', tamanhoAtual);
+}
+
+// Recupera a fonte salva e aplica
+function restaurarTamanhoFonte(){
+    const tamanhoSalvo = parseInt(localStorage.getItem('tamanhoFonte'));
+
+    // Verifica se existe valor salvo
+    if(tamanhoSalvo){
+        tamanhoAtual = tamanhoSalvo;
+        aplicarTamanho(tamanhoAtual);
+    }
+}
 
 restaurarTamanhoFonte();
