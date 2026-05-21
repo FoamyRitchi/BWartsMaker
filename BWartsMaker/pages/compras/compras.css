@@ -1,40 +1,16 @@
-/* Classe padrão para aplicar display flex horizontal*/
-.flex{
-    display: flex;
+/* === CLASSES GERAIS === */
+.cover{
+    object-fit: cover;
 }
 
-/* Classe padrão para aplicar display flex horizontal e em coluna */
-.flex__col{
-    display: flex;
-    flex-direction: column;
-}
 
-/* Classe padrão para aplicar display flex horizontal com espaçamento nas bordas */
-.flex__between{
-    display: flex;
-    justify-content: space-between;
-}
+
+
 
 /* Definir o tamanho da estrelha do produto*/
 .estrela{
     width: 1rem;
     height: 1rem;
-}
-
-/* Seção com imagens do produto e ações de compra */
-.produto {
-    width: 100%;
-    background-color: var(--cor--fundo--branco);
-}
-
-/* Div com os elementos da seção produtos */
-.produto__container {
-    gap: 2rem;
-    display: flex;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 1rem 2rem;
-    align-items: center;
 }
 
 /* Div das imagens do produto alinhadas à esquerda*/
@@ -211,28 +187,37 @@
 
 
 
-/* Seção que contém a descrição e avaliações do produto */
-.descricao{
-    width: 100%;
-    padding: 1rem 0;
-    background: var(--cor--fundo--branco);
-    justify-content: space-around;
-    border-top: 3px solid;
-    border-image: linear-gradient(to right, #d36a00, #ff8f1e, #BD5E00) 1;
-}
-
-/* Estilização do tamanho da área de descricção e de avaliação */
-.descricao__produto, .descricao__avaliacoes{
-    width: 40%;
+/* === SEÇÃO DESCRICÃO/AVALIAÇÕES === */
+/* Permitir que haja rolagem vertical */
+.rolagem{
     overflow: hidden;
     max-height: 300px;
     overflow-y: scroll;
 }
 
-.descricao__produto p{
+
+
+/* === AVALIAÇÃO === */
+.avaliacao{
+    max-height: 90px;
+    overflow: hidden;
+}
+
+.avaliacao__foto{
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.avaliacao__nota{
+    font-size: 0.9rem;
     color: var(--cinza--textos);
 }
 
+
+
+/* === SCROLL BAR DESCRIÇÃO/AVALIAÇÃO */
 /* Estilização do tamanho do scroll de Descrições e de Avaliações*/
 .scroll::-webkit-scrollbar{
     width: 4px;
@@ -241,7 +226,6 @@
 /* Estilização do trilho do scroll*/
 .scroll::-webkit-scrollbar-track{
     border-radius: 10px;
-    /* background: rgb(240, 240, 240); */
 }
 
 /* Estilização da "maçaneta" do scroll*/
@@ -253,48 +237,4 @@
 /* Estilização da "maçaneta" do scroll quando cursos por cima*/
 .scroll::-webkit-scrollbar-thumb:hover{
     background: rgb(255, 194, 82);
-}
-
-.descricao__avaliacoes{
-    gap: 1rem;
-}
-
-.descricao__avaliacoes__qntd__avaliacoes{
-    font-size: 1rem; 
-    font-weight: 200;
-    color: var(--cinza--textos);
-}
-
-.avaliacao{
-    width: 90%;
-    gap: 0.5rem;
-    height: 5rem;
-    border-radius: 10px;
-}
-
-.avaliacao__perfil__foto{
-    width: 5rem;
-    height: 5rem;
-    object-fit: cover;
-    border-radius: 3px;
-}
-
-.avaliacao__perfil__nome{
-    color: var(--cinza--textos);
-}
-
-.avaliacao__perfil__nota{
-    font-size: 0.9rem;
-    color: var(--cinza--textos);
-}
-
-.avaliacao__perfil__comentario{
-    overflow: hidden;
-    overflow-y: scroll;  
-}
-
-.avaliacao__perfil__comentario p{
-    margin: 0;
-    padding: 0;
-    color: var(--cinza--textos);
 }

@@ -27,6 +27,11 @@ body{
     border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
 }
 
+.divisoria__top {
+    border-top: 3px solid;
+    border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
+}
+
 .fundo__escuro {
     background-color: var(--cor--fundo--preto);
 }
@@ -34,15 +39,15 @@ body{
 
 
 /* === CARDS === */
-.card{
+.card__produto{
     box-shadow: 0px 0px 10px 1px rgb(0, 0, 0);
 }
 
-.card a{
+.card__produto a{
     text-decoration: none;
 }
 
-.card:hover {
+.card__produto:hover {
     cursor: pointer;
     transform: scale(1.05);
 }
