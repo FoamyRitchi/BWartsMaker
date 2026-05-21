@@ -3,97 +3,41 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- O include.js vai inserir os dados aqui -->
-        <script src="../../js/global/include.js" defer></script>
+
+        <!-- Configurações iniciais -->
         <script src="../../js/global/fetch.js" defer></script>
-        <script src="../../js/carrossel/carrosselCards.js"></script>
-        <script src="../../js/validacoes/validacaoCepCompras.js" defer></script>
-        <script src="../../js/global/preferenciaFonte.js" defer></script>
+        <script src="../../js/global/include.js" defer></script>
+        <script src="../../js/validacoes/validacaoCepCompras.js" defer></script>        
+
+        <!-- Swiper -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+        <script src="../../js/global/swiperCards.js" defer></script>
 
         <link rel="stylesheet" href="compras.css">
     </head>
 
     <body>    
-    <!-- Inserção do header.html na página -->
-    <div id="header"></div>
+        <div id="header"></div>
+
         <main>
-            <!-- SEÇÃO: Informações do produto -->
-            <section class="produto">
-                <div class="produto__container">
-                    <!-- Imagens da lateral esquerda do produto -->
-                    <div class="produto__imagens">
+            <!-- Seção informação dos produtos -->
+            <section class="container-xxl mt-5 mb-5">
+                <div class="row">
+                    <div class="col">
                         <img src="../../img/assets/produto.png" alt="Imagem do produto" class="produto__imagem">
                         <img src="../../img/assets/produto.png" alt="Imagem do produto" class="produto__imagem">
                         <img src="../../img/assets/produto.png" alt="Imagem do produto" class="produto__imagem">
                         <img src="../../img/assets/produto.png" alt="Imagem do produto" class="produto__imagem">
                     </div>
-                    <!-- Imagem principal do produto -->
-                    <div class="produto__principal">
+                    <div class="col-6">
                         <img src="../../img/compras/decoracao1.png" alt="Imagem do produto" class="produto__principal__imagem">
                     </div>
-                    <!-- Informações e ações da lateral direita do produto -->
-                    <div class="produto__compra flex__col">
-                        <div>
-                            <h1 class="produto__compra__titulo">Produto muito legal e bom de 21mmX30mm - MDF</h1>
-                        </div>
-                        <!-- Informações de avaliação, estrelhs e quantidades  -->
-                        <div class="produto__compra__avaliacao flex">
-                            <div>
-                                <span>5.0</span>
-                            </div>
-                            <div class="flex">
-                                <img src="../../img/compras/estrela_amarela.png" alt="Estrela" class="estrela">
-                                <img src="../../img/compras/estrela_amarela.png" alt="Estrela" class="estrela">
-                                <img src="../../img/compras/estrela_amarela.png" alt="Estrela" class="estrela">
-                                <img src="../../img/compras/estrela_amarela.png" alt="Estrela" class="estrela">
-                                <img src="../../img/compras/estrela_amarela.png" alt="Estrela" class="estrela">
-                            </div>
-                            <div>
-                                <span>(100)</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h2 class="produto__preco">R$999,99</h2>
-                        </div>
-                        <button class="produto__botao__compra">Comprar agora</button>
-                        <button class="produto__botao__carrinho">Adicionar ao carrinho</button> 
-                        <!-- Informações da quantidade de produtos disponíveis e selecionados -->
-                        <div class="produto__compra__quantidade flex__between"> 
-                            <div>
-                                <span>Unidade</span>
-                                <input type="number" min="1" class="produto__compra__quantidade__numeros">
-                            </div> 
-                            <div class="produto__compra__quantidade__disponivel">
-                                <span>Disponível (500)</span>
-                            </div>
-                        </div> 
-                        <!-- Informações da loja que está vendendo o produto -->
-                        <div class="flex">
-                            <img src="../../img/compras/empresa.jpg" alt="Logo da empresa BW arts Maker" class="produto__compra__loja__imagem">
-                            <div class="produto__compra__loja__infos flex__between">
-                                <div class="flex__col">
-                                    <span class="nome__loja flex">BWartsMaker<img src="../../img/compras/verificado.svg" alt="Loja verificada"></span>
-                                    <span class="loja__oficial">Loja oficial</span>
-                                </div>
-                                <div>
-                                    <span class="garantia"><img src="../../img/compras/garantia.svg" alt="Garantia">12 meses de garantia</span>
-                                    <span class="compra__segura"><img src="../../img/compras/protegido.svg" alt="Compra segura">Compra segura</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Informações para entrega do produto CEP -->
-                        <div class="produto__compra__cep flex__between">
-                            <div class="flex__col">
-                                <label for="cep" class="label__cep">Informe seu CEP:</label>
-                                <input type="text" id="cep" class="input__cep">
-                            </div>
-                            <button class="botao__cep">Calcular frete</button>
-                        </div>
-                        <span class="erro__cep" id="erro_cep_tamanho"></span>
-                        <span class="erro__cep" id="erro_cep"></span>
+                    <div class="col">
+                        3 of 3
                     </div>
                 </div>
             </section>
+
 
             <!-- SEÇÃO: Descrição do produto -->
             <section class="descricao flex">
@@ -211,370 +155,253 @@
                 </div>
             </section>
 
-            <!-- Seção de cards de produtos novos  -->
-            <section class="novidades">
-                <h2 class="cards__titulo">Últimas novidades</h2>
-                <div class="cards__slides">
-                    <div class="cards__slides__container">
-                        <div class="cards__slides__container__produtos">
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
+            <!-- Seção Novidades -->
+            <section class="fundo__escuro">
+                <div class="container-xxl swiper pt-4 fundo__escuro">
+                    <h2 class="text-white px-4 py-3"><b>Recomendações</b></h2>
+                    <div class="card-wrapper">
+                        <ul class="swiper-wrapper px-5">
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/produto.png" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/dinossauro_mdf.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/batman_chaveiro.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/produto.png" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>  
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/dinossauro_mdf.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/batman_chaveiro.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/batman_chaveiro.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/batman_chaveiro.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/batman_chaveiro.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cards__slides__container__produtos">
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                            <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                            <div class="cards__precos">
-                                <h3 class="cards__preco">R$999,99</h3>
-                                <p class="cards__parcela">p10x s/juros</p>
-                            </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
-                                </div>
-                            </div>  
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
-                                </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
-                                </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cards__slides__container__produtos">
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                            <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                            <div class="cards__precos">
-                                <h3 class="cards__preco">R$999,99</h3>
-                                <p class="cards__parcela">p10x s/juros</p>
-                            </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
-                                </div>
-                            </div>  
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
-                                </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
-                                </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
-                                </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
+
+                        <!-- Configuração de paginação -->
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
                     </div>
-                    <button class="cards__botao__direito__cards" id="botao__direito__cards">&#10095;</button>
-                    <button class="cards__botao__esquerdo__cards" id="botao__esquerdo__cards">&#10094;</button>
                 </div>
             </section>
             
-            <!-- Seção de cards de produtos baseados nas pesquisas do usuário -->
-            <section class="pesquisas">
-                <h2 class="cards__titulo">Com base em suas pesquisas</h2>
-                <div class="cards__slides">
-                    <div class="cards__slides__container">
-                        <div class="cards__slides__container__produtos">
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
+            <!-- Seção Novidades -->
+            <section class="fundo__escuro">
+                <div class="container-xxl swiper pt-4 fundo__escuro">
+                    <h2 class="text-white px-4 py-3"><b>Baseados em suas pesquisas</b></h2>
+                    <div class="card-wrapper">
+                        <ul class="swiper-wrapper px-5">
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/produto.png" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                            <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                            <div class="cards__precos">
-                                <h3 class="cards__preco">R$999,99</h3>
-                                <p class="cards__parcela">p10x s/juros</p>
-                            </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/dinossauro_mdf.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/batman_chaveiro.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>  
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/produto.png" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/dinossauro_mdf.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/batman_chaveiro.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/batman_chaveiro.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/batman_chaveiro.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1" style="max-width: 13rem;">
+                                    <a href="../compras/compras.html">
+                                        <img src="../../img/assets/batman_chaveiro.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="cards__slides__container__produtos">
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                            <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                            <div class="cards__precos">
-                                <h3 class="cards__preco">R$999,99</h3>
-                                <p class="cards__parcela">p10x s/juros</p>
-                            </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
-                                </div>
-                            </div>  
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
-                                </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
-                                </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cards__slides__container__produtos">
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                            <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                            <div class="cards__precos">
-                                <h3 class="cards__preco">R$999,99</h3>
-                                <p class="cards__parcela">p10x s/juros</p>
-                            </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
-                                </div>
-                            </div>  
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
-                                </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
-                                </div>
-                            </div>
-                            <div class="cards">
-                                <div class="cards__estrela">
-                                    <img src="../../img/assets/estrela.svg" alt="Ícone de estrela">
-                                </div>
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto">
-                                <p class="cards__nome__produto">Produto legal de mdf com 21mm x 90mm </p>
-                                <div class="cards__precos">
-                                    <h3 class="cards__preco">R$999,99</h3>
-                                    <p class="cards__parcela">p10x s/juros</p>
-                                </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
+
+                        <!-- Configuração de paginação -->
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
                     </div>
-                    <button class="cards__botao__direito__cards" id="botao__direito__cards">&#10095;</button>
-                    <button class="cards__botao__esquerdo__cards" id="botao__esquerdo__cards">&#10094;</button>
                 </div>
             </section>
-            
         </main>
         
         <div id="footer"></div>

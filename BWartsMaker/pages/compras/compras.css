@@ -46,7 +46,12 @@
 }
 
 /* Estilização de tamanho das imagens para não haver quebra de layout */
-.produto__imagem, .produto__principal__imagem{
+.produto__imagem{
+    height: auto;
+    max-width: 13rem;
+}
+
+.produto__principal__imagem{
     height: auto;
     max-width: 100%;
 }
