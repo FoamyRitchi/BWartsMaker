@@ -4,9 +4,10 @@
 }
 
 .fundo__form {
+    min-height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
-    background: url(../../img/forms/fundo_login.svg);
+    background: linear-gradient(196deg,rgba(250, 250, 250, 1) 0%, rgba(168, 168, 168, 1) 100%);
 }
 
 
