@@ -1,95 +1,49 @@
-/* === CLASSES GERAIS === */
-.cover{
+/* === SEÇÃO DE COMPRAS DO PRODUTO === */
+.produto__imagem__principal {
+    height: 450px;
+}
+
+.produto__imagem__principal img {
+    height: 100%;
     object-fit: cover;
 }
 
-
-
-
-
-/* Definir o tamanho da estrelha do produto*/
-.estrela{
-    width: 1rem;
-    height: 1rem;
+.produto__info {
+    width: 280px;
 }
 
-/* Div das imagens do produto alinhadas à esquerda*/
-.produto__imagens{
-    flex: 0.2;
-    gap: 1rem;
-    display: flex;
-    flex-direction: column;     
+/* Media querie para desktop */
+@media (min-width: 768px){
+    .produto__imagens {
+        direction: rtl;
+        max-height: 450px;
+        overflow-y: scroll;
+        width: 100px !important;
+        flex-direction: column !important;
+    }
+
+    .produto__imagem {
+        cursor: pointer;
+    }
 }
 
-/* Estilização de tamanho das imagens para não haver quebra de layout */
-.produto__imagem{
-    height: auto;
-    max-width: 13rem;
+/* Media querie para mobile */
+@media (max-width: 767px) {
+    .produto__imagens {
+        overflow-x: auto;
+        flex-direction: row;
+    }
+
+    .produto__imagem {
+        width: 70px;
+        height: 70px;
+        flex-shrink: 0;
+        cursor: pointer;
+        object-fit: cover;
+    }
 }
 
-.produto__principal__imagem{
-    height: auto;
-    max-width: 100%;
-}
 
-/* Estilização da div da imagem principal do produto, para não haver quebra de layout */
-.produto__principal{
-    flex: 1;
-}
-
-/* Container com as ações para compra do produto */
-.produto__compra{
-    flex: 0.6;
-    gap: 1rem;
-    height: auto;
-    max-width: 100%;
-    justify-content: center;
-}
-
-/* Estilização do nome do produto em h1*/
-.produto__compra__titulo{
-    margin: 0;
-    padding: 0;
-    font-size: 2rem;
-    font-weight: 200;
-}
-
-/* Alinhas a div da avaliação à esquerda */
-.produto__compra__avaliacao{
-    gap: 3px;
-    justify-content: left;
-    color: var(--cinza--textos);
-}
-
-/* Alinhas informações sobre a loja do produto em coluna */
-.produto__compra__loja__infos{
-    flex-direction: column;
-    padding: 0.3rem 0rem 0.2rem 0.3rem;
-}
-
-/* Nome da loja */
-.nome__loja{
-    font-weight: bold;
-}
-
-/* Certificação oficial da loja */
-.loja__oficial, .garantia, .compra__segura{
-    font-size: 0.85rem;
-    color: var(--cinza--textos);
-}
-
-/* Alinhar as imagens dos selos de verificação das informações da empresa */
-.loja__oficial img, .garantia img, .compra__segura img, .nome__loja img{
-    vertical-align: -22%; 
-}
-
-/* Definição do tamanho do texto do valor do produto */
-.produto__preco{
-    margin: 0;
-    padding: 0;
-    font-size: 4rem;
-    font-weight: 100;
-}
 
 /* Estilização dos botões de compra e carrinho */
 .produto__botao__compra, .produto__botao__carrinho{

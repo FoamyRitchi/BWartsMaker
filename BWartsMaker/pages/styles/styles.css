@@ -27,11 +27,6 @@ body{
     border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
 }
 
-.divisoria__top {
-    border-top: 3px solid;
-    border-image: linear-gradient(to right, #FF8000, #BD5E00) 1;
-}
-
 .fundo__escuro {
     background-color: var(--cor--fundo--preto);
 }
