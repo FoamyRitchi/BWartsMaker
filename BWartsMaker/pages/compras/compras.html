@@ -7,14 +7,16 @@
         <!-- Configurações iniciais -->
         <script src="../../js/global/fetch.js" defer></script>
         <script src="../../js/global/include.js" defer></script>
-        <script src="../../js/validacoes/validacaoCepCompras.js" defer></script>        
-
+        
         <!-- Swiper -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
         <script src="../../js/global/swiperCards.js" defer></script>
 
-        <!-- Selção da imagem -->
+        <!-- Seleção da imagem -->
         <script src="../../js/compras/selecionarFoto.js" defer></script>
+        
+        <!-- Validação do CEP -->
+        <script src="../../js/validacoes/validacaoCepCompras.js" defer></script>        
 
         <link rel="stylesheet" href="compras.css">
     </head>
@@ -90,10 +92,11 @@
 
                             <!-- Calculadora de frete -->
                             <div class="input-group">
-                                <input type="tel" class="form-control" placeholder="00000-000">
+                                <input type="tel" id="cep" class="form-control" placeholder="00000-000">
                                 <button class="btn text-white botao__preto" type="button">Calcular frete</button>
                             </div>
-                            <span class="erro__cep" id="erro_cep"></span>
+                            <span class="erro" id="erro_cep"></span>
+                            <span class="erro" id="erro_cep_tamanho"></span>
                         </div>
                     </div>
                 </div>
