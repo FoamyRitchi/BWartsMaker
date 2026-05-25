@@ -3,140 +3,19 @@
     height: 450px;
 }
 
+
 .produto__imagem__principal img {
     height: 100%;
     object-fit: cover;
 }
 
+.selecionada {
+    border: 2px solid;
+    border-color: var(--laranja--detalhes) !important;
+}
+
 .produto__info {
     width: 280px;
-}
-
-/* Media querie para desktop */
-@media (min-width: 768px){
-    .produto__imagens {
-        direction: rtl;
-        max-height: 450px;
-        overflow-y: scroll;
-        width: 100px !important;
-        flex-direction: column !important;
-    }
-
-    .produto__imagem {
-        cursor: pointer;
-    }
-}
-
-/* Media querie para mobile */
-@media (max-width: 767px) {
-    .produto__imagens {
-        overflow-x: auto;
-        flex-direction: row;
-    }
-
-    .produto__imagem {
-        width: 70px;
-        height: 70px;
-        flex-shrink: 0;
-        cursor: pointer;
-        object-fit: cover;
-    }
-}
-
-
-
-/* Estilização dos botões de compra e carrinho */
-.produto__botao__compra, .produto__botao__carrinho{
-    padding: 1rem;
-    font-size: 1.5rem;
-    border-radius: 5px;
-    transition: 0.2s ease;
-    color: var(--cor--fundo--branco);
-}
-
-/* Estilização do botão de compra */
-.produto__botao__compra{
-    border: none;
-    color: var(--cor--fundo--branco);
-    background-color: var(--laranja--detalhes);
-}
-
-/* Estilização do hover do botão de compra */
-.produto__botao__compra:hover{
-    cursor: pointer;
-    background-color: #f9c11a;
-}
-
-/* Estilização do  botão de compra*/
-.produto__botao__carrinho{
-    color: white;
-    background-color: rgb(52, 52, 52);
-    border: 2px solid var(--laranja--detalhes);
-}
-
-/* Estilização do hover do botão de carrinho */
-.produto__botao__carrinho:hover, .botao__cep:hover{
-    cursor: pointer;
-    background-color: var(--laranja--detalhes);
-}
-
-/* Estilização da entrada de quantidade dos produtos */
-.produto__compra__quantidade__numeros{
-    width: 2rem;
-    height: 1rem;
-    padding: 2px;
-    border-radius: 5px;
-    border: 1px solid var(--cinza--textos);
-    background-color: #f2f2f2;
-}
-
-/* Texto da quantidade disponível de produtos */
-.produto__compra__quantidade__disponivel{
-    color: var(--cinza--textos);
-}
-
-/* Imagem da loja que vende o produto */
-.produto__compra__loja__imagem{
-    width: 5rem;
-    height: 5rem;
-    border-radius: 10px;
-}
-
-/* Div que contempla as informações do CEP */
-.produto__compra__cep{
-    align-items: flex-end;
-}
-
-/* Estilização do rótulo do input do CEP */
-.label__cep{
-    color: var(--cinza--textos);
-}
-
-/* Entrada do CEP do usuário */
-.input__cep{
-    padding: 1rem;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    border: 1px solid var(--cinza--textos);
-}
-
-/* Botão de calcular o frete */
-.botao__cep{
-    width: 8rem;
-    height: 3.2rem;
-    border-radius: 8px;
-    transition: 0.1s ease;
-    color: var(--cor--fundo--branco);
-    background-color: rgb(52, 52, 52);
-    border: 2px solid var(--laranja--detalhes);
-}
-
-.erro__cep, .erro__cep__tamanho{
-    margin: 0;
-    padding: 0;
-    height: 1px;
-    color: red;
-    font-size: 0.8rem;
 }
 
 
@@ -171,7 +50,7 @@
 
 
 
-/* === SCROLL BAR DESCRIÇÃO/AVALIAÇÃO */
+/* === SCROLL BAR DESCRIÇÃO/AVALIAÇÃO === */
 /* Estilização do tamanho do scroll de Descrições e de Avaliações*/
 .scroll::-webkit-scrollbar{
     width: 4px;
@@ -191,4 +70,41 @@
 /* Estilização da "maçaneta" do scroll quando cursos por cima*/
 .scroll::-webkit-scrollbar-thumb:hover{
     background: rgb(255, 194, 82);
+}
+
+
+
+/* Media querie para desktop */
+@media (min-width: 768px){
+    .produto__imagens {
+        direction: rtl;
+        max-height: 450px;
+        overflow-y: scroll;
+        width: 100px !important;
+        flex-direction: column !important;
+    }
+
+    .produto__imagem {
+        cursor: pointer;
+    }
+}
+
+/* Media querie para mobile */
+@media (max-width: 767px) {
+    .produto__imagens {
+        overflow-x: auto;
+        flex-direction: row;
+    }
+
+    .produto__imagem {
+        width: 70px;
+        height: 70px;
+        flex-shrink: 0;
+        cursor: pointer;
+        object-fit: cover;
+    }
+
+    .scroll::-webkit-scrollbar{
+        display: none;
+    }
 }
