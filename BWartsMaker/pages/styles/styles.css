@@ -80,3 +80,12 @@ body{
     font-size: 0.9rem;
     color: rgb(255, 0, 0);
 }
+
+
+
+@media (max-width: 768px){
+    .swiper-button-next,
+    .swiper-button-prev{
+        display: none !important;   
+    }
+}
