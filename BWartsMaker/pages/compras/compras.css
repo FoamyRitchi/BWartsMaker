@@ -1,8 +1,12 @@
 /* === SEÇÃO DE COMPRAS DO PRODUTO === */
+.produto__info {
+    width: 350px;
+}
+
+/* IMAGENS */
 .produto__imagem__principal {
     height: 450px;
 }
-
 
 .produto__imagem__principal img {
     height: 100%;
@@ -12,24 +16,6 @@
 .selecionada {
     border: 2px solid;
     border-color: var(--laranja--detalhes) !important;
-}
-
-.produto__info {
-    width: 350px;
-}
-
-.botao__comprar {
-    background-color: var(--laranja--detalhes) !important;
-}
-
-.botao__carrinho {
-    background-color: var(--cor--fundo--preto) !important;
-}
-
-.botao__carrinho img,
-.botao__comprar img {
-    width: 30px;
-    height: 30px;
 }
 
 

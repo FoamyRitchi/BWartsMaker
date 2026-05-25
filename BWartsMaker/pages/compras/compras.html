@@ -33,7 +33,7 @@
                         </div>
 
                         <!-- Imagens da lateral esquerda -->
-                        <div class="produto__imagens order-md-1 d-flex flex-row flex-md-column gap-2 scroll ps-3">
+                        <div class="produto__imagens order-md-1 d-flex flex-md-column gap-2 scroll ps-3">
                             <img src="../../img/assets/dinossauro_mdf.jpg" alt="Foto 2 do produto" class="produto__imagem rounded p-1">
                             <img src="../../img/assets/box_madeira.jpg" alt="Foto 1 do produto" class="produto__imagem rounded p-1">
                             <img src="../../img/assets/batman_chaveiro.jpg" alt="Foto 3 do produto" class="produto__imagem rounded p-1">
@@ -47,33 +47,53 @@
                         <!-- Informações do produto -->
                         <div class="produto__info order-3">
                             <!-- Nome do produto -->
-                            <h1 class="h4">Nome do produto de exemplo</h1>
+                            <h1 class="h2">Dinossauro daora de exemplo</h1>
                             
                             <!-- Preço -->
-                            <p class="fs-2 fw-bold m-0">R$ 199,90</p>
+                            <p class="fs-2 mt-1 mb-0 fw-bold">R$ 199,90</p>
 
                             <!-- Nota -->
-                            <div class="avaliacao__nota mb-2">
-                                <span>4.0</span>
+                            <div class="avaliacao__nota mb-4">
+                                <span title="Nota média">4.0</span>
                                 <span><img src="../../img/compras/estrela_cheia.svg" alt="Estrela colorida"></span>
                                 <span><img src="../../img/compras/estrela_cheia.svg" alt="Estrela colorida"></span>
                                 <span><img src="../../img/compras/estrela_cheia.svg" alt="Estrela colorida"></span>
                                 <span><img src="../../img/compras/estrela_cheia.svg" alt="Estrela colorida"></span>
                                 <span><img src="../../img/compras/estrela_vazia.svg" alt="Estrela apagada"></span>
-                                <span>(100)</span>
+                                <span title="Quantidade de avaliações">(100)</span>
                             </div>
                             
                             <!-- Botões  -->
                             <div class="d-grid gap-2">
-                                <button class="btn text-white botao__comprar" type="button">
+                                <button class="btn text-white border-3 botao__laranja" type="button">
                                     <img src="../../img/compras/comprar.svg" alt="Ícone de sacola de dinheiro">
                                     Comprar agora
                                 </button>
-                                <button class="btn text-white botao__carrinho" type="button">
+                                <button class="btn text-white botao__preto" type="button">
                                     <img src="../../img/header/carrinho.svg" alt="Ícone de carrinho de compras">
                                     Adicionar ao carrinho
                                 </button>
                             </div>
+
+                            <!-- Quantidade -->
+                            <form class="row align-items-center justify-content-between mb-4 mt-2">
+                                <div class="d-flex col-auto pe-1">
+                                    <label class="form-text col-form-label pe-2">Quantidade: </label>
+                                    <input min="1" max="10" type="number" class="form-control form-control-sm" style="width: 3.1rem;">
+                                </div>
+                                <div class="col-auto">
+                                    <span class="form-text">
+                                        Disponível: 500
+                                    </span>
+                                </div>
+                            </form>
+
+                            <!-- Calculadora de frete -->
+                            <div class="input-group">
+                                <input type="tel" class="form-control" placeholder="00000-000">
+                                <button class="btn text-white botao__preto" type="button">Calcular frete</button>
+                            </div>
+                            <span class="erro__cep" id="erro_cep"></span>
                         </div>
                     </div>
                 </div>

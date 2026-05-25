@@ -7,6 +7,11 @@
     --cinza--textos: rgb(80, 80, 80);
 }
 
+.form-control:focus {
+    border-color: #FF6B00 !important;
+    box-shadow: 0 0 0 0.25rem rgba(255, 107, 0, 0.25) !important;
+}
+
 /* Importando a fonte OpenDyslexic */
 @font-face {
     font-family: 'OpenDyslexic';
@@ -70,6 +75,33 @@ body{
     --swiper-navigation-size: 30px;
     top: 57% !important;
     font-weight: bold;    
+}
+
+
+
+/* === BOTÕES PADRÃO === */
+.botao__laranja {
+    background-color: var(--laranja--detalhes) !important;
+    transition: 0.2s ease;
+}
+
+.botao__laranja:hover {
+    background-color: rgb(255, 192, 75) !important;
+}
+
+.botao__preto {
+    background-color: var(--cor--fundo--preto) !important;
+}
+
+.botao__preto:hover {
+    background-color: #6a6a6a !important;
+}
+
+.botao__preto img,
+.botao__laranja img {
+    width: 30px;
+    height: 30px;
+    transform: translateY(-5%);
 }
 
 

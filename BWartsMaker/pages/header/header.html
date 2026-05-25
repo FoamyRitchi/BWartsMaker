@@ -11,12 +11,15 @@
         <!-- === ACESSIBILIDADE === -->
         <section class="cabecalho__acessibilidade">
             <div class="text-end container-xxl">
-                <button type="button" class="btn btn-outline-light" id="alto_contraste"><img src="../../img/header/alto_contraste.svg" alt="Ícone de alto contraste"></button>
-                <button type="button" class="btn btn-outline-light" id="diminuir_fonte"><img src="../../img/header/diminuir_fonte.svg" alt="Ícone de diminuir fonte"></button>
-                <button type="button" class="btn btn-outline-light" id="retomar_fonte"><img src="../../img/header/retomar_fonte.svg" alt="Ícone de retomar fonte"></button>
-                <button type="button" class="btn btn-outline-light" id="aumentar_fonte"><img src="../../img/header/aumentar_fonte.svg" alt="Ícone de aumentar fonte"></button>
+                <button type="button" class="btn btn-outline-light" title="" id="alto_contraste"><img src="../../img/header/alto_contraste.svg" alt="Ícone de alto contraste"></button>
                 
-                <div class="btn-group">
+                <!-- Botões tamanho fonte -->
+                <button type="button" class="btn btn-outline-light" title="Diminuir fonte" id="diminuir_fonte"><img src="../../img/header/diminuir_fonte.svg" alt="Ícone de diminuir fonte"></button>
+                <button type="button" class="btn btn-outline-light" title="Retomar tamanho padrão da fonte" id="retomar_fonte"><img src="../../img/header/retomar_fonte.svg" alt="Ícone de retomar fonte"></button>
+                <button type="button" class="btn btn-outline-light" title="Aumentar fonte" id="aumentar_fonte"><img src="../../img/header/aumentar_fonte.svg" alt="Ícone de aumentar fonte"></button>
+                
+                <!-- Dropbar alterar estilo da fonte -->
+                <div class="btn-group" title="Alterar estilo da fonte">
                     <button type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         Alterar fonte
                     </button>
@@ -30,13 +33,12 @@
         </section>
             
         <header class="fundo__escuro divisoria__bottom">
-            <!-- === NAVBAR === -->
             <nav class="navbar navbar-expand-lg bg-body-transparent">
+                
                 <!-- Alinhar os itens -->
-                <div class="container-xxl d-flex align-items-center">
-
+                <div class="container-xxl align-items-center">
                     <!-- Logo -->
-                    <div class="d-flex" style="flex: 1;">
+                    <div style="flex: 1;">
                         <a class="navbar-brand" href="../global/index.html">
                             <img src="../../img/assets/Logo.svg" alt="Logo BWarts" class="cabecalho__logo">
                         </a>
@@ -44,9 +46,9 @@
 
                     <!-- Search bar -->
                     <div class="d-none d-lg-flex justify-content-center" style="flex: 1;">
-                        <form class="d-flex px-0 py-1 w-100" role="search">
-                            <input class="form-control me-2 opacity-75 w-100" type="search" placeholder="Search" aria-label="Search"/>
-                            <button class="btn btn-outline-light flex-shrink-0" type="submit">
+                        <form class="d-flex w-100" role="search">
+                            <input class="form-control me-2 opacity-75 w-100" type="search" placeholder="Pesquisar"/>
+                            <button class="btn btn-outline-light flex-shrink-0" type="submit" title="Submeter pesquisa">
                                 <img src="../../img/header/lupa.svg" alt="Ícone de lupa" class="cabecalho__icone">
                             </button>
                         </form>
@@ -56,9 +58,9 @@
                     <div class="d-flex justify-content-end align-items-center" style="flex: 1;">
 
                         <!-- Links visíveis só no desktop -->
-                        <ul class="navbar-nav mb-0 d-none d-lg-flex">
+                        <ul class="navbar-nav d-none d-lg-flex">
                             <li class="nav-item">
-                                <a class="nav-link active text-white cabecalho__link" aria-current="page" href="../catalogo/catalogo.html">Catálogo</a>
+                                <a class="nav-link active text-white cabecalho__link" href="../catalogo/catalogo.html">Catálogo</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white cabecalho__link" href="../forms/form_cadastro_usuario.html">Cadastre-se</a>
@@ -74,12 +76,11 @@
                         <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-
                     </div>
                 </div>
 
                 <!-- Menu de links mobile -->
-                <div class="collapse navbar-collapse d-lg-none" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse d-lg-none px-2">
                     <ul class="navbar-nav w-100 pb-2">
                         <li class="nav-item">
                             <a class="nav-link active text-white cabecalho__link" aria-current="page" href="../catalogo/catalogo.html">Catálogo</a>
@@ -90,10 +91,11 @@
                         <li class="nav-item">
                             <a class="nav-link text-white cabecalho__link" href="../carrinho/carrinho.html">Carrinho</a>
                         </li>
+
                         <!-- Search bar -->
-                        <div class="d-flex justify-content-center" style="flex: 1;">
-                            <form class="d-flex px-0 py-1 w-100" role="search">
-                                <input class="form-control me-2 opacity-75 w-100" type="search" placeholder="Search" aria-label="Search"/>
+                        <div class="justify-content-center" style="flex: 1;">
+                            <form class="d-flex py-1 w-100" role="search">
+                                <input class="form-control me-2 opacity-75 w-100" type="search" placeholder="Pesquisar"/>
                                 <button class="btn btn-outline-light flex-shrink-0" type="submit">
                                     <img src="../../img/header/lupa.svg" alt="Ícone de lupa" class="cabecalho__icone">
                                 </button>
