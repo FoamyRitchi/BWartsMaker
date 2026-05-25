@@ -18,6 +18,20 @@
     width: 350px;
 }
 
+.botao__comprar {
+    background-color: var(--laranja--detalhes) !important;
+}
+
+.botao__carrinho {
+    background-color: var(--cor--fundo--preto) !important;
+}
+
+.botao__carrinho img,
+.botao__comprar img {
+    width: 30px;
+    height: 30px;
+}
+
 
 
 /* === SEÇÃO DESCRICÃO/AVALIAÇÕES === */
@@ -46,6 +60,12 @@
 .avaliacao__nota{
     font-size: 0.9rem;
     color: var(--cinza--textos);
+}
+
+.avaliacao__nota img{
+    width: 1rem;
+    height: 1rem;
+    transform: translateY(-13%);
 }
 
 
