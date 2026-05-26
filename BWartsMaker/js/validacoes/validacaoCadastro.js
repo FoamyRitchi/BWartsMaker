@@ -12,6 +12,7 @@ let botao_cadastrar = document.getElementById("botao_cadastrar");
 let erro_nome = document.getElementById("erro_nome");
 let erro_email = document.getElementById("erro_email");
 let erro_cpf = document.getElementById("erro_cpf");
+let erro_cpf_formato = document.getElementById("erro_cpf_formato");
 let erro_ddd = document.getElementById("erro_ddd");
 let erro_senha_fraca = document.getElementById("erro_senha_fraca");
 let erro_senha_tamanho = document.getElementById("erro_senha_tamanho");
@@ -22,6 +23,7 @@ let erro_telefone = document.getElementById("erro_telefone");
 erro_nome.style.display = "none";
 erro_email.style.display = "none";
 erro_cpf.style.display = "none";
+erro_cpf_formato.style.display = "none";
 erro_ddd.style.display = "none";
 erro_telefone.style.display = "none";
 erro_senha_fraca.style.display = "none";
@@ -77,6 +79,37 @@ cpf_user.addEventListener("input", () => {
 cpf_user.addEventListener("change", () => {
     limitarTamanhoInput(erro_cpf, cpf_user.value, "CPF deve ter 11 números", 11);
 });
+
+// Verificar se o CPF é um CPF válido
+cpf_user.addEventListener("change", () => {
+    var resto, soma = 0;
+
+    // Verifica se o CPF não é inteiro de zero
+    if(cpf_user.value == "00000000000"){
+        erro_cpf_formato.style.display = "block";
+        erro_cpf_formato.textContent = "ERRO: CPF inesistente";
+    } else {
+        erro_cpf_formato.style.display = "none";
+    }
+
+    // Fórmula para verificar se um CPF é válido
+    for (i=1; i<=9; i++){
+        Soma = Soma + parseInt(cpf_user.value.substring(i-1, i)) * (11 - i);
+    }
+    
+    resto = (soma * 10) % 11;
+
+    if ((resto == 10) || (resto == 11)) {
+        resto = 0;
+    }
+
+    if (resto != parseInt(cpf_user.value.substring(10, 11))){
+        erro_cpf_formato.style.display = "block";
+        erro_cpf_formato.textContent = "ERRO: CPF inesistente";
+    } else {
+        erro_cpf_formato.style.display = "none";
+    }
+})
 
 // Permitir apenas números no DDD
 ddd_user.addEventListener("input", () => {
