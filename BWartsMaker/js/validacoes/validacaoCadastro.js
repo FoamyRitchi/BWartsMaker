@@ -82,34 +82,57 @@ cpf_user.addEventListener("change", () => {
 
 // Verificar se o CPF é um CPF válido
 cpf_user.addEventListener("change", () => {
-    var resto, soma = 0;
+    // Verifica se tem 11 dígitos ou é sequência repetida
+    const sequenciasInvalidas = [
+        "00000000000","11111111111","22222222222", "33333333333","44444444444",
+        "55555555555","66666666666", "77777777777","88888888888","99999999999"
+    ];
 
-    // Verifica se o CPF não é inteiro de zero
-    if(cpf_user.value == "00000000000"){
+    if (sequenciasInvalidas.includes(cpf_user.value)) {
         erro_cpf_formato.style.display = "block";
-        erro_cpf_formato.textContent = "ERRO: CPF inesistente";
-    } else {
-        erro_cpf_formato.style.display = "none";
+        erro_cpf_formato.textContent = "ERRO: CPF inválido";
+
+        return;
     }
 
-    // Fórmula para verificar se um CPF é válido
-    for (i=1; i<=9; i++){
-        Soma = Soma + parseInt(cpf_user.value.substring(i-1, i)) * (11 - i);
-    }
+    // Validar 1º dígito verificador
+    let soma = 0;
     
-    resto = (soma * 10) % 11;
-
-    if ((resto == 10) || (resto == 11)) {
-        resto = 0;
+    for (let i = 0; i < 9; i++) {
+        soma += parseInt(cpf_user.value[i]) * (10 - i);
     }
 
-    if (resto != parseInt(cpf_user.value.substring(10, 11))){
+    let resto = (soma * 10) % 11;
+    
+    if (resto === 10 || resto === 11) resto = 0;
+
+    if (resto !== parseInt(cpf_user.value[9])) {
         erro_cpf_formato.style.display = "block";
-        erro_cpf_formato.textContent = "ERRO: CPF inesistente";
-    } else {
-        erro_cpf_formato.style.display = "none";
+        erro_cpf_formato.textContent = "ERRO: CPF inválido";
+
+        return;
     }
-})
+
+    // Validar 2º dígito verificador
+    soma = 0;
+
+    for (let i = 0; i < 10; i++) {
+        soma += parseInt(cpf_user.value[i]) * (11 - i);
+    }
+
+    resto = (soma * 10) % 11;
+    
+    if (resto === 10 || resto === 11) resto = 0;
+
+    if (resto !== parseInt(cpf_user.value[10])) {
+        erro_cpf_formato.style.display = "block";
+        erro_cpf_formato.textContent = "ERRO: CPF inválido";
+
+        return;
+    }
+
+    erro_cpf_formato.style.display = "none";
+});
 
 // Permitir apenas números no DDD
 ddd_user.addEventListener("input", () => {
