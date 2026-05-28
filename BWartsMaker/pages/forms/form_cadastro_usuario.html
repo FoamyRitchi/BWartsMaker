@@ -78,6 +78,35 @@
                             <span class="erro" id="erro_senha_tamanho"></span>
                             <span class="erro" id="erro_confirmar"></span>
 
+                               <!-- ETAPA 2 - ENDEREÇO -->
+                            <div id="etapa_endereco">
+                                <div class="mb-3">
+                                    <input type="text" id="nome_rua" name="nome_rua" placeholder="Rua" class="form-control" required />
+                                </div>
+
+                                <div class="row g-2 mb-3">
+                                    <div class="col-6">
+                                        <input type="text" id="numero_endereco" name="numero_endereco" placeholder="Número" class="form-control" required />
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" id="nome_bairro" name="nome_bairro" placeholder="Bairro" class="form-control" required />
+                                    </div>
+                                </div>
+
+                                <div class="row g-2 mb-3">
+                                    <div class="col-8">
+                                        <input type="text" id="nome_cidade" name="nome_cidade" placeholder="Cidade" class="form-control" required />
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="text" id="nome_estado" name="nome_estado" placeholder="UF" class="form-control" required />
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <input type="text" id="cep_endereco" name="cep_endereco" placeholder="CEP" class="form-control" required />
+                                </div>
+                            </div>
+                            
                             <!-- Confirmar cadastro -->
                             <div class="mt-4">
                                 <div class="my-2 d-flex flex-wrap justify-content-between align-items-center gap-3">
@@ -89,47 +118,7 @@
                             </div>
                         </div>
 
-                        <!-- ETAPA 2 - ENDEREÇO -->
-                    <div id="etapa_endereco">
-                        <h4 class="fw-semibold mb-4 mt-5 text-uppercase">Endereço</h4>
-
-                        <div class="mb-3">
-                            <input type="text" id="nome_rua" name="nome_rua" placeholder="Rua" class="form-control" required />
-                        </div>
-
-                        <div class="row g-2 mb-3">
-                            <div class="col-6">
-                                <input type="text" id="numero_endereco" name="numero_endereco" placeholder="Número" class="form-control" required />
-                            </div>
-                            <div class="col-6">
-                                <input type="text" id="nome_bairro" name="nome_bairro" placeholder="Bairro" class="form-control" required />
-                            </div>
-                        </div>
-
-                        <div class="row g-2 mb-3">
-                            <div class="col-8">
-                                <input type="text" id="nome_cidade" name="nome_cidade" placeholder="Cidade" class="form-control" required />
-                            </div>
-                            <div class="col-4">
-                                <input type="text" id="nome_estado" name="nome_estado" placeholder="UF" class="form-control" required />
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <input type="text" id="cep_endereco" name="cep_endereco" placeholder="CEP" class="form-control" required />
-                        </div>
-
-                        <!-- BOTÕES -->
-                        <div class="d-flex justify-content-between mt-4">
-                            <button type="button" class="btn btn-secondary" id="voltar_etapa">
-                                Voltar
-                            </button>
-
-                            <button type="submit" class="btn btn-success">
-                                Finalizar cadastro
-                            </button>
-                        </div>
-                    </div>
+                     
 
                         <!-- Realizar login -->
                         <div>
