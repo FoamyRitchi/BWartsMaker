@@ -12,6 +12,9 @@
 
         <!-- Validação de inputs -->
         <script src="../../js/validacoes/validacaoCadastro.js" defer></script>
+        
+        <!-- Cadastro de usuário -->
+        <script src="../../js/API/cadastroUsuario.js" defer></script>
     </head>
     
     <body class="fundo__form">
@@ -37,6 +40,10 @@
                                 <input type="email" id="email_user" name="email_user" placeholder="E-mail" class="form-control" required/>
                                 <span class="erro" id="erro_email"></span>
                             </div>
+                            <div class="mb-3">
+                                <input type="date" id="dataNasc_user" name="dataNasc_user" placeholder="Data de nascimento" class="form-control" required/>
+                                <span class="erro" id="erro_dataNasc_user"></span>
+                            </div>
 
                             <!-- CPF, DDD, Telefone -->
                             <div class="row g-2 mb-3">
@@ -44,7 +51,7 @@
                                     <input type="tel" id="cpf_user" name="cpf_user" placeholder="CPF" class="form-control" required/>
                                 </div>
                                 <div class="col-2">
-                                    <input type="tel" id="ddd_user" name="ddd_user" placeholder="DDD" class="form-control" required/>
+                                    <input type="tel" id="ddd_telefone" name="ddd_telefone" placeholder="DDD" class="form-control" required/>
                                 </div>
                                 <div class="col-5">
                                     <input type="tel" id="numero_telefone" name="numero_telefone" placeholder="Telefone" class="form-control" required/>
@@ -83,7 +90,7 @@
                         </div>
 
                         <!-- ETAPA 2 - ENDEREÇO -->
-                    <div id="etapa_endereco" style="display: none;">
+                    <div id="etapa_endereco">
                         <h4 class="fw-semibold mb-4 mt-5 text-uppercase">Endereço</h4>
 
                         <div class="mb-3">

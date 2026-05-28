@@ -10,6 +10,7 @@ async function request(endpoint, options = {}) {
     try {
 
         const response = await fetch(`${API}${endpoint}`, {
+
             ...options,
 
             headers: {
@@ -19,17 +20,23 @@ async function request(endpoint, options = {}) {
         });
 
         const contentType =
-            response.headers.get("Content-Type") || "";
+            response.headers.get("content-type") || "";
 
         let data;
 
         if (contentType.includes("application/json")) {
+
             data = await response.json();
+
         } else {
+
             data = await response.text();
         }
 
         if (!response.ok) {
+
+            console.error("Erro retornado pelo backend:");
+            console.error(data);
 
             throw new Error(
                 data?.message ||
@@ -64,11 +71,12 @@ function obterDadosFormulario() {
         email_user:
             dados.get("email_user")?.trim(),
 
+        senha_user:
+            dados.get("senha_user"),
+
         cpf_user:
-            Number(
-                dados.get("cpf_user")
-                    ?.replace(/\D/g, "")
-            ),
+            dados.get("cpf_user")
+                ?.replace(/\D/g, ""),
 
         dataNasc_user:
             dados.get("dataNasc_user"),
@@ -76,15 +84,11 @@ function obterDadosFormulario() {
         telefone: {
 
             ddd_telefone:
-                Number(
-                    dados.get("ddd_telefone")
-                ),
+                dados.get("ddd_telefone"),
 
             numero_telefone:
-                Number(
-                    dados.get("numero_telefone")
-                        ?.replace(/\D/g, "")
-                )
+                dados.get("numero_telefone")
+                    ?.replace(/\D/g, "")
         },
 
         endereco: {
@@ -95,10 +99,8 @@ function obterDadosFormulario() {
                 ),
 
             cep_endereco:
-                Number(
-                    dados.get("cep_endereco")
-                        ?.replace(/\D/g, "")
-                ),
+                dados.get("cep_endereco")
+                    ?.replace(/\D/g, ""),
 
             rua: {
 
@@ -142,6 +144,10 @@ function validarFormulario(usuario) {
 
     if (!usuario.email_user) {
         throw new Error("E-mail obrigatório.");
+    }
+
+    if (!usuario.senha_user) {
+        throw new Error("Senha obrigatória.");
     }
 
     if (!usuario.cpf_user) {
@@ -225,9 +231,9 @@ async function cadastrarUsuario() {
 /* =========================================
    EVENTO SUBMIT
 ========================================= */
-formCadastro.addEventListener("submit", (event) => {
+formCadastro.addEventListener("submit", async (event) => {
 
     event.preventDefault();
 
-    cadastrarUsuario();
+    await cadastrarUsuario();
 });
