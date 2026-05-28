@@ -16,7 +16,7 @@
     
     <body class="fundo__form">
         <main>
-            <form method="post" class="container py-5 d-flex justify-content-center align-items-center">
+            <form method="post" id="cadastro_usuario" class="container py-5 d-flex justify-content-center align-items-center">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card-body p-5 text-center text-white shadow rounded fundo__escuro" style="border-radius: 1rem;">
                         <!-- Logo BWarts -->
@@ -28,26 +28,26 @@
 
                             <!-- Nome -->
                             <div class="mb-3">
-                                <input type="text" id="nome_user" name="nome" placeholder="Nome de usuário" class="form-control" required/>
+                                <input type="text" id="nome_user" name="nome_user" placeholder="Nome de usuário" class="form-control" required/>
                                 <span class="erro" id="erro_nome"></span>
                             </div>
 
                             <!-- E-mail -->
                             <div class="mb-3">
-                                <input type="email" id="email_user" name="email" placeholder="E-mail" class="form-control" required/>
+                                <input type="email" id="email_user" name="email_user" placeholder="E-mail" class="form-control" required/>
                                 <span class="erro" id="erro_email"></span>
                             </div>
 
                             <!-- CPF, DDD, Telefone -->
                             <div class="row g-2 mb-3">
                                 <div class="col-5">
-                                    <input type="tel" id="cpf_user" name="cpf" placeholder="CPF" class="form-control" required/>
+                                    <input type="tel" id="cpf_user" name="cpf_user" placeholder="CPF" class="form-control" required/>
                                 </div>
                                 <div class="col-2">
-                                    <input type="tel" id="ddd_user" name="ddd" placeholder="DDD" class="form-control" required/>
+                                    <input type="tel" id="ddd_user" name="ddd_user" placeholder="DDD" class="form-control" required/>
                                 </div>
                                 <div class="col-5">
-                                    <input type="tel" id="telefone_user" name="telefone" placeholder="Telefone" class="form-control" required/>
+                                    <input type="tel" id="numero_telefone" name="numero_telefone" placeholder="Telefone" class="form-control" required/>
                                 </div>
                                 <span class="erro" id="erro_cpf"></span>
                                 <span class="erro" id="erro_cpf_formato"></span>
@@ -58,11 +58,11 @@
                             <!-- Senha -->
                             <div class="row g-2 mb-3">
                                 <div class="col">
-                                    <input type="password" id="senha_user" placeholder="Senha" class="form-control" required/>
+                                    <input type="password" id="senha_user" name="senha_user" placeholder="Senha" class="form-control" required/>
                                     
                                 </div>
                                 <div class="col">
-                                    <input type="password" id="confirmar_senha" placeholder="Confirmar senha" class="form-control" required/>
+                                    <input type="password" id="confirmar_senha" name="confirmar_senha" placeholder="Confirmar senha" class="form-control" required/>
                                     
                                 </div>
                             </div>
@@ -81,6 +81,48 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- ETAPA 2 - ENDEREÇO -->
+                    <div id="etapa_endereco" style="display: none;">
+                        <h4 class="fw-semibold mb-4 mt-5 text-uppercase">Endereço</h4>
+
+                        <div class="mb-3">
+                            <input type="text" id="nome_rua" name="nome_rua" placeholder="Rua" class="form-control" required />
+                        </div>
+
+                        <div class="row g-2 mb-3">
+                            <div class="col-6">
+                                <input type="text" id="numero_endereco" name="numero_endereco" placeholder="Número" class="form-control" required />
+                            </div>
+                            <div class="col-6">
+                                <input type="text" id="nome_bairro" name="nome_bairro" placeholder="Bairro" class="form-control" required />
+                            </div>
+                        </div>
+
+                        <div class="row g-2 mb-3">
+                            <div class="col-8">
+                                <input type="text" id="nome_cidade" name="nome_cidade" placeholder="Cidade" class="form-control" required />
+                            </div>
+                            <div class="col-4">
+                                <input type="text" id="nome_estado" name="nome_estado" placeholder="UF" class="form-control" required />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <input type="text" id="cep_endereco" name="cep_endereco" placeholder="CEP" class="form-control" required />
+                        </div>
+
+                        <!-- BOTÕES -->
+                        <div class="d-flex justify-content-between mt-4">
+                            <button type="button" class="btn btn-secondary" id="voltar_etapa">
+                                Voltar
+                            </button>
+
+                            <button type="submit" class="btn btn-success">
+                                Finalizar cadastro
+                            </button>
+                        </div>
+                    </div>
 
                         <!-- Realizar login -->
                         <div>
