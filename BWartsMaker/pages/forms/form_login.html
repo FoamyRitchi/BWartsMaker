@@ -12,11 +12,14 @@
 
         <!-- Validação de inputs -->
         <script src="../../js/validacoes/validacaoLogin.js" defer></script>
+
+        <!-- Login de usuário -->
+        <script src="../../js/API/loginUsuario.js" defer></script>
     </head>
     
     <body class="fundo__form">
         <main>
-            <form method="post" class="container py-5 d-flex justify-content-center align-items-center">
+            <form method="post" id="form_login" class="container py-5 d-flex justify-content-center align-items-center">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card-body p-5 text-center text-white shadow rounded fundo__escuro" style="border-radius: 1rem;">
                         <!-- Logo BWarts -->
@@ -28,16 +31,16 @@
 
                             <!-- E-mail -->
                             <div class="mb-3">
-                                <input type="email" id="email_user" name="email" placeholder="E-mail" class="form-control" required/>
+                                <input type="email" id="email_user" name="email_user" placeholder="E-mail" class="form-control" required/>
                             </div>
                             
                             <!-- Senha -->
                             <div class="mb-3">
-                                <input type="password" id="senha_user" name="senha" placeholder="Senha" class="form-control" required/>
+                                <input type="password" id="senha_user" name="senha_user" placeholder="Senha" class="form-control" required/>
                                 <span class="erro" id="erro_senha"></span>
                             </div>
                             <span class="erro" id="erro_email"></span>
-                            <!-- ### Quando haver verifiação no banco de dados: ### -->
+                            <!-- ### Quando haver verificação no banco de dados: ### -->
                             <!-- <span class="erro" id="erro_login"></span> -->
 
                             <!-- Botão entrar -->
