@@ -1,66 +1,85 @@
 const API = "https://bwartsmaker-back-end-production.up.railway.app";
 
-const formLogin = document.getElementById("form_login");
+document.addEventListener("DOMContentLoaded", () => {
 
-async function realizarLogin() {
+    const formLogin = document.getElementById("form_login");
+
+    if (!formLogin) {
+        console.error("Formulário 'form_login' não encontrado.");
+        return;
+    }
+
+    formLogin.addEventListener("submit", realizarLogin);
+});
+
+async function realizarLogin(event) {
+
+    event.preventDefault();
+
+    const erroElement = document.getElementById("erro_email");
 
     try {
 
-        const email =
-            document.getElementById("email_user").value.trim();
+        if (erroElement) {
+            erroElement.textContent = "";
+        }
 
-        const senha =
-            document.getElementById("senha_user").value;
+        const email = document
+            .getElementById("email_user")
+            .value
+            .trim();
 
-        const response = await fetch(`${API}/api/auth/login`, {
+        const senha = document
+            .getElementById("senha_user")
+            .value;
 
+        if (!email || !senha) {
+            throw new Error("Preencha email e senha.");
+        }
+
+        const response = await fetch(`${API}/api/usuarios/login`, {
             method: "POST",
-
             headers: {
                 "Content-Type": "application/json"
             },
-
             body: JSON.stringify({
-
                 email_user: email,
-
                 senha_user: senha
             })
         });
 
-        const data = await response.json();
+        let data = {};
+
+        const contentType = response.headers.get("content-type");
+
+        if (
+            contentType &&
+            contentType.includes("application/json")
+        ) {
+            data = await response.json();
+        }
 
         if (!response.ok) {
-
             throw new Error(
                 data.message ||
                 "Email ou senha inválidos."
             );
         }
 
-        console.log("Usuário autenticado:");
-        console.log(data);
-
         localStorage.setItem(
             "usuarioLogado",
             JSON.stringify(data)
         );
 
-        window.location.href =
-            "../../index.html";
+        window.location.href = "../../pages/perfil_visao_geral/user_visao_geral.html";
 
     } catch (error) {
 
-        console.error(error);
+        console.error("Erro no login:", error);
 
-        document.getElementById("erro_email").textContent =
-            error.message;
+        if (erroElement) {
+            erroElement.textContent =
+                error.message || "Erro ao realizar login.";
+        }
     }
 }
-
-formLogin.addEventListener("submit", async (event) => {
-
-    event.preventDefault();
-
-    await realizarLogin();
-});

@@ -26,7 +26,3 @@ email_user.addEventListener("change", () => {
     }
 });
 
-// Redirecionar para página do perfil
-botao_login.addEventListener("click", () => {
-    window.location.href = "../../pages/perfil_visao_geral/user_visao_geral.html";
-})
