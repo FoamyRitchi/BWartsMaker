@@ -7,6 +7,9 @@
         <script src="../../js/global/include.js" defer></script>
         <script src="../../js/global/fetch.js" defer></script>
         <script src="../../js/global/preferenciaFonte.js" defer></script>
+
+        <!-- Requisições API -->
+        <script src="../../js/API/perfilUsuario.js" defer></script>
         
         <link rel="stylesheet" href="../styles/perfil.css">
         <link rel="stylesheet" href="perfil_user_visao_geral.css">
@@ -24,27 +27,27 @@
                     </div>
 
                     <div class="nav__links">
-                        <a href="#">
+                        <a href="#" style="text-decoration: none; color: white; font-weight: bold;">
                             <div class="nav__link selecionado">
                                 <h2>Visão geral</h2>
                             </div>
                         </a>
-                        <a href="../perfil_minhas_compras/minhas_compras.html">
+                        <a href="../perfil_minhas_compras/minhas_compras.html" style="text-decoration: none; color: white; font-weight: bold;">
                             <div class="nav__link">
                                 <h2>Minhas compras</h2>
                             </div>
                         </a>
-                        <a href="#">
+                        <a href="#" style="text-decoration: none; color: white; font-weight: bold;">
                             <div class="nav__link">
                                 <h2>Suporte</h2>
                             </div>
                         </a>
-                        <a href="#">
+                        <a href="#" style="text-decoration: none; color: white; font-weight: bold;">
                             <div class="nav__link">
                                 <h2>Configurações</h2>
                             </div>
                         </a>
-                        <a href="#">
+                        <a href="#" style="text-decoration: none; color: white; font-weight: bold;">
                             <div class="nav__link">
                                 <h2>Sair da conta</h2>
                             </div>
@@ -67,34 +70,29 @@
                             </div>
                             <form action="/editar_perfil" id="form__dados__pessoais" method="post" class="form__dados__pessoais flex__col">
                                 <div class="label__input">
-                                    <label for="">Nome</label>
-                                    <input type="text" placeholder="LebronZika123" disabled>
+                                    <label for="nome_user">Nome</label>
+                                    <input type="text" id="nome_user" disabled>
                                 </div>
 
                                 <div class="label__input">
-                                    <label for="">E-mail</label>
-                                    <input type="email" placeholder="LebronZika123@nike.com" disabled>
+                                    <label for="email_user">E-mail</label>
+                                    <input type="email" id="email_user" disabled>
                                 </div>
                                 
                                 <div class="label__input">
-                                    <label for="">Telefone</label>
-                                    <input type="tel" placeholder="(11) 91212-3267" disabled>
+                                    <label for="telefone_user">Telefone</label>
+                                    <input type="tel" id="telefone_user" disabled>
                                 </div>
                                 
                                 
                                 <div class="label__input">
-                                    <label for="">CPF</label>
-                                    <input type="text" placeholder="123.123.123-32" disabled>
+                                    <label for="cpf_user">CPF</label>
+                                    <input type="text" id="cpf_user" disabled>
                                 </div>
 
                                 <div class="label__input">
-                                    <label for="">Data de nascimento</label>
-                                    <input type="date" placeholder="06/07/1967" disabled>
-                                </div>
-
-                                <div class="label__input">
-                                    <label for="">Gênero</label>
-                                    <input type="text" placeholder="Masculino" disabled></input>
+                                    <label for="dataNasc_user">Data de nascimento</label>
+                                    <input type="date" id="dataNasc_user" disabled>
                                 </div>
                             </form>
                         </div>
@@ -107,34 +105,34 @@
                                 <form action="/editar_perfil" id="form__dados__pessoais" method="post" class="form__dados__endereco flex__col">
                                     <div class="form__dados__endereco__duas__colunas">
                                         <div class="label__input">
-                                            <label for="">CEP</label>
-                                            <input type="text" placeholder="12312-123" disabled>
+                                            <label for="cep_user">CEP</label>
+                                            <input type="text" id="cep_user" disabled>
                                         </div>
                                         <div class="label__input">
-                                            <label for="">Número</label>
-                                            <input type="text" placeholder="67" disabled>
+                                            <label for="numero_user">Número</label>
+                                            <input type="text" id="numero_user" disabled>
                                         </div>
                                     </div>
                                     
                                     <div class="label__input">
-                                        <label for="">Rua</label>
-                                        <input type="text" placeholder="Rua dos bobos" disabled>
+                                        <label for="rua_user">Rua</label>
+                                        <input type="text" id="rua_user" disabled>
                                     </div>
                                     
                                     <div class="form__dados__endereco__duas__colunas">
                                         <div class="label__input">
-                                            <label for="">Estado</label>
-                                            <input type="text" placeholder="Bahia" disabled>
+                                            <label for="estado_user">Estado</label>
+                                            <input type="text" id="estado_user" disabled>
                                         </div>
                                         <div class="label__input">
-                                            <label for="">Cidade</label>
-                                            <input type="text" placeholder="xique-xique" disabled>
+                                            <label for="cidade_user">Cidade</label>
+                                            <input type="text" id="cidade_user" disabled>
                                         </div>
                                     </div>
 
                                     <div class="label__input">
-                                        <label for="">Bairro</label>
-                                        <input type="text" placeholder="Jardim das rosas" disabled>
+                                        <label for="bairro_user">Bairro</label>
+                                        <input type="text" id="bairro_user" disabled>
                                     </div>
                                 </form>
                                 
