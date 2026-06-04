@@ -1,6 +1,6 @@
 /* === CLASSES GERAIS === */
 .logo{
-    width: 70%;
+    width: 50%;
 }
 
 .fundo__form {
@@ -21,11 +21,11 @@
     margin-right: 1rem;
 }
 
-.botao__confirmar{
+.botao__form{
     border-color: var(--laranja--detalhes) !important;
 }
 
-.botao__confirmar:hover{
+.botao__form:hover{
     background-color: var(--laranja--detalhes) !important;
 }
 

@@ -2,8 +2,8 @@
 let nome_user = document.getElementById("nome_user");
 let email_user = document.getElementById("email_user");
 let cpf_user = document.getElementById("cpf_user");
-let ddd_user = document.getElementById("ddd_user");
-let telefone_user = document.getElementById("telefone_user");
+let ddd_user = document.getElementById("ddd_telefone");
+let telefone_user = document.getElementById("numero_telefone");
 let senha_user = document.getElementById("senha_user");
 let confirmar_senha = document.getElementById("confirmar_senha");
 let botao_cadastrar = document.getElementById("botao_cadastrar");
@@ -213,7 +213,7 @@ botao_cadastrar.addEventListener("click", (e) => {
     senha_user.dispatchEvent(new Event("change"));
     confirmar_senha.dispatchEvent(new Event("change"));
 
-    // Agora verifica se algum erro está visível
+    // Verifica se algum erro está visível
     const erros = [
         erro_nome, erro_email, erro_cpf, erro_ddd,
         erro_telefone, erro_senha_fraca, erro_senha_tamanho, erro_confirmar

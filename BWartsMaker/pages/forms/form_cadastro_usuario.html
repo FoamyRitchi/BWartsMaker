@@ -6,12 +6,14 @@
 
         <link rel="stylesheet" href="../styles/forms.css">
         
+        <!-- Configurações iniciais -->
         <script src="../../js/global/include.js" defer></script>
         <script src="../../js/global/fetch.js" defer></script>
-        <script src="../../js/global/preferenciaFonte.js" defer></script>
 
         <!-- Validação de inputs -->
-        <script src="../../js/validacoes/validacaoCadastro.js" defer></script>
+        <script src="../../js/cadastroUsuario/validacaoCadastroDadosPessoais.js" defer></script>
+        <script src="../../js/cadastroUsuario/validacaoCadastroEndereco.js" defer></script>
+        <script src="../../js/cadastroUsuario/passarEtapas.js" defer></script>
         
         <!-- Cadastro de usuário -->
         <script src="../../js/API/cadastroUsuario.js" defer></script>
@@ -26,60 +28,84 @@
                         <img src="../../img/assets/Logo.svg" alt="Logo BWarts" class="logo">
 
                         <!-- Inputs do usuário -->
-                        <div class="mb-md-5 mt-md-4">
-                            <h4 class="fw-semibold mb-4 mt-5 text-uppercase">Cadastre-se</h4>
+                        <div class="my-3">
+                            <h4 class="mb-3 mt-0 text-uppercase fs-6">Cadastre-se</h4>
 
-                            <!-- Nome -->
-                            <div class="mb-3">
-                                <input type="text" id="nome_user" name="nome_user" placeholder="Nome de usuário" class="form-control" required/>
-                                <span class="erro" id="erro_nome"></span>
-                            </div>
-
-                            <!-- E-mail -->
-                            <div class="mb-3">
-                                <input type="email" id="email_user" name="email_user" placeholder="E-mail" class="form-control" required/>
-                                <span class="erro" id="erro_email"></span>
-                            </div>
-                            <div class="mb-3">
-                                <input type="date" id="dataNasc_user" name="dataNasc_user" placeholder="Data de nascimento" class="form-control" required/>
-                                <span class="erro" id="erro_dataNasc_user"></span>
-                            </div>
-
-                            <!-- CPF, DDD, Telefone -->
-                            <div class="row g-2 mb-3">
-                                <div class="col-5">
-                                    <input type="tel" id="cpf_user" name="cpf_user" placeholder="CPF" class="form-control" required/>
+                            <!-- Etapas do cadastro --> 
+                            <div class="d-flex justify-content-center align-items-center w-100 mb-4 gap-2">
+                                <div class="d-flex flex-column align-items-center" style="width: 70px !important;">
+                                    <i id="iconeEtapa1" class="bi bi-1-circle fs-3"></i>
+                                    <span id="textoIconeEtapa1">Perfil</span>
                                 </div>
-                                <div class="col-2">
-                                    <input type="tel" id="ddd_telefone" name="ddd_telefone" placeholder="DDD" class="form-control" required/>
-                                </div>
-                                <div class="col-5">
-                                    <input type="tel" id="numero_telefone" name="numero_telefone" placeholder="Telefone" class="form-control" required/>
-                                </div>
-                                <span class="erro" id="erro_cpf"></span>
-                                <span class="erro" id="erro_cpf_formato"></span>
-                                <span class="erro" id="erro_ddd"></span>
-                                <span class="erro" id="erro_telefone"></span>
-                            </div>
-
-                            <!-- Senha -->
-                            <div class="row g-2 mb-3">
-                                <div class="col">
-                                    <input type="password" id="senha_user" name="senha_user" placeholder="Senha" class="form-control" required/>
-                                    
-                                </div>
-                                <div class="col">
-                                    <input type="password" id="confirmar_senha" name="confirmar_senha" placeholder="Confirmar senha" class="form-control" required/>
-                                    
+                                
+                                <hr class="flex border-3" style="width: 120px;">
+                                
+                                <div class="d-flex flex-column align-items-center" style="width: 70px !important;">
+                                    <i id="iconeEtapa2" class="bi bi-2-circle fs-3"></i>
+                                    <span id="textoIconeEtapa2">Endereço</span>
                                 </div>
                             </div>
-                            <p class="text-start text-white-50 lh-1 obs__senha">Senha deve ter no mínimo: 8 caracteres, um número, uma letra minúscula, uma letra maiúscula.</p>
-                            <span class="erro" id="erro_senha_fraca"></span>
-                            <span class="erro" id="erro_senha_tamanho"></span>
-                            <span class="erro" id="erro_confirmar"></span>
+                            
+                            <!-- ETAPA 1 - DADOS PESSOAIS -->
+                            <div id="etapa1">
+                                <!-- Nome -->
+                                <div class="mb-3">
+                                    <input type="text" id="nome_user" name="nome_user" placeholder="Nome de usuário" class="form-control" required/>
+                                    <span class="erro" id="erro_nome"></span>
+                                </div>
 
-                               <!-- ETAPA 2 - ENDEREÇO -->
-                            <div id="etapa_endereco">
+                                <!-- E-mail -->
+                                <div class="mb-3">
+                                    <input type="email" id="email_user" name="email_user" placeholder="E-mail" class="form-control" required/>
+                                    <span class="erro" id="erro_email"></span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <input type="date" id="dataNasc_user" name="dataNasc_user" placeholder="Data de nascimento" class="form-control" required/>
+                                    <span class="erro" id="erro_dataNasc_user"></span>
+                                </div>
+
+                                <!-- CPF, DDD, Telefone -->
+                                <div class="row g-2 mb-3">
+                                    <div class="col-5">
+                                        <input type="tel" id="cpf_user" name="cpf_user" placeholder="CPF" class="form-control" required/>
+                                    </div>
+                                    <div class="col-2">
+                                        <input type="tel" id="ddd_telefone" name="ddd_telefone" placeholder="DDD" class="form-control" required/>
+                                    </div>
+                                    <div class="col-5">
+                                        <input type="tel" id="numero_telefone" name="numero_telefone" placeholder="Telefone" class="form-control" required/>
+                                    </div>
+                                    <span class="erro" id="erro_cpf"></span>
+                                    <span class="erro" id="erro_cpf_formato"></span>
+                                    <span class="erro" id="erro_ddd"></span>
+                                    <span class="erro" id="erro_telefone"></span>
+                                </div>
+
+                                <!-- Senha -->
+                                <div class="row g-2">
+                                    <div class="col">
+                                        <input type="password" id="senha_user" name="senha_user" placeholder="Senha" class="form-control" required/>
+                                    </div>
+                                    <div class="col">
+                                        <input type="password" id="confirmar_senha" name="confirmar_senha" placeholder="Confirmar senha" class="form-control" required/>
+                                    </div>
+                                </div>
+                                <p class="text-start text-white-50 lh-1 mt-1 mb-1 obs__senha" style="font-size: 0.8rem;">Senha deve ter no mínimo: 8 caracteres, um número, uma letra minúscula e uma letra maiúscula.</p>
+                                <span class="erro" id="erro_senha_fraca"></span>
+                                <span class="erro" id="erro_senha_tamanho"></span>
+                                <span class="erro" id="erro_confirmar"></span>
+
+                                <!-- Botão confirmar cadastro -->
+                                <div class="mt-3 d-flex w-100 justify-content-end">
+                                    <button class="btn text-white btn-outline px-3 border-2 botao__form" id="botaoPassarEtapa" type="button">
+                                        Próximo<i class="bi bi-arrow-right-short"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- ETAPA 2 - ENDEREÇO -->
+                            <div id="etapa2" style="display: none;">
                                 <div class="mb-3">
                                     <input type="text" id="nome_rua" name="nome_rua" placeholder="Rua" class="form-control" required />
                                 </div>
@@ -105,20 +131,18 @@
                                 <div class="mb-3">
                                     <input type="text" id="cep_endereco" name="cep_endereco" placeholder="CEP" class="form-control" required />
                                 </div>
-                            </div>
-                            
-                            <!-- Confirmar cadastro -->
-                            <div class="mt-4">
-                                <div class="my-2 d-flex flex-wrap justify-content-between align-items-center gap-3">
-                                    <img src="../../img/forms/captcha.svg" alt="captcha" class="captcha">
-                                    <div class="d-flex justify-content-end" style="flex: 0 0 auto;">
-                                        <button class="btn text-white btn-outline btn-lg px-4 border-2 botao__confirmar" id="botao_cadastrar" type="submit">Cadastrar</button>
-                                    </div>
+                                
+                                <!-- Botão confirmar cadastro -->
+                                <div class="mt-3 d-flex w-100 justify-content-between">
+                                    <button class="btn text-white btn-outline px-3 border-2 botao__form" id="botaoVoltarEtapa" type="submit">
+                                        <i class="bi bi-arrow-left-short"></i>Voltar
+                                    </button>
+                                    <button class="btn text-white btn-outline px-3 border-2 botao__form" id="botaoConfirmar" type="submit">
+                                        Cadastrar
+                                    </button>
                                 </div>
                             </div>
                         </div>
-
-                     
 
                         <!-- Realizar login -->
                         <div>
