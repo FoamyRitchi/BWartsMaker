@@ -93,18 +93,13 @@ function verificarPassagemEtapa(){
 
 // Bloquear envio de formulário se houver campos inválidos
 botao_cadastrar.addEventListener("click", (e) => {
-    // Parar envio de formulário
-    e.preventDefault();
 
-    // Dispara as validações em todos os campos antes de verificar
-    // Endereço
     nome_rua.dispatchEvent(new Event("change"));
     nome_bairro.dispatchEvent(new Event("change"));
     nome_cidade.dispatchEvent(new Event("change"));
     nome_estado.dispatchEvent(new Event("change"));
     cep_endereco.dispatchEvent(new Event("change"));
 
-    // Verifica se algum erro está visível
     const erros = [
         erro_nome_rua,
         erro_nome_bairro,
@@ -113,10 +108,11 @@ botao_cadastrar.addEventListener("click", (e) => {
         erro_cep_endereco
     ];
 
-    // Verifica se algum elemento está com display block
-    const temErro = erros.some(erro => erro.style.display === "block");
+    const temErro = erros.some(
+        erro => erro.style.display === "block"
+    );
 
-    if (!temErro) {
-        window.location.href = "form_login.html";
+    if (temErro) {
+        e.preventDefault();
     }
 });
