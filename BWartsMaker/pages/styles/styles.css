@@ -4,6 +4,7 @@
     --cor--fundo--preto: #343434;
     --cor-texto--branco: #FAFAFA;
     --laranja--detalhes: #FF8000;
+    --vermelho--detalhes: #FF0000;
     --cinza--textos: rgb(80, 80, 80);
 }
 
@@ -104,13 +105,22 @@ body{
     transform: translateY(-5%);
 }
 
-.botao__preto__laranja{
+.botao__preto__laranja {
     background-color: #343434 !important;
     border: 5px solid var(--laranja--detalhes) !important;
 }
 
-.botao__preto__laranja:hover{
+.botao__preto__laranja:hover {
     background-color: var(--laranja--detalhes) !important;
+}
+
+.botao__preto__vermelho {
+    background-color: #343434 !important;
+    border: 5px solid var(--vermelho--detalhes) !important;
+}
+
+.botao__preto__vermelho:hover {
+    background-color: var(--vermelho--detalhes) !important;
 }
 
 

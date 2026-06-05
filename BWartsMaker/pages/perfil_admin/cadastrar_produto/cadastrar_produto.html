@@ -17,6 +17,8 @@
         
         <!-- Listar as imagens ao dar input -->
         <script src="../../../js/perfil_admin/cadastro_produto/listarImagens.js" defer></script>
+
+        <script src="../../../js/API/produto/cadastraProduto.js" defer></script>
     </head>
 
     <body>
@@ -127,14 +129,14 @@
                                         <!-- Nome do produto -->
                                         <div class="col-8">
                                             <label>Nome do produto</label>
-                                            <input type="text" class="form-control" placeholder="Nome do produto">
+                                            <input type="text" id="nome_prod" class="form-control" placeholder="Nome do produto">
                                         </div>
                                         
                                         <!-- Categoria do produto -->
                                         <div class="col-4">
                                             <label>Categoria</label>
                                             <div class="input-group">
-                                                <select class="form-select" placeholder="selecione">
+                                                <select class="form-select" id="categoria_prod" placeholder="selecione">
                                                     <option selected>Selecione</option>
                                                     <option value="1">Chaveiro</option>
                                                     <option value="2">Decoração</option>
@@ -147,19 +149,19 @@
                                         <!-- Valor unitário -->
                                         <div class="col-6">
                                             <label>Preço (R$)</label>
-                                            <input type="number" min="1" class="form-control" placeholder="R$0,00">
+                                            <input type="number" min="1" id="valor_prod" class="form-control" placeholder="R$0,00">
                                         </div>
 
                                         <!-- Quantidade disponível -->
                                         <div class="col-6">
                                             <label>Estoque</label>
-                                            <input type="number" min="1" class="form-control" placeholder="0">
+                                            <input type="number" min="1" id="qntd_prod" class="form-control" placeholder="0">
                                         </div>
 
                                         <!-- Descrição do produto -->
                                         <div class="col-12 pb-3" style="border-bottom: 2px solid #E0E0E0;">
                                             <label>Descrição</label>
-                                            <textarea class="form-control" placeholder="Descreva detalhes, materiais, dimensões..." style="height: 100px;"></textarea>
+                                            <textarea class="form-control" id="desc_prod" placeholder="Descreva detalhes, materiais, dimensões..." style="height: 100px;"></textarea>
                                         </div>
                                     </div>
                                 </div>
