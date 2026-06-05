@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Configurações iniciais -->
+        <script src="../../../js/global/include.js" defer></script>
+        <script src="../../../js/global/fetch.js" defer></script>
+        
+        <!-- Estilização -->
+        <link rel="stylesheet" href="../../styles/perfil.css">
+
+        <!-- Animação sidebar -->
+        <script src="../../../js/perfil_visao_geral/recolherSidebar.js" defer></script>
+    </head>
+
+    <body>
+        <section id="header"></section>
+
+        <section class="d-flex" style="min-height: 100vh;">
+            <!-- SIDEBAR -->
+            <nav class="pt-4 d-flex flex-column align-items-center flex-shrink-0" id="sidebar">
+                <!-- Botão para recolher a sidebar -->
+                <div class="w-100 d-flex justify-content-end pe-3">
+                    <button class="botao_recolher" id="botao_recolher_menu">
+                        <i class="bi bi-chevron-left" id="sidebar_icone"></i>
+                    </button>
+                </div>
+
+                <!-- Links para outras páginas -->
+                <ul class="p-0 pt-3 w-100 links__sidebar">
+                    <li class="pb-2"><span class="fs-5 d-flex flex-wrap fw-bold text-white text-uppercase titulo__sidebar">Páginas - Admin</span></li>
+                    <li>
+                        <a href="#" class="active">
+                            <span class="fs-5 link__sidebar">Vendas</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../cadastrar_produto/cadastrar_produto.html">
+                            <span class="fs-5 link__sidebar">Cadastrar produto</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../produtos/produtos.html">
+                            <span class="fs-5 link__sidebar">Lista de produtos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <button type="button" id="botao_sair" class="btn link-light p-0 fs-5 link__sidebar"  
+                                data-bs-toggle="modal" data-bs-target="#SairConta"
+                            >
+                                Sair da conta
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Modal para Sair da conta -->
+                <div class="modal fade" id="SairConta" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <!-- Header do modal -->
+                            <div class="modal-header fundo__escuro">
+                                <div class="d-flex justify-content-center modal-body">
+                                    <img src="../../../img/assets/Logo.svg" alt="Logo da BWarts" style="width: 13rem;">
+                                </div>
+                                <button id="fechar_modal" type="button" class="btn-close" data-bs-theme="dark" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            
+                            <!-- Corpo do modal -->
+                            <div class="modal-body d-flex flex-column align-items-center text-center px-4 py-4 gap-3">
+                                <!-- Ícone -->
+                                <div class="rounded-circle d-flex align-items-center justify-content-center"
+                                    style="width:72px; height:72px; background:#fff5e6; border: 2px solid #FF8E1C;">
+                                    <i class="bi bi-box-arrow-right" style="font-size:2rem; color:#FF8E1C;"></i>
+                                </div>
+
+                                <!-- Texto -->
+                                <div>
+                                    <h1 class="fw-bold mb-1 fs-4" style="font-family:'Syne',sans-serif; color:#222;">
+                                        Sair da conta?
+                                    </h1>
+                                </div>
+
+                                <!-- Botões de confirmação -->
+                                <div class="modal-body">
+                                    <button id="sair_conta" type="button" class="btn btn-success" data-bs-dismiss="modal"><i class="bi bi-check-circle-fill"></i> Confirmar</button>
+                                    <button id="cancelar_saida" type="button" class="btn btn-outline-danger"><i class="bi bi-x-circle-fill"></i> Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Dados do usuário -->
+            <main class="flex-grow-1 p-2 p-sm-5">
+                <h1 class="h3 fw-bold pb-1 divisoria__titulo">Relatório de vendas</h1>
+            </main>
+        </section>
+
+        <section id="footer"></section>
+    </body>
+</html>
