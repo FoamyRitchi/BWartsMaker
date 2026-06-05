@@ -6,10 +6,10 @@
 
         <link rel="stylesheet" href="../styles/forms.css">
         
+        <!-- Configurações iniciais -->
         <script src="../../js/global/include.js" defer></script>
         <script src="../../js/global/fetch.js" defer></script>
-        <script src="../../js/global/preferenciaFonte.js" defer></script>
-
+        
         <!-- Validação de inputs -->
         <script src="../../js/validacoes/validacaoLogin.js" defer></script>
 
@@ -26,8 +26,8 @@
                         <img src="../../img/assets/Logo.svg" alt="Logo BWarts" class="logo">
 
                         <!-- Inputs do usuário -->
-                        <div class="mb-md-5 mt-md-4">
-                            <h4 class="fw-semibold mb-4 mt-5 text-uppercase">Login</h4>
+                        <div class="my-3">
+                            <h4 class="mb-3 mt-0 text-uppercase fs-6">Login</h4>
 
                             <!-- E-mail -->
                             <div class="mb-3">
@@ -39,13 +39,13 @@
                                 <input type="password" id="senha_user" name="senha_user" placeholder="Senha" class="form-control" required/>
                                 <span class="erro" id="erro_senha"></span>
                             </div>
-                            <span class="erro" id="erro_email"></span>
-                            <!-- ### Quando haver verificação no banco de dados: ### -->
-                            <!-- <span class="erro" id="erro_login"></span> -->
+                            <span class="erro" id="erro_login"></span>
 
-                            <!-- Botão entrar -->
-                            <div class="mt-4">
-                                <button class="btn text-white btn-outline btn-lg px-4 border-2 botao__form" id="botao_login" type="submit">Entrar</button>
+                            <!-- Botão para passar para próxima página -->
+                            <div class="mt-3 d-flex w-100 justify-content-end">
+                                <button class="btn text-white btn-outline px-3 border-2 botao__form" id="botao_login" type="submit">
+                                    Entrar
+                                </button>
                             </div>
                         </div>
 

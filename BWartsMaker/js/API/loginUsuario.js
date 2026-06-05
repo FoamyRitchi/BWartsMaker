@@ -16,12 +16,13 @@ async function realizarLogin(event) {
 
     event.preventDefault();
 
-    const erroElement = document.getElementById("erro_email");
+    // Container da mensagem de erro para exibir ao usuário
+    const erro_login = document.getElementById("erro_login");
 
     try {
 
-        if (erroElement) {
-            erroElement.textContent = "";
+        if (erro_login) {
+            erro_login.textContent = "";
         }
 
         const email = document
@@ -62,7 +63,7 @@ async function realizarLogin(event) {
         if (!response.ok) {
             throw new Error(
                 data.message ||
-                "Email ou senha inválidos."
+                "Email e/ou senha inválidos."
             );
         }
 
@@ -75,10 +76,10 @@ async function realizarLogin(event) {
 
     } catch (error) {
 
-        console.error("Erro no login:", error);
+        erroLogin("E-mail e/ou senha inválidos.")
 
-        if (erroElement) {
-            erroElement.textContent =
+        if (erro_login) {
+            erro_login.textContent =
                 error.message || "Erro ao realizar login.";
         }
     }
