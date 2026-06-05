@@ -83,15 +83,15 @@
 
                                 <!-- Texto -->
                                 <div>
-                                    <h1 class="fw-bold mb-1 fs-4" style="font-family:'Syne',sans-serif; color:#222;">
+                                    <h1 class="fw-bold mb-1 fs-4" style="color:#222;">
                                         Sair da conta?
                                     </h1>
                                 </div>
 
                                 <!-- Botões de confirmação -->
                                 <div class="modal-body">
-                                    <button id="sair_conta" type="button" class="btn btn-success" data-bs-dismiss="modal"><i class="bi bi-check-circle-fill"></i> Confirmar</button>
                                     <button id="cancelar_saida" type="button" class="btn btn-outline-danger"><i class="bi bi-x-circle-fill"></i> Cancelar</button>
+                                    <button id="sair_conta" type="button" class="btn btn-success" data-bs-dismiss="modal"><i class="bi bi-check-circle-fill"></i> Confirmar</button>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
 
             <!-- Cadastro de produto -->
             <main class="flex-grow-1 p-2 p-sm-5">
-                <h1 class="h3 fw-bold pb-1 divisoria__titulo">Cadastro de produto</h1>
+                <h1 class="h4 fw-bold pb-1 divisoria__titulo">Cadastro de produto</h1>
 
                 <div class="w-100 rounded-4 p-4 sombra__card">
                     <form id="form_cadastrar_produto" action="#" method="post" class="d-flex">
@@ -167,10 +167,48 @@
                         </div>
                     </form> 
 
+                    <!-- Modal: confirmar cadastro de produto -->
+                    <div class="modal fade" id="confirmar_cadastro" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-scrollable">
+                            <div class="modal-content">
+
+                                <!-- Header do modal -->
+                                <div class="modal-header fundo__escuro">
+                                    <div class="d-flex justify-content-center modal-body">
+                                        <img src="../../../img/assets/Logo.svg" alt="Logo da BWarts" style="width: 13rem;">
+                                    </div>
+                                    <button id="fechar_modal" type="button" class="btn-close" data-bs-theme="dark" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                
+                                <!-- Corpo do modal -->
+                                <div class="modal-body d-flex flex-column align-items-center text-center px-4 py-4 gap-3">
+                                    <!-- Ícone -->
+                                    <div class="rounded-circle d-flex align-items-center justify-content-center"
+                                        style="width:72px; height:72px; background:#fff5e6; border: 2px solid #FF8E1C;">
+                                        <i class="bi bi-clipboard2-check" style="font-size:2rem; color:#FF8E1C;"></i>
+                                    </div>
+
+                                    <!-- Texto -->
+                                    <div>
+                                        <h1 class="fw-bold mb-1 fs-4" style="color:#222;">
+                                            Confirmar cadastro de produto?
+                                        </h1>
+                                    </div>
+
+                                    <!-- Botões de confirmação -->
+                                    <div class="modal-body">
+                                        <button id="cancelar_cadastro_produto" type="button" class="btn btn-outline-danger"><i class="bi bi-x-circle-fill"></i> Cancelar</button>
+                                        <button id="confirmar_cadastro_produto" type="button" class="btn btn-success" data-bs-dismiss="modal"><i class="bi bi-check-circle-fill"></i> Confirmar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Botões de envio ou cancelamento -->
                     <div class="d-flex justify-content-end gap-3 mt-1">
                         <button id="botao_cancelar_cadastro" class="btn text-black px-3 botao__cancelar" type="button">Cancelar</button>
-                        <button id="botao_cadastrar_produto" class="btn text-white btn-outline px-3 border-2 botao__preto__laranja" type="submit">Cadastrar produto</button>
+                        <button id="botao_cadastrar_produto" class="btn text-white btn-outline px-3 border-2 botao__preto__laranja" type="submit" data-bs-toggle="modal" data-bs-target="#confirmar_cadastro">Cadastrar produto</button>
                     </div>
                 </div>
             </main>

@@ -36,7 +36,7 @@ function atualizarIcone() {
 
 // Recolher menu automaticamente quando atingir tela de tablet
 function recolherMenuAutomatico() {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 1025) {
         sidebar.classList.add("recolhida");
     } else {
         sidebar.classList.remove("recolhida");

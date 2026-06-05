@@ -10,6 +10,7 @@
         
         <!-- Estilização -->
         <link rel="stylesheet" href="../../styles/perfil.css">
+        <link rel="stylesheet" href="produtos.css">
 
         <!-- Animação sidebar -->
         <script src="../../../js/perfil_visao_geral/recolherSidebar.js" defer></script>
@@ -86,8 +87,8 @@
 
                                 <!-- Botões de confirmação -->
                                 <div class="modal-body">
-                                    <button id="sair_conta" type="button" class="btn btn-success" data-bs-dismiss="modal"><i class="bi bi-check-circle-fill"></i> Confirmar</button>
                                     <button id="cancelar_saida" type="button" class="btn btn-outline-danger"><i class="bi bi-x-circle-fill"></i> Cancelar</button>
+                                    <button id="sair_conta" type="button" class="btn btn-success" data-bs-dismiss="modal"><i class="bi bi-check-circle-fill"></i> Confirmar</button>
                                 </div>
                             </div>
                         </div>
@@ -95,9 +96,125 @@
                 </div>
             </nav>
 
-            <!-- Dados do usuário -->
+            <!-- Lista dos produtos cadastrados -->
             <main class="flex-grow-1 p-2 p-sm-5">
-                <h1 class="h3 fw-bold pb-1 divisoria__titulo">Visão geral</h1>
+                <h1 class="h4 fw-bold pb-1 divisoria__titulo">Produtos cadastrados</h1>
+
+                <div class="w-100 rounded-4 mt-3 p-4 sombra__card">
+
+                    <!-- Search bar e botão de procura -->
+                    <div class="d-flex justify-content-between pb-2 mb-3">
+                        <search class="d-flex align-items-center gap-2">
+                            <i class="bi bi-search fs-6" style="color: #535353;"></i>
+                            <input class="form-control me-2 opacity-75 w-100" type="search" placeholder="Buscar por nome..."/>
+                        </search>
+
+                        <button class="btn text-white fw-bold botao__laranja" onclick="window.location.href='../cadastrar_produto/cadastrar_produto.html'" style="font-size: 0.8rem;">
+                            <i class="bi bi-plus"></i> Novo produto
+                        </button>
+                    </div>
+                    
+                    <div class="table-responsive">
+
+
+                    <!-- Produtos cadastrados -->
+                    <table class="table table-hover align-middle">
+                        <!-- colunas -->
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Produto</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col" class="text-center">Preço</th>
+                                <th scope="col" class="text-center">Estoque</th>
+                                <th scope="col" class="text-center">Status</th>
+                                <th scope="col" class="text-center">Ações</th>
+                            </tr>
+                        </thead>
+
+                        <!-- Linhas -->
+                        <tbody>
+                            <tr>
+                                <!-- ID -->
+                                <th scope="row">1</th>
+                                <!-- Produto -->
+                                <td>
+                                    <img class="me-1 rounded-2" src="../../../img/assets/dinossauro_mdf.jpg" alt="Dinossauro de mdf">
+                                    <span>Dinossauro daora de MDF de exemplo muito bacana</span>
+                                </td>
+                                <!-- Categoria -->
+                                <td><span>Decoração</span></td>
+                                <!-- Preço -->
+                                <td class="text-center"><span>R$67,00</span></td>
+                                <!-- Quantidade -->
+                                <td class="text-center"><span>67</span></td>
+                                <!-- Status -->
+                                <td class="text-center"><span class="status__ativo py-1 px-2">ativo</span></td>
+                                <!-- Botões de ação -->
+                                <td class="text-center">
+                                    <button title="Editar produto" class="botao__editar">
+                                        <i class="bi bi-pencil-square fs-5"></i>
+                                    </button>
+                                    <button title="Remover produto" class="botao__excluir">
+                                        <i class="bi bi-trash fs-5"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <!-- ID -->
+                                <th scope="row">2</th>
+                                <!-- Produto -->
+                                <td>
+                                    <img class="me-1 rounded-2" src="../../../img/assets/batman_chaveiro.jpg" alt="Dinossauro de mdf">
+                                    <span>Chaveiro Batman</span>
+                                </td>
+                                <!-- Categoria -->
+                                <td><span>Decoração</span></td>
+                                <!-- Preço -->
+                                <td class="text-center"><span>R$10,90</span></td>
+                                <!-- Quantidade -->
+                                <td class="text-center"><span>0</span></td>
+                                <!-- Status -->
+                                <td class="text-center"><span class="status__inativo py-1 px-2">Inativo</span></td>
+                                <!-- Botões de ação -->
+                                <td class="text-center">
+                                    <button title="Editar produto" class="botao__editar">
+                                        <i class="bi bi-pencil-square fs-5"></i>
+                                    </button>
+                                    <button title="Remover produto" class="botao__excluir">
+                                        <i class="bi bi-trash fs-5"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <!-- ID -->
+                                <th scope="row">3</th>
+                                <!-- Produto -->
+                                <td>
+                                    <img class="me-1 rounded-2" src="../../../img/assets/box_madeira.jpg" alt="Dinossauro de mdf">
+                                    <span>Caixa de madeira 30x20x30cm</span>
+                                </td>
+                                <!-- Categoria -->
+                                <td><span>Decoração</span></td>
+                                <!-- Preço -->
+                                <td class="text-center"><span>R$33,50</span></td>
+                                <!-- Quantidade -->
+                                <td class="text-center"><span>3</span></td>
+                                <!-- Status -->
+                                <td class="text-center"><span class="status__alerta py-1 px-2">Alerta</span></td>
+                                <!-- Botões de ação -->
+                                <td class="text-center">
+                                    <button title="Editar produto" class="botao__editar">
+                                        <i class="bi bi-pencil-square fs-5"></i>
+                                    </button>
+                                    <button title="Remover produto" class="botao__excluir">
+                                        <i class="bi bi-trash fs-5"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </main>
         </section>
 

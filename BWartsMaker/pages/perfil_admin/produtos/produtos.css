@@ -1,0 +1,56 @@
+/* === TABELA === */
+thead tr th {
+    border-bottom: 2px solid var(--laranja--detalhes) !important;
+}
+
+td img {
+    width: 80px;
+    height: 80px;
+}
+
+
+
+/* === BOTTONS DE STATUS === */
+.status__ativo {
+    color: green;
+    border-radius: 50px;
+    border: 1px solid green ;
+    background-color: rgb(194, 255, 194) !important;
+}
+
+.status__inativo {
+    color: rgb(206, 0, 0);
+    border-radius: 50px;
+    border: 1px solid rgb(206, 0, 0);
+    background-color: rgb(255, 194, 194) !important;
+}
+
+.status__alerta {
+    color: #d89700;
+    border-radius: 50px;
+    border: 1px solid #d89700;
+    background-color: rgb(255, 243, 108) !important;
+}
+
+
+
+/* === BOTÕES DE EDIÇÃO E EXCLUSÃO ===  */
+.botao__editar, .botao__excluir {
+    color: #525252;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 1px solid #999;
+    background-color: transparent;
+}
+
+.botao__editar:hover {
+    background-color: #ffb30019;
+    color: rgb(255, 145, 0);
+    border-color: rgb(255, 145, 0);
+}
+
+.botao__excluir:hover {
+    color: red;
+    border-color: Red;
+    background-color: #ff000019;
+}
