@@ -12,16 +12,20 @@ const texto_icone_etapa2 = document.getElementById("texto_icone_etapa2");
 const botao_proxima_etapa = document.getElementById("botao_proxima_etapa");
 const botao_voltar_etapa = document.getElementById("botao_voltar_etapa");
 
+// Botão de cadastro
+const botao_cadastrar = document.getElementById("botao_cadastrar");
+
 alterarEtapa(1);
 
 botao_proxima_etapa.addEventListener("click", () => {
-    alterarEtapa(2);
+    verificarPassagemEtapa()
 })
 
 botao_voltar_etapa.addEventListener("click", () => {
     alterarEtapa(1);
 })
 
+// Alterar entre etapas 1 e 2
 function alterarEtapa(etapa){
     // Dados pessoais
     if(etapa === 1) {
@@ -51,3 +55,68 @@ function alterarEtapa(etapa){
         texto_icone_etapa1.style.color = "white";
     }
 }
+
+function verificarPassagemEtapa(){
+    // Dados pessoais
+    nome_user.dispatchEvent(new Event("change"));
+    email_user.dispatchEvent(new Event("change"));
+    cpf_user.dispatchEvent(new Event("change"));
+    erro_cpf_formato.dispatchEvent(new Event("change"));
+    ddd_user.dispatchEvent(new Event("change"));
+    telefone_user.dispatchEvent(new Event("change"));
+    senha_user.dispatchEvent(new Event("change"));
+    confirmar_senha.dispatchEvent(new Event("change"));
+    dataNasc_user.dispatchEvent(new Event("change"));
+
+    const erros = [
+        erro_nome, 
+        erro_email,
+        erro_cpf_formato, 
+        erro_cpf, 
+        erro_ddd,
+        erro_telefone, 
+        erro_senha_fraca, 
+        erro_senha_tamanho, 
+        erro_confirmar,
+        erro_dataNasc_user
+    ];
+
+    // Verifica se algum elemento está com display block
+    const temErro = erros.some(erro => erro.style.display === "block");
+    
+    if(temErro){
+        return false
+    } else {
+        alterarEtapa(2)
+    }
+}
+
+// Bloquear envio de formulário se houver campos inválidos
+botao_cadastrar.addEventListener("click", (e) => {
+    // Parar envio de formulário
+    e.preventDefault();
+
+    // Dispara as validações em todos os campos antes de verificar
+    // Endereço
+    nome_rua.dispatchEvent(new Event("change"));
+    nome_bairro.dispatchEvent(new Event("change"));
+    nome_cidade.dispatchEvent(new Event("change"));
+    nome_estado.dispatchEvent(new Event("change"));
+    cep_endereco.dispatchEvent(new Event("change"));
+
+    // Verifica se algum erro está visível
+    const erros = [
+        erro_nome_rua,
+        erro_nome_bairro,
+        erro_nome_cidade,
+        erro_nome_estado,
+        erro_cep_endereco
+    ];
+
+    // Verifica se algum elemento está com display block
+    const temErro = erros.some(erro => erro.style.display === "block");
+
+    if (!temErro) {
+        window.location.href = "form_login.html";
+    }
+});

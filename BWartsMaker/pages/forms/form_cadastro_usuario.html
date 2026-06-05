@@ -23,7 +23,7 @@
         <main>
             <form method="post" id="cadastro_usuario" class="container py-5 d-flex justify-content-center align-items-center">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                    <div class="card-body p-5 text-center text-white shadow rounded fundo__escuro" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center text-white shadow rounded fundo__escuro">
                         <!-- Logo BWarts -->
                         <img src="../../img/assets/Logo.svg" alt="Logo BWarts" class="logo">
 
@@ -60,6 +60,7 @@
                                     <span class="erro" id="erro_email"></span>
                                 </div>
 
+                                <!-- Data de nascimento -->
                                 <div class="mb-3">
                                     <input type="date" id="dataNasc_user" name="dataNasc_user" placeholder="Data de nascimento" class="form-control" required/>
                                     <span class="erro" id="erro_dataNasc_user"></span>
@@ -96,7 +97,7 @@
                                 <span class="erro" id="erro_senha_tamanho"></span>
                                 <span class="erro" id="erro_confirmar"></span>
 
-                                <!-- Botão confirmar cadastro -->
+                                <!-- Botão para passar para próxima página -->
                                 <div class="mt-3 d-flex w-100 justify-content-end">
                                     <button class="btn text-white btn-outline px-3 border-2 botao__form" id="botao_proxima_etapa" type="button">
                                         Próximo<i class="bi bi-arrow-right-short"></i>
@@ -106,10 +107,13 @@
 
                             <!-- ETAPA 2 - ENDEREÇO -->
                             <div id="etapa2" style="display: none;">
+                                <!-- Nome da rua -->
                                 <div class="mb-3">
                                     <input type="text" id="nome_rua" name="nome_rua" placeholder="Rua" class="form-control" required />
+                                    <span class="erro" id="erro_nome_rua"></span>
                                 </div>
 
+                                <!-- Número do endereço e nome do bairro -->
                                 <div class="row g-2 mb-3">
                                     <div class="col-6">
                                         <input type="text" id="numero_endereco" name="numero_endereco" placeholder="Número" class="form-control" required />
@@ -117,8 +121,10 @@
                                     <div class="col-6">
                                         <input type="text" id="nome_bairro" name="nome_bairro" placeholder="Bairro" class="form-control" required />
                                     </div>
+                                    <span class="erro" id="erro_nome_bairro"></span>
                                 </div>
 
+                                <!-- Nome da cidade e sigla do estado -->
                                 <div class="row g-2 mb-3">
                                     <div class="col-8">
                                         <input type="text" id="nome_cidade" name="nome_cidade" placeholder="Cidade" class="form-control" required />
@@ -126,15 +132,19 @@
                                     <div class="col-4">
                                         <input type="text" id="nome_estado" name="nome_estado" placeholder="UF" class="form-control" required />
                                     </div>
+                                    <span class="erro" id="erro_nome_cidade"></span>
+                                    <span class="erro" id="erro_nome_estado"></span>
                                 </div>
 
+                                <!-- CEP -->
                                 <div class="mb-3">
                                     <input type="text" id="cep_endereco" name="cep_endereco" placeholder="CEP" class="form-control" required />
+                                    <span class="erro" id="erro_cep_endereco"></span>
                                 </div>
                                 
-                                <!-- Botão confirmar cadastro -->
+                                <!-- Botão voltar e confirmar cadastro -->
                                 <div class="mt-3 d-flex w-100 justify-content-between">
-                                    <button class="btn text-white btn-outline px-3 border-2 botao__form" id="botao_voltar_etapa" type="submit">
+                                    <button class="btn text-white btn-outline px-3 border-2 botao__form" id="botao_voltar_etapa" type="button">
                                         <i class="bi bi-arrow-left-short"></i>Voltar
                                     </button>
                                     <button class="btn text-white btn-outline px-3 border-2 botao__form" id="botao_cadastrar" type="submit">

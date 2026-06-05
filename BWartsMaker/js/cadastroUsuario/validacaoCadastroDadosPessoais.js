@@ -1,23 +1,24 @@
 // Variáveis de entrada de dados do usuário
-let nome_user = document.getElementById("nome_user");
-let email_user = document.getElementById("email_user");
-let cpf_user = document.getElementById("cpf_user");
-let ddd_user = document.getElementById("ddd_telefone");
-let telefone_user = document.getElementById("numero_telefone");
-let senha_user = document.getElementById("senha_user");
-let confirmar_senha = document.getElementById("confirmar_senha");
-let botao_cadastrar = document.getElementById("botao_cadastrar");
+const nome_user = document.getElementById("nome_user");
+const email_user = document.getElementById("email_user");
+const cpf_user = document.getElementById("cpf_user");
+const ddd_user = document.getElementById("ddd_telefone");
+const telefone_user = document.getElementById("numero_telefone");
+const senha_user = document.getElementById("senha_user");
+const confirmar_senha = document.getElementById("confirmar_senha");
+const dataNasc_user = document.getElementById("dataNasc_user");
 
 // Variáveis de mensagens de erro
-let erro_nome = document.getElementById("erro_nome");
-let erro_email = document.getElementById("erro_email");
-let erro_cpf = document.getElementById("erro_cpf");
-let erro_cpf_formato = document.getElementById("erro_cpf_formato");
-let erro_ddd = document.getElementById("erro_ddd");
-let erro_senha_fraca = document.getElementById("erro_senha_fraca");
-let erro_senha_tamanho = document.getElementById("erro_senha_tamanho");
-let erro_confirmar = document.getElementById("erro_confirmar");
-let erro_telefone = document.getElementById("erro_telefone");
+const erro_nome = document.getElementById("erro_nome");
+const erro_email = document.getElementById("erro_email");
+const erro_cpf = document.getElementById("erro_cpf");
+const erro_cpf_formato = document.getElementById("erro_cpf_formato");
+const erro_ddd = document.getElementById("erro_ddd");
+const erro_senha_fraca = document.getElementById("erro_senha_fraca");
+const erro_senha_tamanho = document.getElementById("erro_senha_tamanho");
+const erro_confirmar = document.getElementById("erro_confirmar");
+const erro_telefone = document.getElementById("erro_telefone");
+const erro_dataNasc_user = document.getElementById("erro_dataNasc_user");
 
 // Configuração de esconder os erros
 erro_nome.style.display = "none";
@@ -29,6 +30,7 @@ erro_telefone.style.display = "none";
 erro_senha_fraca.style.display = "none";
 erro_senha_tamanho.style.display = "none";
 erro_confirmar.style.display = "none";
+erro_dataNasc_user.style.display = "none";
 
 // Permitir que o usuário use apenas letras para digitar o nome
 nome_user.addEventListener("input", () => {
@@ -91,7 +93,6 @@ cpf_user.addEventListener("change", () => {
     if (sequenciasInvalidas.includes(cpf_user.value)) {
         erro_cpf_formato.style.display = "block";
         erro_cpf_formato.textContent = "ERRO: CPF inválido";
-
         return;
     }
 
@@ -104,12 +105,13 @@ cpf_user.addEventListener("change", () => {
 
     let resto = (soma * 10) % 11;
     
-    if (resto === 10 || resto === 11) resto = 0;
+    if (resto === 10 || resto === 11) {
+        resto = 0
+    };
 
     if (resto !== parseInt(cpf_user.value[9])) {
         erro_cpf_formato.style.display = "block";
         erro_cpf_formato.textContent = "ERRO: CPF inválido";
-
         return;
     }
 
@@ -127,7 +129,6 @@ cpf_user.addEventListener("change", () => {
     if (resto !== parseInt(cpf_user.value[10])) {
         erro_cpf_formato.style.display = "block";
         erro_cpf_formato.textContent = "ERRO: CPF inválido";
-
         return;
     }
 
@@ -200,31 +201,20 @@ confirmar_senha.addEventListener("change", () => {
     }
 });
 
-// Bloquear envio se houver campos inválidos
-botao_cadastrar.addEventListener("click", (e) => {
-    e.preventDefault();
+// Verifica se o usuário tem 18 anos ou mais
+dataNasc_user.addEventListener("blur", () => {
+    const dataNascimentoUser = new Date(dataNasc_user.value);
+    const hoje = new Date();
 
-    // Dispara as validações em todos os campos antes de verificar
-    nome_user.dispatchEvent(new Event("change"));
-    email_user.dispatchEvent(new Event("change"));
-    cpf_user.dispatchEvent(new Event("change"));
-    ddd_user.dispatchEvent(new Event("change"));
-    telefone_user.dispatchEvent(new Event("change"));
-    senha_user.dispatchEvent(new Event("change"));
-    confirmar_senha.dispatchEvent(new Event("change"));
+    dataNascimentoUser.setFullYear(dataNascimentoUser.getFullYear() + 18);
 
-    // Verifica se algum erro está visível
-    const erros = [
-        erro_nome, erro_email, erro_cpf, erro_ddd,
-        erro_telefone, erro_senha_fraca, erro_senha_tamanho, erro_confirmar
-    ];
-
-    const temErro = erros.some(erro => erro.style.display === "block");
-
-    if (!temErro) {
-        window.location.href = "form_login.html";
+    if(hoje < dataNascimentoUser){
+        erro_dataNasc_user.style.display = "block";
+        erro_dataNasc_user.textContent = "ERRO: Usuário deve ter mais de 18 anos";
+    } else {
+        erro_dataNasc_user.style.display = "none";
     }
-});
+})
 
 // Função para filtrar o input deixando apenas números
 function apenasNumeros(inputParaFiltrar) {
@@ -241,7 +231,7 @@ function verificarInputCorreto(elementoErro, input, inputFiltrado, mensagem) {
     }
 }
 
-// Limita o tamanho de um input para ser estritamente igual ao limite
+// Faz o tamanho de um input ser estritamente igual ao limite
 function limitarTamanhoInput(elementoErro, input, mensagem, limiteTamanho) {
     if (input.length !== limiteTamanho) {
         elementoErro.style.display = "block";
