@@ -1,131 +1,102 @@
-:root{
-    --link--selecionado: #FFAE00;
+/* === CONTAINER SIDEBAR === */
+#sidebar {
+    width: 260px;
+    transition: 0.3s ease;
+    background: linear-gradient(150deg, #FF8E1C 0%, #D96C00 100%);
+}
+
+#sidebar.recolhida {
+    width: 64px;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar.recolhida .link__sidebar,
+#sidebar.recolhida .titulo__sidebar {
+    opacity: 0;
 }
 
 
 
-/* === CONTEÚDO === */
-/* Seção completa do perfil do usuário */
-.perfil{
-    display: flex;
-    min-height: 100vh;
-    background-color: var(--cor--fundo--branco);
-}
-
-/* Conteúdo principal do perfil */
-.perfil__conteudo{
-    flex: 1;
-    padding: 1rem 3rem;
-}
-
-.perfil__conteudo__titulo{
-    width: 100%;
-    border-bottom: 2px solid #D9D9D9;
-}
-
-.perfil__conteudo__titulo h1{
-    font-weight: 400;
-    margin-bottom: 0.5rem;
-}
-
-.perfil__conteudo__subtitulo{
-    width: 100%;
-    margin-top: 1rem;
-    border-bottom: 2px solid #D9D9D9;
-}
-
-.perfil__conteudo__subtitulo h2{
-    font-weight: 400;
-    margin-bottom: 0.5rem;
-}
-
-
-
-/* === CLASSES PADRONIZADAS === */
-/* Alinhar itens com flexblox */
-.flex{
-    display: flex;
-}
-
-/* Alinhar elementos com flex-direction column */
-.flex__col{
-    display: flex;
-    flex-direction: column;
-}
-
-/* Tirar estilização de links da navbar*/
-a{
-    color: white;
-    text-decoration: none;
-}
-
-/* Separar a página do perfil que está selecionada*/
-.selecionado{
-    background-color: var(--link--selecionado);
-}
-
-/* Aplicar espaçamento entre uma label e seu input no forms*/
-.label__input{
-    gap: 0.3rem;
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-/* === NAVBAR ===*/
-/* Navbar da lateral esquerda */
-.nav{
-    gap: 4rem;
-    max-height: 100%;
-    padding-top: 5rem;
-    background: #FF8E1C;
-    flex-direction: column;
-    background: linear-gradient(120deg,rgba(255, 142, 28, 1) 0%, rgba(217, 108, 0, 1) 90%, rgba(255, 128, 0, 1) 100%);
-}
-
-.nav__imagem__container{
-    max-width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-}
-
-.nav__imagem__perfil{
-    width: 10rem;
-    height: 10rem;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px 1px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.nav__links{
-    width: 100%;
-    padding-bottom: 3rem;
-}
-
-.nav__link{
-    padding: 0.5rem 4rem 0.5rem 3rem;
-}
-
-.nav__link:hover{
-    background-color: var(--link--selecionado);
+/* === BOTÃO RECOLHER SIDEBAR === */
+.botao_recolher {
+    border: none;
+    width: 36px;
+    height: 36px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
     transition: 0.2s ease;
+    background: rgba(255,255,255,0.2);
+}
+
+.botao_recolher:hover {
+    background: rgba(255,255,255,0.35);
 }
 
 
 
-@media screen and (max-width: 1023px) {
-    .nav__imagem__container, .nav__imagem__perfil{
-        display: none;
+/* === LINKS DA SIDEBAR === */
+.links__sidebar {
+    list-style: none;
+}
+
+.links__sidebar li a {
+    display: flex;
+    color: white;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.7rem 1.5rem;
+}
+
+.links__sidebar li a:hover {
+    background: rgba(255,255,255,0.18);
+}
+
+.links__sidebar li a.active {
+    border-left: 3px solid white;
+    background: rgba(255,255,255,0.22);
+}
+
+.titulo__sidebar {
+    padding: 1.2rem 1.5rem 0.3rem;
+}
+
+
+/* === DIVISÓRIA DO TÍTULO === */
+.divisoria__titulo {
+    border-bottom: 2px solid #E0E0E0;
+}
+
+
+
+/* === MOBILE === */
+@media (max-width: 991.98px) {
+    #sidebar {
+        width: 64px;
+        min-width: 64px;
     }
 
-    .nav__link{
-        font-size: 1rem;
-        padding: 0.5rem 1rem 0.5rem 1rem;
+    #sidebar .titulo__sidebar,
+    #sidebar .link__sidebar {
+        opacity: 0;
+        pointer-events: none;
     }
 
-    .nav{
-        justify-content: space-around;
+    #sidebar:not(.recolhida) {
+        width: 260px;
+        min-width: 260px;
+    }
+
+    #sidebar:not(.recolhida) {
+        opacity: 1;
+        height: auto;
+        pointer-events: auto;
+    }
+
+    #sidebar:not(.recolhida) .titulo__sidebar,
+    #sidebar:not(.recolhida) .link__sidebar{
+        opacity: 1;
+        pointer-events: auto;
     }
 }

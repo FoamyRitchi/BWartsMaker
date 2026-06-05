@@ -104,6 +104,15 @@ body{
     transform: translateY(-5%);
 }
 
+.botao__preto__laranja{
+    background-color: #343434 !important;
+    border: 5px solid var(--laranja--detalhes) !important;
+}
+
+.botao__preto__laranja:hover{
+    background-color: var(--laranja--detalhes) !important;
+}
+
 
 
 /* === MENSAGEM DE ERRO PARA VERIFICAÇÕES JS === */
