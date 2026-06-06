@@ -79,7 +79,7 @@ async function listarProdutos() {
                     </td>
 
                     <td class="text-center">
-                        <span class="${statusClasse}">
+                        <span class="py-1 px-2 ${statusClasse}">
                             ${statusTexto}
                         </span>
                     </td>
