@@ -56,30 +56,6 @@
 
 
 
-/* === SCROLL BAR DESCRIÇÃO/AVALIAÇÃO === */
-/* Estilização do tamanho do scroll de Descrições e de Avaliações*/
-.scroll::-webkit-scrollbar{
-    width: 4px;
-}
-
-/* Estilização do trilho do scroll*/
-.scroll::-webkit-scrollbar-track{
-    border-radius: 10px;
-}
-
-/* Estilização da "maçaneta" do scroll*/
-.scroll::-webkit-scrollbar-thumb{
-    border-radius: 10px;
-    background: var(--laranja--detalhes);
-}
-
-/* Estilização da "maçaneta" do scroll quando cursos por cima*/
-.scroll::-webkit-scrollbar-thumb:hover{
-    background: rgb(255, 194, 82);
-}
-
-
-
 /* Media querie para desktop */
 @media (min-width: 768px){
     .produto__imagens {
