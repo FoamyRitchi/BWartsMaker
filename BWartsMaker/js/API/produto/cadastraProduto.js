@@ -3,7 +3,7 @@ const API = "https://bwartsmaker-back-end-production.up.railway.app";
 document.addEventListener("DOMContentLoaded", () => {
 
     const botaoCadastrar =
-        document.getElementById("botao_cadastrar_produto");
+        document.getElementById("botao_modal_confirmar_cadastro_produto");
 
     if (!botaoCadastrar) {
         return;
@@ -75,10 +75,6 @@ async function cadastrarProduto(event) {
             produtoCriado
         );
 
-        alert(
-            "Produto cadastrado com sucesso!"
-        );
-
         document.getElementById(
             "form_cadastrar_produto"
         ).reset();
@@ -87,6 +83,7 @@ async function cadastrarProduto(event) {
 
         console.error(erro);
 
+        // erroCadastro()
         alert(
             "Erro ao cadastrar produto."
         );

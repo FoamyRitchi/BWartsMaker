@@ -1,4 +1,3 @@
-
 let modoEdicao = false;
 
 document.addEventListener("DOMContentLoaded", () => {

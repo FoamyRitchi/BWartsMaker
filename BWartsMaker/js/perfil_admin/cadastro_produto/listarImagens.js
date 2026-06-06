@@ -6,12 +6,17 @@ let arquivosAtivos = [];
 input.addEventListener('change', () => {
     // Criando array com imagens
     const arquivos = Array.from(input.files);
+    
+    // ID para capturar cada botão
+    let id_botao_contador = 0
 
     arquivos.forEach(arquivo => {
         // Lendo imagem
         const reader = new FileReader();
 
         reader.onload = (e) => {
+            id_botao_contador += 1;
+
             // Adiciona o arquivo ao array de ativos
             arquivosAtivos.push(arquivo);
 
@@ -26,6 +31,7 @@ input.addEventListener('change', () => {
 
             // Botão de remoção de imagem
             const btn = document.createElement('button');
+            btn.id = `botao_fechar_miniatura${id_botao_contador}`;
             btn.textContent = '×';
             btn.title = 'Remover imagem';
             btn.addEventListener('click', () => {
@@ -44,9 +50,4 @@ input.addEventListener('change', () => {
     });
 
     input.value = '';
-});
-
-// Teste: Visualizar arquivos que estõ sendo enviados
-document.getElementById('botao_cadastrar_produto').addEventListener('click', () => {
-    console.log('Arquivos a enviar:', arquivosAtivos);
 });

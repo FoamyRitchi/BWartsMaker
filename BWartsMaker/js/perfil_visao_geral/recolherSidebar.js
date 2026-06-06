@@ -4,7 +4,7 @@ const botao_recolher_menu = document.getElementById("botao_recolher_menu");
 const sidebar_icone = document.getElementById("sidebar_icone");
 
 // Botões
-const sair_conta = document.getElementById("sair_conta");
+const sair_conta = document.getElementById("botao_sair_conta");
 const cancelar_saida = document.getElementById("cancelar_saida");
 const fechar_modal = document.getElementById("fechar_modal");
 
@@ -16,6 +16,7 @@ botao_recolher_menu.addEventListener("click", () => {
 
 // Sair da conta
 sair_conta.addEventListener("click", () => {
+    alert("saindo")
     window.location.href = "../forms/form_login.html";
 })
 

@@ -8,11 +8,6 @@
     --cinza--textos: rgb(80, 80, 80);
 }
 
-.form-control:focus, .form-select:focus{
-    border-color: #FF6B00 !important;
-    box-shadow: 0 0 0 0.25rem rgba(255, 107, 0, 0.25) !important;
-}
-
 /* Importando a fonte OpenDyslexic */
 @font-face {
     font-family: 'OpenDyslexic';
@@ -26,6 +21,11 @@
 
 body{
     background-color: var(--cor--fundo--preto);
+}
+
+.form-control:focus, .form-select:focus{
+    border-color: #FF6B00 !important;
+    box-shadow: 0 0 0 0.25rem rgba(255, 107, 0, 0.25) !important;
 }
 
 .divisoria__bottom {
