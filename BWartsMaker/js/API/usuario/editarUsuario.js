@@ -1,3 +1,5 @@
+
+
 let modoEdicao = false;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -172,7 +174,7 @@ async function salvarPerfil() {
             JSON.stringify(usuarioAtualizadoAPI)
         );
 
-        alert("Perfil atualizado com sucesso!");
+        new bootstrap.Modal(document.getElementById("modal_sucesso_edicao")).show();
 
         return true;
 
