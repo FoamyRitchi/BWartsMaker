@@ -13,6 +13,7 @@
 
         <!-- Animação sidebar -->
         <script src="../../../js/global/recolherSidebar.js" defer></script>
+        <script src="../../../js/global/modalSairConta.js" defer></script>
     </head>
 
     <body>
@@ -48,51 +49,12 @@
                     </li>
                     <li>
                         <a>
-                            <button type="button" id="botao_sair" class="btn link-light p-0 fs-5 link__sidebar"  
-                                data-bs-toggle="modal" data-bs-target="#SairConta"
-                            >
+                            <button type="button" id="botao_sair" class="btn link-light p-0 fs-5 link__sidebar" onclick="exibirModalSairConta()">
                                 Sair da conta
                             </button>
                         </a>
                     </li>
                 </ul>
-
-                <!-- Modal para Sair da conta -->
-                <div class="modal fade" id="SairConta" tabindex="-1">
-                    <div class="modal-dialog modal-dialog-scrollable">
-                        <div class="modal-content">
-                            <!-- Header do modal -->
-                            <div class="modal-header fundo__escuro">
-                                <div class="d-flex justify-content-center modal-body">
-                                    <img src="../../../img/assets/Logo.svg" alt="Logo da BWarts" style="width: 13rem;">
-                                </div>
-                                <button id="fechar_modal" type="button" class="btn-close" data-bs-theme="dark" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            
-                            <!-- Corpo do modal -->
-                            <div class="modal-body d-flex flex-column align-items-center text-center px-4 py-4 gap-3">
-                                <!-- Ícone -->
-                                <div class="rounded-circle d-flex align-items-center justify-content-center"
-                                    style="width:72px; height:72px; background:#fff5e6; border: 2px solid #FF8E1C;">
-                                    <i class="bi bi-box-arrow-right" style="font-size:2rem; color:#FF8E1C;"></i>
-                                </div>
-
-                                <!-- Texto -->
-                                <div>
-                                    <h1 class="fw-bold mb-1 fs-4" style="font-family:'Syne',sans-serif; color:#222;">
-                                        Sair da conta?
-                                    </h1>
-                                </div>
-
-                                <!-- Botões de confirmação -->
-                                <div class="modal-body">
-                                    <button id="cancelar_saida" type="button" class="btn btn-outline-danger"><i class="bi bi-x-circle-fill"></i> Cancelar</button>
-                                    <button id="botao_sair_conta" type="button" class="btn btn-success" data-bs-dismiss="modal"><i class="bi bi-check-circle-fill"></i> Confirmar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </nav>
 
             <!-- Dados do usuário -->
