@@ -16,8 +16,7 @@ botao_recolher_menu.addEventListener("click", () => {
 
 // Sair da conta
 sair_conta.addEventListener("click", () => {
-    alert("saindo")
-    window.location.href = "../forms/form_login.html";
+    window.location.href = "../../forms/form_login.html";
 })
 
 // Cancelar saída da conta

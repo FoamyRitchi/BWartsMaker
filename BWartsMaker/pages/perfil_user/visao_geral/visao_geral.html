@@ -5,20 +5,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Configurações iniciais -->
-        <script src="../../js/global/include.js" defer></script>
-        <script src="../../js/global/fetch.js" defer></script>
+        <script src="../../../js/global/include.js" defer></script>
+        <script src="../../../js/global/fetch.js" defer></script>
         
         <!-- Estilização -->
-        <link rel="stylesheet" href="../styles/perfil.css">
+        <link rel="stylesheet" href="../../styles/perfil.css">
         <link rel="stylesheet" href="perfil_user_visao_geral.css">
 
         <!-- Animação sidebar -->
-        <script src="../../js/perfil_visao_geral/recolherSidebar.js" defer></script>
+        <script src="../../../js/global/recolherSidebar.js" defer></script>
 
         <!-- Operações CRUD perfil -->
-        <script src="../../js/API/usuario/perfilUsuario.js" defer></script>
-        <script src="../../js/API/usuario/editarUsuario.js" defer></script>
-        <script src="../../js/API/usuario/excluirUsuario.js" defer></script>
+        <script src="../../../js/API/usuario/perfilUsuario.js" defer></script>
+        <script src="../../../js/API/usuario/editarUsuario.js" defer></script>
+        <script src="../../../js/API/usuario/excluirUsuario.js" defer></script>
     </head>
 
     <body>
@@ -43,12 +43,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../perfil_minhas_compras/minhas_compras.html">
+                        <a href="../minhas_compras/minhas_compras.html">
                             <span class="fs-5 link__sidebar">Minhas compras</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../perfil_suporte/suporte.html">
+                        <a href="../suporte/suporte.html">
                             <span class="fs-5 link__sidebar">Suporte</span>
                         </a>
                     </li>
@@ -70,7 +70,7 @@
                             <!-- Header do modal -->
                             <div class="modal-header fundo__escuro">
                                 <div class="d-flex justify-content-center modal-body">
-                                    <img src="../../img/assets/Logo.svg" alt="Logo da BWarts" style="width: 13rem;">
+                                    <img src="../../../img/assets/Logo.svg" alt="Logo da BWarts" style="width: 13rem;">
                                 </div>
                                 <button id="fechar_modal" type="button" class="btn-close" data-bs-theme="dark" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
@@ -93,7 +93,7 @@
                                 <!-- Botões de confirmação -->
                                 <div class="modal-body">
                                     <button id="cancelar_saida" type="button" class="btn btn-outline-danger"><i class="bi bi-x-circle-fill"></i> Cancelar</button>
-                                    <button id="sair_conta" type="button" class="btn btn-success" data-bs-dismiss="modal"><i class="bi bi-check-circle-fill"></i> Confirmar</button>
+                                    <button id="botao_sair_conta" type="button" class="btn btn-success" data-bs-dismiss="modal"><i class="bi bi-check-circle-fill"></i> Confirmar</button>
                                 </div>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
 
                 <!-- Foto de perfil central -->
                 <div class="d-flex justify-content-center my-3">
-                    <img src="../../img/perfil/perfil.jpg" alt="Foto de perfil" class="foto__perfil">
+                    <img src="../../../img/perfil/perfil.jpg" alt="Foto de perfil" class="foto__perfil">
                 </div>
 
                 <!-- Cards de formulários -->
@@ -200,7 +200,7 @@
                                 <!-- Header do modal -->
                                 <div class="modal-header fundo__escuro">
                                     <div class="d-flex justify-content-center modal-body">
-                                        <img src="../../img/assets/Logo.svg" alt="Logo da BWarts" style="width: 13rem;">
+                                        <img src="../../../img/assets/Logo.svg" alt="Logo da BWarts" style="width: 13rem;">
                                     </div>
                                     <button id="fechar_modal" type="button" class="btn-close" data-bs-theme="dark" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>

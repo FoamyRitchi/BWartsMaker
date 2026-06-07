@@ -102,7 +102,7 @@ async function realizarLogin(event) {
 
         // USUÁRIO COMUM
         window.location.href =
-            "../../pages/perfil_visao_geral/user_visao_geral.html";
+            "../../pages/perfil_user/visao_geral/visao_geral.html";
 
     } catch (error) {
 

@@ -10,12 +10,9 @@
         
         <!-- Estilização -->
         <link rel="stylesheet" href="../../styles/perfil.css">
-        <link rel="stylesheet" href="produtos.css">
 
         <!-- Animação sidebar -->
         <script src="../../../js/global/recolherSidebar.js" defer></script>
-        
-        <script src="../../../js/API/produto/listarProduto.js" defer></script>
     </head>
 
     <body>
@@ -33,20 +30,20 @@
 
                 <!-- Links para outras páginas -->
                 <ul class="p-0 pt-3 w-100 links__sidebar">
-                    <li class="pb-2"><span class="fs-5 d-flex flex-wrap fw-bold text-white text-uppercase titulo__sidebar">Páginas - Admin</span></li>
+                    <li class="pb-2"><span class="fs-5 d-flex flex-wrap fw-bold text-white text-uppercase titulo__sidebar">Páginas - perfil</span></li>
                     <li>
-                        <a href="../vendas/vendas.html">
-                            <span class="fs-5 link__sidebar">Vendas</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../cadastrar_produto/cadastrar_produto.html">
-                            <span class="fs-5 link__sidebar">Cadastrar produto</span>
+                        <a href="../visao_geral/visao_geral.html">
+                            <span class="fs-5 link__sidebar">Visão geral</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="active">
-                            <span class="fs-5 link__sidebar">Lista de produtos</span>
+                            <span class="fs-5 link__sidebar">Minhas compras</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../suporte/suporte.html">
+                            <span class="fs-5 link__sidebar">Suporte</span>
                         </a>
                     </li>
                     <li>
@@ -90,7 +87,7 @@
                                 <!-- Botões de confirmação -->
                                 <div class="modal-body">
                                     <button id="cancelar_saida" type="button" class="btn btn-outline-danger"><i class="bi bi-x-circle-fill"></i> Cancelar</button>
-                                    <button id="sair_conta" type="button" class="btn btn-success" data-bs-dismiss="modal"><i class="bi bi-check-circle-fill"></i> Confirmar</button>
+                                    <button id="botao_sair_conta" type="button" class="btn btn-success" data-bs-dismiss="modal"><i class="bi bi-check-circle-fill"></i> Confirmar</button>
                                 </div>
                             </div>
                         </div>
@@ -98,46 +95,9 @@
                 </div>
             </nav>
 
-            <!-- Lista dos produtos cadastrados -->
+            <!-- Dados do usuário -->
             <main class="flex-grow-1 p-2 p-sm-5">
-                <h1 class="h4 fw-bold pb-1 divisoria__titulo">Produtos cadastrados</h1>
-
-                <div class="w-100 rounded-4 mt-3 p-4 sombra__card">
-
-                    <!-- Search bar e botão de procura -->
-                    <div class="d-flex justify-content-between pb-2 mb-3">
-                        <search class="d-flex align-items-center gap-2">
-                            <i class="bi bi-search fs-6" style="color: #535353;"></i>
-                            <input class="form-control me-2 opacity-75 w-100" type="search" placeholder="Buscar por nome..."/>
-                        </search>
-
-                        <button class="btn text-white fw-bold botao__laranja" onclick="window.location.href='../cadastrar_produto/cadastrar_produto.html'" style="font-size: 0.8rem;">
-                            <i class="bi bi-plus"></i> Novo produto
-                        </button>
-                    </div>
-                    
-                    <div class="tabela scroll pe-3">
-                        <!-- Produtos cadastrados -->
-                        <table class="table table-hover align-middle">
-                            <!-- colunas -->
-                            <thead>
-                                <tr>
-                                    <th scope="col">ID</th>
-                                    <th scope="col">Produto</th>
-                                    <th scope="col">Categoria</th>
-                                    <th scope="col" class="text-center">Preço</th>
-                                    <th scope="col" class="text-center">Estoque</th>
-                                    <th scope="col" class="text-center">Status</th>
-                                    <th scope="col" class="text-center">Ações</th>
-                                </tr>
-                            </thead>
-
-                            <!-- Linhas -->
-                            <tbody id="tabela_produtos">
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                <h1 class="h3 fw-bold pb-1 divisoria__titulo">Minhas compras</h1>
             </main>
         </section>
 
