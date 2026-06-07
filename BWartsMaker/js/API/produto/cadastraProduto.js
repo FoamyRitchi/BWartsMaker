@@ -1,9 +1,12 @@
-const API = "https://bwartsmaker-back-end-production.up.railway.app";
+const API =
+    "https://bwartsmaker-back-end-production.up.railway.app";
 
 document.addEventListener("DOMContentLoaded", () => {
 
     const botaoCadastrar =
-        document.getElementById("botao_modal_confirmar_cadastro_produto");
+        document.getElementById(
+            "botao_modal_confirmar_cadastro_produto"
+        );
 
     if (!botaoCadastrar) {
         return;
@@ -21,47 +24,89 @@ async function cadastrarProduto(event) {
 
     try {
 
-        const produto = {
+        const imagem =
+            window.arquivosAtivos?.[0];
 
-            nome_prod:
-                document.getElementById("nome_prod").value,
+        if (!imagem) {
+            alert("Selecione uma imagem.");
+            return;
+        }
 
-            desc_prod:
-                document.getElementById("desc_prod").value,
+        const nome =
+            document.getElementById("nome_prod").value.trim();
 
-            qntd_prod:
-                Number(
-                    document.getElementById("qntd_prod").value
-                ),
+        const descricao =
+            document.getElementById("desc_prod").value.trim();
 
-            img_prod:
-                document.getElementById("input_imagem").files[0]?.name || "",
+        const quantidade =
+            Number(
+                document.getElementById("qntd_prod").value
+            );
 
-            frete_prod: 0,
+        const valor =
+            Number(
+                document.getElementById("valor_prod").value
+            );
 
-            valor_prod:
-                Number(
-                    document.getElementById("valor_prod").value
-                )
-        };
+        if (!nome) {
+            alert("Informe o nome do produto.");
+            return;
+        }
+
+        const formData =
+            new FormData();
+
+        formData.append(
+            "nome_prod",
+            nome
+        );
+
+        formData.append(
+            "desc_prod",
+            descricao
+        );
+
+        formData.append(
+            "qntd_prod",
+            quantidade
+        );
+
+        formData.append(
+            "valor_prod",
+            valor
+        );
+
+        formData.append(
+            "frete_prod",
+            0
+        );
+
+        formData.append(
+            "imagem",
+            imagem
+        );
 
         console.log(
-            JSON.stringify(produto, null, 2)
+            "Arquivo enviado:",
+            imagem
         );
 
-        const response = await fetch(
-            `${API}/api/produtos`,
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type":
-                        "application/json"
-                },
-                body: JSON.stringify(produto)
-            }
-        );
+        const response =
+            await fetch(
+                `${API}/api/produtos/com-imagem`,
+                {
+                    method: "POST",
+                    body: formData
+                }
+            );
 
         if (!response.ok) {
+
+            const erro =
+                await response.text();
+
+            console.error(erro);
+
             throw new Error(
                 `Erro ${response.status}`
             );
@@ -75,17 +120,32 @@ async function cadastrarProduto(event) {
             produtoCriado
         );
 
-        document.getElementById(
-            "form_cadastrar_produto"
-        ).reset();
+        alert(
+            "Produto cadastrado com sucesso!"
+        );
+
+        document
+            .getElementById(
+                "form_cadastrar_produto"
+            )
+            .reset();
+
+        window.arquivosAtivos = [];
+
+        document.querySelector(
+            ".input__imagem__lista"
+        ).innerHTML = "";
 
     } catch (erro) {
 
-        console.error(erro);
+        console.error(
+            "Erro ao cadastrar:",
+            erro
+        );
 
-        // erroCadastro()
         alert(
+            erro.message ||
             "Erro ao cadastrar produto."
         );
     }
-}
+}   

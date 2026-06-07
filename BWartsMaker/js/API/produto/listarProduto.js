@@ -28,6 +28,13 @@ async function listarProdutos() {
                 "tabela_produtos"
             );
 
+        if (!tabela) {
+            console.error(
+                "Elemento #tabela_produtos não encontrado."
+            );
+            return;
+        }
+
         tabela.innerHTML = "";
 
         produtos.forEach(produto => {
@@ -36,25 +43,37 @@ async function listarProdutos() {
             let statusTexto = "";
 
             if (produto.qntd_prod > 5) {
+
                 statusClasse = "status__ativo";
                 statusTexto = "Ativo";
+
             } else if (produto.qntd_prod > 0) {
+
                 statusClasse = "status__alerta";
                 statusTexto = "Alerta";
+
             } else {
+
                 statusClasse = "status__inativo";
                 statusTexto = "Inativo";
             }
 
+            const imagemProduto =
+                produto.img_prod &&
+                produto.img_prod.trim() !== ""
+                    ? `${API}${produto.img_prod}`
+                    : "../../../img/assets/sem-imagem.png";
+
             tabela.innerHTML += `
                 <tr>
+
                     <th scope="row">
                         ${produto.id_prod}
                     </th>
 
                     <td>
                         <img
-                            src="${produto.img_prod || '../../../img/assets/sem-imagem.png'}"
+                            src="${imagemProduto}"
                             alt="${produto.nome_prod}"
                             class="imagem__produto"
                         >
@@ -65,26 +84,32 @@ async function listarProdutos() {
                     </td>
 
                     <td>
-                        <span>
-                            ${produto.categoria?.nome_categoria || "Sem categoria"}
-                        </span>
+                        ${
+                            produto.categoria?.nome_categoria
+                            || "Sem categoria"
+                        }
                     </td>
 
                     <td class="text-center">
-                        R$ ${Number(produto.valor_prod).toFixed(2)}
+                        R$ ${Number(
+                            produto.valor_prod || 0
+                        ).toFixed(2)}
                     </td>
 
                     <td class="text-center">
-                        ${produto.qntd_prod}
+                        ${produto.qntd_prod ?? 0}
                     </td>
 
                     <td class="text-center">
-                        <span class="py-1 px-2 ${statusClasse}">
+                        <span
+                            class="py-1 px-2 ${statusClasse}"
+                        >
                             ${statusTexto}
                         </span>
                     </td>
 
                     <td class="text-center">
+
                         <button
                             class="botao__editar"
                             onclick="editarProduto(${produto.id_prod})"
@@ -98,7 +123,9 @@ async function listarProdutos() {
                         >
                             <i class="bi bi-trash"></i>
                         </button>
+
                     </td>
+
                 </tr>
             `;
         });
