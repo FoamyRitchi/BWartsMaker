@@ -10,11 +10,13 @@ async function listarProdutos() {
 
     try {
 
-        const response = await fetch(
-            `${API}/api/produtos`
-        );
+        const response =
+            await fetch(
+                `${API}/api/produtos`
+            );
 
         if (!response.ok) {
+
             throw new Error(
                 "Erro ao carregar produtos."
             );
@@ -29,13 +31,15 @@ async function listarProdutos() {
             );
 
         if (!tabela) {
+
             console.error(
                 "Elemento #tabela_produtos não encontrado."
             );
+
             return;
         }
 
-        tabela.innerHTML = "";
+        let linhas = "";
 
         produtos.forEach(produto => {
 
@@ -44,27 +48,41 @@ async function listarProdutos() {
 
             if (produto.qntd_prod > 5) {
 
-                statusClasse = "status__ativo";
-                statusTexto = "Ativo";
+                statusClasse =
+                    "status__ativo";
 
-            } else if (produto.qntd_prod > 0) {
+                statusTexto =
+                    "Ativo";
 
-                statusClasse = "status__alerta";
-                statusTexto = "Alerta";
+            } else if (
+                produto.qntd_prod > 0
+            ) {
+
+                statusClasse =
+                    "status__alerta";
+
+                statusTexto =
+                    "Alerta";
 
             } else {
 
-                statusClasse = "status__inativo";
-                statusTexto = "Inativo";
+                statusClasse =
+                    "status__inativo";
+
+                statusTexto =
+                    "Inativo";
             }
 
             const imagemProduto =
+
                 produto.img_prod &&
                 produto.img_prod.trim() !== ""
+
                     ? `${API}${produto.img_prod}`
+
                     : "../../../img/assets/sem-imagem.png";
 
-            tabela.innerHTML += `
+            linhas += `
                 <tr>
 
                     <th scope="row">
@@ -84,20 +102,23 @@ async function listarProdutos() {
                     </td>
 
                     <td>
-                        ${
-                            produto.categoria?.nome_categoria
-                            || "Sem categoria"
-                        }
+                        ${produto.categoria_prod || "Sem categoria"}
                     </td>
 
                     <td class="text-center">
                         R$ ${Number(
                             produto.valor_prod || 0
-                        ).toFixed(2)}
+                        ).toLocaleString(
+                            "pt-BR",
+                            {
+                                minimumFractionDigits: 2,
+                                maximumFractionDigits: 2
+                            }
+                        )}
                     </td>
 
                     <td class="text-center">
-                        ${produto.qntd_prod ?? 0}
+                        ${produto.qntd_prod || 0}
                     </td>
 
                     <td class="text-center">
@@ -113,6 +134,7 @@ async function listarProdutos() {
                         <button
                             class="botao__editar"
                             onclick="editarProduto(${produto.id_prod})"
+                            title="Editar produto"
                         >
                             <i class="bi bi-pencil-square"></i>
                         </button>
@@ -120,6 +142,7 @@ async function listarProdutos() {
                         <button
                             class="botao__excluir"
                             onclick="excluirProduto(${produto.id_prod})"
+                            title="Excluir produto"
                         >
                             <i class="bi bi-trash"></i>
                         </button>
@@ -130,9 +153,14 @@ async function listarProdutos() {
             `;
         });
 
+        tabela.innerHTML = linhas;
+
     } catch (erro) {
 
-        console.error(erro);
+        console.error(
+            "Erro ao listar produtos:",
+            erro
+        );
 
         alert(
             "Erro ao carregar produtos."

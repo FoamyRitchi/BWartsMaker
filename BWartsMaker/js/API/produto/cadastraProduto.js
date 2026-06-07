@@ -1,22 +1,25 @@
 const API =
     "https://bwartsmaker-back-end-production.up.railway.app";
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-    const botaoCadastrar =
-        document.getElementById(
-            "botao_modal_confirmar_cadastro_produto"
+        const botaoCadastrar =
+            document.getElementById(
+                "botao_modal_confirmar_cadastro_produto"
+            );
+
+        if (!botaoCadastrar) {
+            return;
+        }
+
+        botaoCadastrar.addEventListener(
+            "click",
+            cadastrarProduto
         );
-
-    if (!botaoCadastrar) {
-        return;
     }
-
-    botaoCadastrar.addEventListener(
-        "click",
-        cadastrarProduto
-    );
-});
+);
 
 async function cadastrarProduto(event) {
 
@@ -28,28 +31,56 @@ async function cadastrarProduto(event) {
             window.arquivosAtivos?.[0];
 
         if (!imagem) {
-            alert("Selecione uma imagem.");
+
+            alert(
+                "Selecione uma imagem."
+            );
+
             return;
         }
 
         const nome =
-            document.getElementById("nome_prod").value.trim();
+            document
+                .getElementById("nome_prod")
+                .value
+                .trim();
 
         const descricao =
-            document.getElementById("desc_prod").value.trim();
+            document
+                .getElementById("desc_prod")
+                .value
+                .trim();
 
         const quantidade =
             Number(
-                document.getElementById("qntd_prod").value
+                document
+                    .getElementById("qntd_prod")
+                    .value
             );
 
         const valor =
             Number(
-                document.getElementById("valor_prod").value
+                document
+                    .getElementById("valor_prod")
+                    .value
             );
 
+        const selectCategoria =
+            document.getElementById(
+                "categoria_prod"
+            );
+
+        const categoria =
+            selectCategoria.options[
+                selectCategoria.selectedIndex
+            ].text;
+
         if (!nome) {
-            alert("Informe o nome do produto.");
+
+            alert(
+                "Informe o nome do produto."
+            );
+
             return;
         }
 
@@ -82,13 +113,23 @@ async function cadastrarProduto(event) {
         );
 
         formData.append(
+            "categoria_prod",
+            categoria
+        );
+
+        formData.append(
             "imagem",
             imagem
         );
 
         console.log(
-            "Arquivo enviado:",
-            imagem
+            "Categoria selecionada:",
+            categoria
+        );
+
+        console.log(
+            "Imagem enviada:",
+            imagem.name
         );
 
         const response =
@@ -105,7 +146,10 @@ async function cadastrarProduto(event) {
             const erro =
                 await response.text();
 
-            console.error(erro);
+            console.error(
+                "Erro da API:",
+                erro
+            );
 
             throw new Error(
                 `Erro ${response.status}`
@@ -132,9 +176,14 @@ async function cadastrarProduto(event) {
 
         window.arquivosAtivos = [];
 
-        document.querySelector(
-            ".input__imagem__lista"
-        ).innerHTML = "";
+        const listaImagens =
+            document.querySelector(
+                ".input__imagem__lista"
+            );
+
+        if (listaImagens) {
+            listaImagens.innerHTML = "";
+        }
 
     } catch (erro) {
 
@@ -148,4 +197,4 @@ async function cadastrarProduto(event) {
             "Erro ao cadastrar produto."
         );
     }
-}   
+}
