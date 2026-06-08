@@ -170,7 +170,7 @@ async function listarProdutos() {
 
 async function editarProduto(id_prod) {
     window.location.href =
-        `../cadastrar_produto/cadastrar_produto.html?id=${id_prod}`;
+        `../editar_produto/editar_produto.html?id=${id_prod}`;
 }
 
 async function excluirProduto(id_prod) {
