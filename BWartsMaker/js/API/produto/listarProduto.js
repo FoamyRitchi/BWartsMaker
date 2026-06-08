@@ -167,3 +167,34 @@ async function listarProdutos() {
         );
     }
 }
+
+async function editarProduto(id_prod) {
+    try {
+        const response = await fetch(
+            `${API}/api/produtos/${id_prod}`
+        );
+
+        if (!response.ok) {
+            throw new Error(
+                `Erro ao carregar produto (${response.status})`
+            );
+        }   
+
+        const data = await response.json();
+
+        localStorage.setItem(
+            "produtoSelecionado",
+            JSON.stringify(data)
+        );
+
+        // Redirecionar para a página de edição
+        window.location.href =
+            `../cadastrar_produto/cadastrar_produto.html?id=${id_prod}`;
+
+    } catch (erro) {
+        console.error(
+            "Erro ao carregar produto:",
+            erro
+        );
+    }
+}
