@@ -114,7 +114,11 @@ async function realizarLogin(event) {
         if (erroLogin) {
             erroLogin.textContent =
                 error.message ||
-                "E-mail e/ou senha inválidos.";
+                "E-mail e/ou senha incorretos";
+        }
+
+        if(erroLogin){
+            exibirErroLogin("E-mail e/ou senha incorretos");
         }
     }
 }

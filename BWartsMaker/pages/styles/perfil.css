@@ -11,11 +11,10 @@
     padding: 0;
 }
 
-#sidebar.recolhida .link__sidebar,
-#sidebar.recolhida .titulo__sidebar {
-    opacity: 0;
+#sidebar.recolhida .links__sidebar {
+    all: unset !important;
+    display: none !important;
 }
-
 
 
 /* === SOMBRA PARA CARDS === */

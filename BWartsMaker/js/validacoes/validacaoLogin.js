@@ -1,8 +1,19 @@
+const email_user = document.getElementById("email_user");
+const senha_user = document.getElementById("senha_user");
+
 const erro_login = document.getElementById("erro_login");
-const botao_login = document.getElementById("botao_login");
+
 erro_login.style.display = "none";
 
-function erroLogin(mensagemErro) {
+email_user.addEventListener("focus", () => {
+    erro_login.style.display = "none";
+})
+
+senha_user.addEventListener("focus", () => {
+    erro_login.style.display = "none";
+})
+
+function exibirErroLogin(mensagemErro) {
     erro_login.style.display = "block";
     erro_login.textContent = mensagemErro;
 }
