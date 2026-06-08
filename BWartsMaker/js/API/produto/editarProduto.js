@@ -20,12 +20,7 @@ async function carregarProduto() {
 
 
 function preencherFormulario(produto) {
-    const campoId = document.getElementById("id_prod");
 
-    if (campoId) {
-        campoId.value = produto.id_prod ?? "";
-    }
-    // Dados pessoais
     document.getElementById("id_prod").value =
         produto.id_prod ?? "";
 
@@ -38,12 +33,23 @@ function preencherFormulario(produto) {
     document.getElementById("valor_prod").value =
         produto.valor_prod ?? "";
 
-    document.getElementById("img_prod").value =
-        produto.img_prod ?? "";
-
-    // Telefone
     document.getElementById("qntd_prod").value =
         produto.qntd_prod ?? "";
+
+    document.getElementById("desc_prod").value =
+        produto.desc_prod ?? "";
+
+    const preview =
+    document.getElementById("preview_imagem");
+    
+    if (produto.img_prod) {
+
+        preview.src =
+            `${API}${produto.img_prod}`;
+
+        preview.style.display =
+            "block";
+    }
 }
 
 window.addEventListener("DOMContentLoaded", () => {

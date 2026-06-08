@@ -10,7 +10,7 @@
         
         <!-- Estilização -->
         <link rel="stylesheet" href="../../styles/perfil.css">
-        <link rel="stylesheet" href="cadastrar_produto.css">
+        <link rel="stylesheet" href="editar_produto.css">
 
         <!-- Animação sidebar -->
         <script src="../../../js/global/recolherSidebar.js" defer></script>        
@@ -22,7 +22,7 @@
         <script src="../../../js/perfil_admin/cadastro_produto/confirmarCancelarCadastro.js" defer></script>
 
         <script src="../../../js/API/produto/cadastraProduto.js" defer></script>
-
+        <script src="../../../js/API/produto/editarProduto.js" defer></script>
     </head>
 
     <body>
@@ -48,7 +48,7 @@
                     </li>
                     <li>
                         <a href="#" class="active">
-                            <span class="fs-5 link__sidebar">Cadastrar produto</span>
+                            <span class="fs-5 link__sidebar">Editar produto</span>
                         </a>
                     </li>
                     <li>
@@ -77,8 +77,14 @@
                                 <!-- Imagem do produto -->
                                 <div class="col-4">
                                     <div class="mb-3">
+                                        <div class="d-flex flex-column align-items-center gap-3">
                                         <label class="form-label">Imagens do produto</label>
                                         <input class="form-control" type="file" id="input_imagem" accept="image/png, image/jpeg" multiple>
+
+                                        
+
+                                        <img id="preview_imagem" src="" alt="Imagem do produto" style="max-width: 200px; margin-top: 10px;display: none;">
+                                    </div>
   
                                         <div class="d-flex flex-wrap gap-2 mt-3 input__imagem__lista"></div>
                                     </div>  
@@ -101,9 +107,9 @@
                                             <div class="input-group">
                                                 <select class="form-select" id="categoria_prod" placeholder="selecione">
                                                     <option selected>Selecione</option>
-                                                    <option value="1">Chaveiro</option>
-                                                    <option value="2">Decoração</option>
-                                                    <option value="3">Utilidade</option>
+                                                    <option value="Chaveiro">Chaveiro</option>
+                                                    <option value="Decoração">Decoração</option>
+                                                    <option value="Utilidade">Utilidade</option>
                                                 </select>
                                                 <button class="btn" type="button" title="Adicionar categoria" style="border: 1px solid #88888860;">+</button>
                                             </div>
