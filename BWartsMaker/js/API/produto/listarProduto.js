@@ -198,3 +198,31 @@ async function editarProduto(id_prod) {
         );
     }
 }
+
+async function excluirProduto(id_prod) {
+    if (!confirm("Tem certeza que deseja excluir este produto?")) {
+        return;
+    }  
+
+    try {
+        const response = await fetch(
+            `${API}/api/produtos/${id_prod}`,
+            {
+                method: "DELETE"
+            }
+        );
+        if (!response.ok) {
+            throw new Error(
+                `Erro ao excluir produto (${response.status})`
+            );
+        }
+        alert("Produto excluído com sucesso.");
+        listarProdutos();
+    } catch (erro) {
+        console.error(
+            "Erro ao excluir produto:",
+            erro
+        );
+        alert("Erro ao excluir produto.");
+    }
+}
