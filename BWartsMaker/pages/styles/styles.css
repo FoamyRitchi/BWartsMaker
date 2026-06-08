@@ -82,8 +82,9 @@ body{
 
 /* === BOTÕES PADRÃO === */
 .botao__laranja {
-    background-color: var(--laranja--detalhes) !important;
+    cursor: pointer;
     transition: 0.2s ease;
+    background-color: var(--laranja--detalhes) !important;
 }
 
 .botao__laranja:hover {

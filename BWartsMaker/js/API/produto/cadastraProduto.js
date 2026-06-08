@@ -164,10 +164,6 @@ async function cadastrarProduto(event) {
             produtoCriado
         );
 
-        alert(
-            "Produto cadastrado com sucesso!"
-        );
-
         document
             .getElementById(
                 "form_cadastrar_produto"
