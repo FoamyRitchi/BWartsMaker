@@ -1,49 +1,30 @@
 async function carregarProduto() {
 
-    try {
+    const params = new URLSearchParams(
+        window.location.search
+    );
 
-        const produtoSelecionado = JSON.parse(
-            localStorage.getItem("produtoSelecionado")
-        );
+    const id_prod = params.get("id");
 
-        if (!produtoSelecionado || !produtoSelecionado.id_user) {
+    if (!id_prod) return;
 
-            alert("Erro ao carregar produto.");
+    const response = await fetch(
+        `${API}/api/produtos/${id_prod}`
+    );
 
-            window.location.href =
-                "../cadastrar_produto/cadastrar_produto.html";
+    const produto = await response.json();
 
-            return;
-        }
-
-        console.log("Produto selecionado:", produtoSelecionado);
-
-        const response = await fetch(
-            `${API}/api/usuarios/${produtoSelecionado.id_user}`
-        );
-
-        if (!response.ok) {
-            throw new Error(
-                `Erro ao carregar produto (${response.status})`
-            );
-        }
-
-        const produto = await response.json();
-
-        console.log("Produto carregado:", produto);
-
-        preencherFormulario(produto);
-
-    } catch (erro) {
-
-        console.error("Erro:", erro);
-
-        alert("Erro ao carregar produto.");
-    }
+    preencherFormulario(produto);
 }
 
-function preencherFormulario(produto) {
 
+
+function preencherFormulario(produto) {
+    const campoId = document.getElementById("id_prod");
+
+    if (campoId) {
+        campoId.value = produto.id_prod ?? "";
+    }
     // Dados pessoais
     document.getElementById("id_prod").value =
         produto.id_prod ?? "";
@@ -57,7 +38,16 @@ function preencherFormulario(produto) {
     document.getElementById("valor_prod").value =
         produto.valor_prod ?? "";
 
+    document.getElementById("img_prod").value =
+        produto.img_prod ?? "";
+
     // Telefone
     document.getElementById("qntd_prod").value =
         produto.qntd_prod ?? "";
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+
+
+    carregarProduto();
+});
