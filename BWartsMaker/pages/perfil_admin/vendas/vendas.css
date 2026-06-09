@@ -1,0 +1,35 @@
+h2 {
+    margin: 0!important;
+    font-size: 0.8rem !important;
+    text-transform: uppercase;
+}
+
+h3 {
+    margin: 0 !important;
+    font-size: 1.3rem !important;
+    font-weight: bold !important;
+}
+
+.subtitulo__dashboard__card {
+    font-size: 0.8rem;
+    color: rgb(113, 113, 113);
+}
+
+.categorias__lista li{
+    display: flex;
+    font-size: 0.9rem;
+    justify-content: space-between;
+}
+
+.icone__card {
+    font-size: 1.3rem;
+    border-radius: 10px;
+    padding: 0.1rem 0.5rem;
+    color: var(--laranja--detalhes);
+    background-color: rgb(255, 225, 142);
+}
+
+.porcentagem__card {
+    font-size: 0.8rem;
+}
+

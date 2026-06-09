@@ -10,6 +10,7 @@
         
         <!-- Estilização -->
         <link rel="stylesheet" href="../../styles/perfil.css">
+        <link rel="stylesheet" href="vendas.css">
 
         <!-- Animação sidebar -->
         <script src="../../../js/global/recolherSidebar.js" defer></script>
@@ -57,10 +58,129 @@
                 </ul>
             </nav>
 
-            <!-- Dados do usuário -->
+            <!-- Informações dashboard -->
             <main class="flex-grow-1 p-2 p-sm-5">
-                <h1 class="h4 fw-bold pb-1 divisoria__titulo">Relatório de vendas</h1>
-            </main>
+                <!-- Título -->
+                <div class="d-flex justify-content-between divisoria__titulo mb-3">
+                    <h1 class="h3 fw-bold">Relatório de vendas</h1>
+
+                    <!-- Seleção de tempo -->
+                    <div class="flex-shrink-0">
+                        <div class="input-group">
+                            <select class="form-select" id="categoria_prod" placeholder="selecione">
+                                <option selected>Últimos 7 dias</option>
+                                <option value="1">Últimos 30 dias</option>
+                                <option value="2">Este ano</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards de informações gerais -->
+                <article class="row g-4 mb-5">
+                    <!-- Receita total -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="rounded-4 p-4 sombra__card">
+                            <!-- Título do card -->
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h2>Receita Total</h2>
+                                <i class="bi bi-currency-dollar icone__card"></i>
+                            </div>
+
+                            <!-- Valores do card -->
+                            <div class="d-flex align-items-end justify-content-between">
+                                <h3>R$10.000,00</h3>
+                                <span class="text-success porcentagem__card"><i class="bi bi-caret-up-fill"></i> +12,4%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Total de pedidos -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="rounded-4 p-4 sombra__card">
+                            <!-- Título do card -->
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h2>qtnd. pedidos</h2>
+                                <i class="bi bi-cart icone__card"></i>
+                            </div>
+
+                            <!-- Valores do card -->
+                            <div class="d-flex align-items-end justify-content-between">
+                                <h3>329</h3>
+                                <span class="text-danger porcentagem__card"><i class="bi bi-caret-down-fill"></i> -1,67%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Devoluções -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="rounded-4 p-4 sombra__card">
+                            <!-- Título do card -->
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h2>Taxa de devoluções</h2>
+                                <i class="bi bi-box-seam icone__card"></i>
+                            </div>
+
+                            <!-- Valores do card -->
+                            <div class="d-flex align-items-end justify-content-between">
+                                <h3 class="flex-wrap">0,00%</h3>
+                                <span class="text-success porcentagem__card"><i class="bi bi-caret-down-fill"></i> -0,1%</span>
+                            </div>
+                        </div>
+                    </div>           
+                </article>
+
+                <article class="row g-4">
+                    <!-- Receita total -->
+                    <div class="col-12 col-md-8 col-lg-8">
+                        <div class="rounded-4 p-4 sombra__card">
+                            <!-- Título do card -->
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h2 class="fw-bold">vendas na semana (R$)</h2>
+                                <span class="text-success porcentagem__card"><i class="bi bi-graph-up-arrow"></i> +12,4%</span>
+                            </div>
+
+                            <!-- Gráfico -->
+                            <figure class="d-flex justify-content-center">
+                                <img class="w-75" src="../../../img/assets/Total (1).png" alt="Gráfico de linhas ilustrativo"">
+                            </figure>
+                        </div>
+                    </div>
+
+                    <!-- Categorias -->
+                    <div class="col-12 col-md-4 col-lg-4">
+                        <div class="rounded-4 p-4 sombra__card">
+                            <!-- Título do card -->
+                            <div class="d-flex flex-column mb-3">
+                                <h2 class="fw-bold">Categorias</h2>
+                                <span class="subtitulo__dashboard__card">participação na receita</span>
+                            </div>
+
+                            <!-- Imagem do gráfico -->
+                            <figure class="d-flex justify-content-center">
+                                <img class="w-75" src="../../../img/assets/Total.png" alt="Gráfico de demonstração">
+                            </figure>
+
+                            <!-- Valores do card -->
+                            <div class="d-flex align-items-end justify-content-between">
+                                <ul class="list-unstyled w-100 categorias__lista">
+                                    <li>
+                                        <span><i class="bi bi-square-fill" style="color: #ff751f;"></i> Chaveiros</span>
+                                        <span class="fw-bold">45%</span>
+                                    </li>
+                                    <li>
+                                        <span><i class="bi bi-square-fill" style="color: #ff9c5f;"></i> Decorações</span>
+                                        <span class="fw-bold">40%</span>
+                                    </li>
+                                    <li>
+                                        <span><i class="bi bi-square-fill" style="color: #ffc09a;"></i> Utilidades</span>
+                                        <span class="fw-bold">15%</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </article>
         </section>
 
         <section id="footer"></section>

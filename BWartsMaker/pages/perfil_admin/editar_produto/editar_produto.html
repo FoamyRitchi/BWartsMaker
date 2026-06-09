@@ -77,16 +77,15 @@
                                 <!-- Imagem do produto -->
                                 <div class="col-4">
                                     <div class="mb-3">
-                                        <div class="d-flex flex-column align-items-center gap-3">
-                                        <label class="form-label">Imagens do produto</label>
-                                        <input class="form-control" type="file" id="input_imagem" accept="image/png, image/jpeg" multiple>
+                                        <label for="input_imagm" class="form-label">Imagens do produto</label>
+                                        <label for="input_imagem" class="d-flex justify-content-center p-2 rounded-3 text-white gap-2 botao__laranja">
+                                            <i class="bi bi-upload"></i>
+                                            Selecionar imagens
+                                        </label>
 
-                                        
-
-                                        <img id="preview_imagem" src="" alt="Imagem do produto" style="max-width: 200px; margin-top: 10px;display: none;">
-                                    </div>
+                                        <input class="form-control visually-hidden" type="file" id="input_imagem" accept="image/png, image/jpeg" multiple>
   
-                                        <div class="d-flex flex-wrap gap-2 mt-3 input__imagem__lista"></div>
+                                        <figure class="d-flex flex-wrap gap-2 mt-3 input__imagem__lista"></figure>
                                     </div>  
                                 </div>
 
