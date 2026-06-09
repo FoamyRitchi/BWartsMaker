@@ -22,7 +22,7 @@ async function listarProdutos() {
             );
         }
 
-        const produtos =
+        const produtos = 
             await response.json();
 
         const tabela =

@@ -15,7 +15,6 @@ input.addEventListener("change", () => {
 
         // Criação das imagem-componente
         reader.onload = (e) => {
-
             const item = document.createElement("figure");
 
             item.classList.add("input__imagem__item");

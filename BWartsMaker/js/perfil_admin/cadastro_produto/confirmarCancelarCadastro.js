@@ -1,6 +1,7 @@
 // Botões do formulário e do modal
 const botao_confirmar_cadastro = document.getElementById("botao_modal_confirmar_cadastro_produto");
 const botao_modal_cancelar_cadastro = document.getElementById("botao_modal_cancelar_cadastro_produto");
+const botao_modal_cancelar_edicao_produto = document.getElementById("botao_modal_cancelar_edicao_produto");
 const botao_cancelar_cadastro = document.getElementById("botao_cancelar_cadastro");
 const botao_fechar_modal = document.getElementById("fechar_modal_confimar_cadastro_produto");
 
@@ -28,6 +29,10 @@ botao_confirmar_cadastro.addEventListener("click", () => {
 // Deixar o modal normal novamente
 botao_fechar_modal.addEventListener("click", () => {
     atualizarModal("bi-clipboard2-check", "Confirmar cadastro de produto")
+})
+
+.addEventListener("click", () => {
+    atualizarModal("bi-clipboard2-check", "Confirmar edição de produto")
 })
 
 function atualizarModal(classe_icone, texto_modal) {
