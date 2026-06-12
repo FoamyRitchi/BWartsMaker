@@ -3,164 +3,195 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carrinho</title>
 
         <script src="../../js/global/include.js" defer></script>
         <script src="../../js/global/fetch.js" defer></script>
-        <script src="../../js/global/preferenciaFonte.js" defer></script>
+        <script src="../../js/carrinho/carrinho.js" defer></script>
+
+        <script src="../../js/validacoes/validacaoCepCompras.js" defer></script> 
 
         <link rel="stylesheet" href="carrinho.css">
     </head>
-    
-<body>
 
-<div id="header"></div>
+    <body>
+        <div id="header"></div>
 
-<main class="carrinho">
-    <section class="secao__carrinho">
+        <main class="container py-4 mb-5">
 
-        <!-- TABELA -->
-        <div class="secao__carrinho__bloco__tabela">
-            <h1 class="carrinho__titulo">Meu carrinho</h1>
+            <h1 class="section-title">Meu carrinho</h1>
 
-            <table class="carrinho__tabela">
-                <thead>
-                    <tr class="carrinho__tabela__cabecalho">
-                        <th>Produto</th>
-                        <th>Frete</th>
-                        <th>Quantidade</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
+            <div class="row g-4 align-items-start mb-5">
 
-                <tbody>
+                <!-- ── TABELA DE PRODUTOS ── -->
+                <div class="col-12 col-lg-8">
+                    <div class="table-card">
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Produto</th>
+                                        <th class="text-center">Frete</th>
+                                        <th class="text-center">Quantidade</th>
+                                        <th class="text-center">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="carrinho-tbody">
 
-                    <!-- ITEM 1 -->
-                    <tr class="carrinho__tabela__informacoes">
-                        <td>
-                            <div class="carrinho__tabela__informacoes__descricao">
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto no carrinho">
-                                <p>Produto muito legal e bom de 21mmx30mm - mdf</p>
-                            </div>
-                        </td>
+                                    <!-- ITEM 1 -->
+                                    <tr data-preco-unitario="100" data-frete="10" data-img="../../img/assets/produto.png" data-nome="Produto muito legal e bom de 21mmx30mm - mdf">
+                                        <td>
+                                            <div class="d-flex align-items-center gap-3">
+                                                <img src="../../img/assets/produto.png" alt="Produto" class="produto-img" style="border: none;">
+                                                <span class="produto-nome">Chapas de 3mm mdf compensado</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center td-frete">R$10,00</td>
+                                        <td class="text-center">
+                                            <div class="d-flex flex-column align-items-center gap-1">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <button class="qty-btn menos">−</button>
+                                                    <span class="qty-num">1</span>
+                                                    <button class="qty-btn mais">+</button>
+                                                </div>
+                                                <button class="btn-remover">
+                                                    <i class="bi bi-trash3"></i> Remover
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td class="text-center fw-semibold td-total">R$110,00</td>
+                                    </tr>
 
-                        <td>R$10,00</td>
+                                    <!-- ITEM 2 -->
+                                    <tr data-preco-unitario="100" data-frete="10" data-img="../../img/assets/produto.png" data-nome="Produto muito legal e bom de 21mmx30mm - mdf">
+                                        <td>
+                                            <div class="d-flex align-items-center gap-3">
+                                                <img src="../../img/assets/batman_chaveiro.jpg" alt="Produto" class="produto-img " style="border: none;">
+                                                <span class="produto-nome">Chaveiro Batman</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center td-frete">R$10,00</td>
+                                        <td class="text-center">
+                                            <div class="d-flex flex-column align-items-center gap-1">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <button class="qty-btn menos">−</button>
+                                                    <span class="qty-num">1</span>
+                                                    <button class="qty-btn mais">+</button>
+                                                </div>
+                                                <button class="btn-remover">
+                                                    <i class="bi bi-trash3"></i> Remover
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td class="text-center fw-semibold td-total">R$110,00</td>
+                                    </tr>
 
-                        <td>
-                            <div class="carrinho__tabela__informacoes__quantidade">
-                                <button class="btn__menos">-</button>
-                                <p class="numero">1</p>
-                                <button class="btn__mais">+</button>
-                            </div>
-
-                            <div class="carrinho__tabela__informacoes__remover">
-                                <img src="../../img/assets/lixeira.svg" alt="Remover produto">
-                                <p>Remover</p>
-                            </div>
-                        </td>
-
-                        <td>R$110,00</td>
-                    </tr>
-
-                    <!-- ITEM 2 -->
-                    <tr class="carrinho__tabela__informacoes">
-                        <td>
-                            <div class="carrinho__tabela__informacoes__descricao">
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto no carrinho">
-                                <p>Produto muito legal e bom de 21mmx30mm - mdf</p>
-                            </div>
-                        </td>
-
-                        <td>R$10,00</td>
-
-                        <td>
-                            <div class="carrinho__tabela__informacoes__quantidade">
-                                <button class="btn__menos">-</button>
-                                <p class="numero">1</p>
-                                <button class="btn__mais">+</button>
-                            </div>
-
-                            <div class="carrinho__tabela__informacoes__remover">
-                                <img src="../../img/assets/lixeira.svg" alt="Remover produto">
-                                <p>Remover</p>
-                            </div>
-                        </td>
-
-                        <td>R$110,00</td>
-                    </tr>
-                    
-                    
-                    <tr class="carrinho__tabela__informacoes">
-                        <td>
-                            <div class="carrinho__tabela__informacoes__descricao">
-                                <img src="../../img/assets/produto.png" alt="Imagem do produto no carrinho">
-                                <p>Produto muito legal e bom de 21mmx30mm - mdf</p>
-                            </div>
-                        </td>
-
-                        <td>R$10,00</td>
-
-                        <td>
-                            <div class="carrinho__tabela__informacoes__quantidade">
-                                <button class="btn__menos">-</button>
-                                <p class="numero">1</p>
-                                <button class="btn__mais">+</button>
-                            </div>
-
-                            <div class="carrinho__tabela__informacoes__remover">
-                                <img src="../../img/assets/lixeira.svg" alt="Remover produto">
-                                <p>Remover</p>
-                            </div>
-                        </td>
-
-                        <td>R$110,00</td>
-                    </tr>
-
-                </tbody>
-            </table>
-        </div>
-
-        <!-- LATERAL -->
-        <div class="secao__carrinho__bloco__informacoes">
-
-            <h2 class="carrinho__titulo">Valor total</h2>
-            <h2 class="carrinho__titulo__preco">R$999,99</h2>
-
-            <button class="btn__compra margin__bottom__zero">Finalizar compra</button>
-
-            <div class="secao__carrinho__bloco__informacoes__frete">
-                <div>
-                    <p class="informe__cep">Informe seu CEP:</p>
-                    <input type="text" placeholder="CEP" class="cep">
-                </div>
-                <button class="btn__frete">Calcular frete</button>
-            </div>
-
-            <div class="removidos">
-                <h2 class="removidos__titulo">Últimos produtos retirados da lista</h2>
-                <div class="removidos__itens">
-                    <div class="removidos__itens__item">
-                        <img src="../../img/assets/produto.png" alt="Imagem do produto removido">
-                        <p>Produto muito legal e bom de 21mmx30mm - mdf</p>
-                    </div>
-
-                    <div class="removidos__itens__item">
-                        <img src="../../img/assets/produto.png" alt="Imagem do produto removido">
-                        <p>Produto muito legal e bom de 21mmx30mm - mdf</p>
-                    </div>
-
-                    <div class="removidos__itens__item">
-                        <img src="../../img/assets/produto.png" alt="Imagem do produto removido">
-                        <p>Produto muito legal e bom de 21mmx30mm - mdf</p>
+                                    <!-- ITEM 3 -->
+                                    <tr data-preco-unitario="100" data-frete="10" data-img="../../img/assets/produto.png" data-nome="Produto muito legal e bom de 21mmx30mm - mdf">
+                                        <td>
+                                            <div class="d-flex align-items-center gap-3">
+                                                <img src="../../img/assets/dinossauro_mdf.jpg" alt="Produto" class="produto-img"  style="border: none;">
+                                                <span class="produto-nome"></span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center td-frete">R$10,00</td>
+                                        <td class="text-center">
+                                            <div class="d-flex flex-column align-items-center gap-1">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <button class="qty-btn menos">−</button>
+                                                    <span class="qty-num">1</span>
+                                                    <button class="qty-btn mais">+</button>
+                                                </div>
+                                                <button class="btn-remover">
+                                                    <i class="bi bi-trash3"></i> Remover
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td class="text-center fw-semibold td-total">R$110,00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
+
+                <!-- ── PAINEL LATERAL ── -->
+                <div class="col-12 col-lg-4">
+                    <div class="side-card d-flex flex-column">
+
+                        <!-- Total -->
+                        <div class="my-2">
+                            <h2 class="section-title mb-1">Valor total</h2>
+                            <span class="preco-total" id="preco-total">R$0,00</span>
+                        </div>
+
+                        <!-- Botão finalizar -->
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn-finalizar mb-4" id="btn-finalizar">Finalizar compra</button>
+
+                        <!-- Calcular frete -->
+                        <label class="text-black-50" for="cep">Calcular frete</label>
+                        <div class="input-group mb-2">
+                            <input type="tel" id="cep" class="form-control" placeholder="00000-000">
+                            <button class="btn text-white botao__preto" type="button">Calcular</button>
+                        </div>
+                        <span class="erro" id="erro_cep_tamanho"></span>
+                        <span class="erro" id="erro_cep"></span>
+                
+
+                        
+
+                        <!-- Produtos removidos -->
+                        <div class="mt-3" id="bloco-removidos" style="display:none;">
+                            <div class="removidos-header">Últimos produtos retirados</div>
+                            <div class="removidos-body" id="removidos-lista"></div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
 
-        </div>
+            <!-- Carrinho vazio -->
+            <div id="carrinho-vazio" class="text-center py-5" style="display:none;">
+                <i class="bi bi-cart-x" style="font-size:4rem; color:#ccc;"></i>
+                <p class="mt-3 text-muted fs-5">Seu carrinho está vazio.</p>
+                <a href="../catalogo/catalogo.html" class="btn-finalizar mt-2 d-inline-block text-decoration-none text-center" style="width:auto; padding: 0.7rem 2rem;">Ver produtos</a>
+            </div>
 
-    </section>
-</main>
+        </main>
 
-<div id="footer"></div>
-
+        <div id="footer"></div>
 </body>
+
+    <!-- MODAL COMPRAR -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header fundo__escuro">
+                    <div class="d-flex justify-content-center modal-body">
+                        <img src="../../img/assets/Logo.svg" alt="Logo da BWarts" style="width: 13rem;">
+                    </div>
+                    <button type="button" class="btn-close" data-bs-theme="dark" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex flex-column align-items-center text-center px-4 py-4 gap-3">
+                <!-- Ícone com fundo circular -->
+                <div class="rounded-circle d-flex align-items-center justify-content-center"
+                     style="width:72px; height:72px; background:#fff5e6; border: 2px solid #FF8E1C;">
+                    <i class="bi bi-bag-check" style="font-size:2rem; color:#FF8E1C;"></i>
+                </div>
+
+                <div>
+                    <h1 class="fw-bold mb-1 fs-4" style="font-family:'Syne',sans-serif; color:#222;">
+                        Compra realizada com sucesso!
+                    </h1>
+                </div>
+            </div>
+                <div class="modal-body">
+                    <span style="font-size: 0.8rem;">
+                        Para mais atualizações acesse <a href="../perfil_user/minhas_compras/minhas_compras.html"><strong>Minhas compras</strong>.</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
 </html>

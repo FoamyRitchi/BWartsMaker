@@ -3,14 +3,24 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vendas — BWarts Admin</title>
 
         <!-- Configurações iniciais -->
         <script src="../../../js/global/include.js" defer></script>
         <script src="../../../js/global/fetch.js" defer></script>
-        
+
         <!-- Estilização -->
         <link rel="stylesheet" href="../../styles/perfil.css">
         <link rel="stylesheet" href="vendas.css">
+
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+        <!-- Bootstrap CSS (fallback caso o include.js não carregue) -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+        <!-- Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 
         <!-- Animação sidebar -->
         <script src="../../../js/global/recolherSidebar.js" defer></script>
@@ -21,18 +31,21 @@
         <section id="header"></section>
 
         <section class="d-flex" style="min-height: 100vh;">
-            <!-- SIDEBAR -->
+
+            <!-- ===== SIDEBAR ===== -->
             <nav class="pt-4 d-flex flex-column align-items-center flex-shrink-0" id="sidebar">
-                <!-- Botão para recolher a sidebar -->
                 <div class="w-100 d-flex justify-content-end pe-3">
                     <button class="botao_recolher" id="botao_recolher_menu">
                         <i class="bi bi-chevron-left" id="sidebar_icone"></i>
                     </button>
                 </div>
 
-                <!-- Links para outras páginas -->
                 <ul class="p-0 pt-3 w-100 links__sidebar">
-                    <li class="pb-2"><span class="fs-5 d-flex flex-wrap fw-bold text-white text-uppercase titulo__sidebar">Páginas - Admin</span></li>
+                    <li class="pb-2">
+                        <span class="fs-5 d-flex flex-wrap fw-bold text-white text-uppercase titulo__sidebar">
+                            Páginas - Admin
+                        </span>
+                    </li>
                     <li>
                         <a href="#" class="active">
                             <span class="fs-5 link__sidebar">Vendas</span>
@@ -50,7 +63,9 @@
                     </li>
                     <li>
                         <a>
-                            <button type="button" id="botao_sair" class="btn link-light p-0 fs-5 link__sidebar" onclick="exibirModalSairConta()">
+                            <button type="button" id="botao_sair"
+                                class="btn link-light p-0 fs-5 link__sidebar"
+                                onclick="exibirModalSairConta()">
                                 Sair da conta
                             </button>
                         </a>
@@ -58,131 +73,505 @@
                 </ul>
             </nav>
 
-            <!-- Informações dashboard -->
+            <!-- ===== MAIN ===== -->
             <main class="flex-grow-1 p-2 p-sm-5">
-                <!-- Título -->
-                <div class="d-flex justify-content-between divisoria__titulo mb-3">
-                    <h1 class="h3 fw-bold">Relatório de vendas</h1>
 
-                    <!-- Seleção de tempo -->
+                <!-- Título + Seletor de período -->
+                <div class="d-flex justify-content-between divisoria__titulo mb-4">
+                    <h1 class="h3 fw-bold">Relatório de vendas</h1>
                     <div class="flex-shrink-0">
-                        <div class="input-group">
-                            <select class="form-select" id="categoria_prod" placeholder="selecione">
-                                <option selected>Últimos 7 dias</option>
-                                <option value="1">Últimos 30 dias</option>
-                                <option value="2">Este ano</option>
-                            </select>
-                        </div>
+                        <select class="form-select" id="seletor_periodo" onchange="atualizarDashboard(this.value)">
+                            <option value="7" selected>Últimos 7 dias</option>
+                            <option value="30">Últimos 30 dias</option>
+                            <option value="365">Este ano</option>
+                        </select>
                     </div>
                 </div>
 
-                <!-- Cards de informações gerais -->
-                <article class="row g-4 mb-5">
-                    <!-- Receita total -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="rounded-4 p-4 sombra__card">
-                            <!-- Título do card -->
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                <h2>Receita Total</h2>
+                <!-- ===== CARDS MÉTRICAS ===== -->
+                <article class="row g-3 mb-4">
+
+                    <!-- Receita Total -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="bw-card">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <p class="card-label">Receita total</p>
                                 <i class="bi bi-currency-dollar icone__card"></i>
                             </div>
-
-                            <!-- Valores do card -->
-                            <div class="d-flex align-items-end justify-content-between">
-                                <h3>R$10.000,00</h3>
-                                <span class="text-success porcentagem__card"><i class="bi bi-caret-up-fill"></i> +12,4%</span>
+                            <h2 class="card-valor" id="val-receita">R$10.847,00</h2>
+                            <div class="d-flex align-items-center gap-2 mt-2">
+                                <span class="porcentagem__card positivo" id="pct-receita">
+                                    <i class="bi bi-caret-up-fill"></i> +12,4%
+                                </span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Total de pedidos -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="rounded-4 p-4 sombra__card">
-                            <!-- Título do card -->
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                <h2>qtnd. pedidos</h2>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="bw-card">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <p class="card-label">Total de pedidos</p>
                                 <i class="bi bi-cart icone__card"></i>
                             </div>
-
-                            <!-- Valores do card -->
-                            <div class="d-flex align-items-end justify-content-between">
-                                <h3>329</h3>
-                                <span class="text-danger porcentagem__card"><i class="bi bi-caret-down-fill"></i> -1,67%</span>
+                            <h2 class="card-valor" id="val-pedidos">329</h2>
+                            <div class="d-flex align-items-center gap-2 mt-2">
+                                <span class="porcentagem__card negativo" id="pct-pedidos">
+                                    <i class="bi bi-caret-down-fill"></i> -1,67%
+                                </span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Devoluções -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="rounded-4 p-4 sombra__card">
-                            <!-- Título do card -->
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                <h2>Taxa de devoluções</h2>
+                    <!-- Ticket médio -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="bw-card">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <p class="card-label">Ticket médio</p>
+                                <i class="bi bi-receipt icone__card"></i>
+                            </div>
+                            <h2 class="card-valor" id="val-ticket">R$32,97</h2>
+                            <div class="d-flex align-items-center gap-2 mt-2">
+                                <span class="porcentagem__card positivo" id="pct-ticket">
+                                    <i class="bi bi-caret-up-fill"></i> +5,3%
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Taxa de devoluções -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="bw-card">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <p class="card-label">Taxa de devoluções</p>
                                 <i class="bi bi-box-seam icone__card"></i>
                             </div>
-
-                            <!-- Valores do card -->
-                            <div class="d-flex align-items-end justify-content-between">
-                                <h3 class="flex-wrap">0,00%</h3>
-                                <span class="text-success porcentagem__card"><i class="bi bi-caret-down-fill"></i> -0,1%</span>
-                            </div>
-                        </div>
-                    </div>           
-                </article>
-
-                <article class="row g-4">
-                    <!-- Receita total -->
-                    <div class="col-12 col-md-8 col-lg-8">
-                        <div class="rounded-4 p-4 sombra__card">
-                            <!-- Título do card -->
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                <h2 class="fw-bold">vendas na semana (R$)</h2>
-                                <span class="text-success porcentagem__card"><i class="bi bi-graph-up-arrow"></i> +12,4%</span>
-                            </div>
-
-                            <!-- Gráfico -->
-                            <figure class="d-flex justify-content-center">
-                                <img class="w-75" src="../../../img/assets/Total (1).png" alt="Gráfico de linhas ilustrativo"">
-                            </figure>
-                        </div>
-                    </div>
-
-                    <!-- Categorias -->
-                    <div class="col-12 col-md-4 col-lg-4">
-                        <div class="rounded-4 p-4 sombra__card">
-                            <!-- Título do card -->
-                            <div class="d-flex flex-column mb-3">
-                                <h2 class="fw-bold">Categorias</h2>
-                                <span class="subtitulo__dashboard__card">participação na receita</span>
-                            </div>
-
-                            <!-- Imagem do gráfico -->
-                            <figure class="d-flex justify-content-center">
-                                <img class="w-75" src="../../../img/assets/Total.png" alt="Gráfico de demonstração">
-                            </figure>
-
-                            <!-- Valores do card -->
-                            <div class="d-flex align-items-end justify-content-between">
-                                <ul class="list-unstyled w-100 categorias__lista">
-                                    <li>
-                                        <span><i class="bi bi-square-fill" style="color: #ff751f;"></i> Chaveiros</span>
-                                        <span class="fw-bold">45%</span>
-                                    </li>
-                                    <li>
-                                        <span><i class="bi bi-square-fill" style="color: #ff9c5f;"></i> Decorações</span>
-                                        <span class="fw-bold">40%</span>
-                                    </li>
-                                    <li>
-                                        <span><i class="bi bi-square-fill" style="color: #ffc09a;"></i> Utilidades</span>
-                                        <span class="fw-bold">15%</span>
-                                    </li>
-                                </ul>
+                            <h2 class="card-valor" id="val-devolucao">0,00%</h2>
+                            <div class="d-flex align-items-center gap-2 mt-2">
+                                <span class="porcentagem__card positivo" id="pct-devolucao">
+                                    <i class="bi bi-caret-down-fill"></i> -0,1%
+                                </span>
                             </div>
                         </div>
                     </div>
+
                 </article>
+
+                <!-- ===== GRÁFICOS ===== -->
+                <article class="row g-3 mb-4">
+
+                    <!-- Gráfico de linha — Receita por período -->
+                    <div class="col-12 col-lg-8">
+                        <div class="bw-card">
+                            <div class="card-header-row">
+                                <div>
+                                    <p class="card-label" style="margin-bottom:2px;">Receita por período</p>
+                                    <p class="card-subtitulo">valores em R$</p>
+                                </div>
+                                <span class="porcentagem__card positivo">
+                                    <i class="bi bi-graph-up-arrow"></i> +12,4%
+                                </span>
+                            </div>
+                            <div class="chart-wrap" style="height:220px;">
+                                <canvas id="grafico-linha"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico de rosca — Categorias -->
+                    <div class="col-12 col-lg-4">
+                        <div class="bw-card">
+                            <div class="card-header-row">
+                                <div>
+                                    <p class="card-label" style="margin-bottom:2px;">Categorias</p>
+                                    <p class="card-subtitulo">participação na receita</p>
+                                </div>
+                            </div>
+
+                            <div class="chart-wrap d-flex justify-content-center" style="height:160px;">
+                                <canvas id="grafico-rosca"></canvas>
+                            </div>
+
+                            <ul class="categorias__lista mt-3">
+                                <li>
+                                    <span class="cat-nome">
+                                        <span class="cat-dot" style="background:#ff751f;"></span>
+                                        Chaveiros
+                                    </span>
+                                    <span class="cat-valor">45%</span>
+                                </li>
+                                <li>
+                                    <span class="cat-nome">
+                                        <span class="cat-dot" style="background:#ff9c5f;"></span>
+                                        Decorações
+                                    </span>
+                                    <span class="cat-valor">40%</span>
+                                </li>
+                                <li>
+                                    <span class="cat-nome">
+                                        <span class="cat-dot" style="background:#ffc09a;"></span>
+                                        Utilidades
+                                    </span>
+                                    <span class="cat-valor">15%</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </article>
+
+                <!-- ===== GRÁFICO DE BARRAS + TABELA ===== -->
+                <article class="row g-3 mb-4">
+
+                    <!-- Barras — Pedidos por dia da semana -->
+                    <div class="col-12 col-lg-5">
+                        <div class="bw-card">
+                            <div class="card-header-row">
+                                <div>
+                                    <p class="card-label" style="margin-bottom:2px;">Pedidos por dia</p>
+                                    <p class="card-subtitulo">quantidade de pedidos</p>
+                                </div>
+                            </div>
+                            <div class="chart-wrap" style="height:200px;">
+                                <canvas id="grafico-barras"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tabela — Pedidos recentes -->
+                    <div class="col-12 col-lg-7">
+                        <div class="bw-card">
+                            <div class="card-header-row">
+                                <div>
+                                    <p class="card-label" style="margin-bottom:2px;">Pedidos recentes</p>
+                                    <p class="card-subtitulo">últimas transações</p>
+                                </div>
+                            </div>
+                            <div class="tabela-wrap">
+                                <table class="bw-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Pedido</th>
+                                            <th>Cliente</th>
+                                            <th>Produto</th>
+                                            <th>Valor</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#4521</td>
+                                            <td>Ana Lima</td>
+                                            <td>Chaveiro MDF</td>
+                                            <td>R$28,90</td>
+                                            <td><span class="badge-status badge-entregue">Entregue</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#4520</td>
+                                            <td>Carlos Mota</td>
+                                            <td>Porta-retrato</td>
+                                            <td>R$64,00</td>
+                                            <td><span class="badge-status badge-enviado">Enviado</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#4519</td>
+                                            <td>Bruna Neves</td>
+                                            <td>Kit decoração</td>
+                                            <td>R$112,50</td>
+                                            <td><span class="badge-status badge-pendente">Pendente</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#4518</td>
+                                            <td>Lucas Ferreira</td>
+                                            <td>Chaveiro acrílico</td>
+                                            <td>R$19,90</td>
+                                            <td><span class="badge-status badge-entregue">Entregue</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#4517</td>
+                                            <td>Mariana Costa</td>
+                                            <td>Quadro personalizado</td>
+                                            <td>R$89,00</td>
+                                            <td><span class="badge-status badge-entregue">Entregue</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#4516</td>
+                                            <td>Rafael Santos</td>
+                                            <td>Porta-chaves</td>
+                                            <td>R$35,00</td>
+                                            <td><span class="badge-status badge-cancelado">Cancelado</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#4515</td>
+                                            <td>Júlia Rocha</td>
+                                            <td>Nécessaire MDF</td>
+                                            <td>R$74,00</td>
+                                            <td><span class="badge-status badge-enviado">Enviado</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#4514</td>
+                                            <td>Pedro Alves</td>
+                                            <td>Chaveiro coração</td>
+                                            <td>R$22,00</td>
+                                            <td><span class="badge-status badge-entregue">Entregue</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </article>
+
+            </main>
         </section>
 
         <section id="footer"></section>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- ===== DASHBOARD JS ===== -->
+        <script>
+        /* -------------------------------------------------------
+           Dados simulados por período
+        ------------------------------------------------------- */
+        const dados = {
+            7: {
+                labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+                receita: [980, 1240, 870, 1560, 2100, 2680, 1417],
+                pedidos: [32, 41, 28, 52, 68, 82, 26],
+                cards: {
+                    receita: 'R$10.847,00',
+                    pctReceita: { valor: '+12,4%', classe: 'positivo', icone: 'bi-caret-up-fill' },
+                    pedidos: '329',
+                    pctPedidos: { valor: '-1,67%', classe: 'negativo', icone: 'bi-caret-down-fill' },
+                    ticket: 'R$32,97',
+                    pctTicket: { valor: '+5,3%', classe: 'positivo', icone: 'bi-caret-up-fill' },
+                    devolucao: '0,00%',
+                    pctDevolucao: { valor: '-0,1%', classe: 'positivo', icone: 'bi-caret-down-fill' },
+                },
+            },
+            30: {
+                labels: ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4'],
+                receita: [8200, 11500, 9800, 14300],
+                pedidos: [260, 370, 318, 450],
+                cards: {
+                    receita: 'R$43.800,00',
+                    pctReceita: { valor: '+8,9%', classe: 'positivo', icone: 'bi-caret-up-fill' },
+                    pedidos: '1.398',
+                    pctPedidos: { valor: '+3,2%', classe: 'positivo', icone: 'bi-caret-up-fill' },
+                    ticket: 'R$31,33',
+                    pctTicket: { valor: '+2,1%', classe: 'positivo', icone: 'bi-caret-up-fill' },
+                    devolucao: '0,23%',
+                    pctDevolucao: { valor: '+0,2%', classe: 'negativo', icone: 'bi-caret-up-fill' },
+                },
+            },
+            365: {
+                labels: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+                receita: [18400, 15200, 21000, 19500, 24300, 28100, 22800, 26400, 31200, 29700, 38500, 42100],
+                pedidos: [590, 487, 673, 625, 779, 901, 730, 847, 1000, 952, 1234, 1350],
+                cards: {
+                    receita: 'R$317.700,00',
+                    pctReceita: { valor: '+31,2%', classe: 'positivo', icone: 'bi-caret-up-fill' },
+                    pedidos: '9.168',
+                    pctPedidos: { valor: '+18,7%', classe: 'positivo', icone: 'bi-caret-up-fill' },
+                    ticket: 'R$34,65',
+                    pctTicket: { valor: '+10,5%', classe: 'positivo', icone: 'bi-caret-up-fill' },
+                    devolucao: '0,18%',
+                    pctDevolucao: { valor: '-0,05%', classe: 'positivo', icone: 'bi-caret-down-fill' },
+                },
+            },
+        };
+
+        /* -------------------------------------------------------
+           Configuração global do Chart.js
+        ------------------------------------------------------- */
+        Chart.defaults.color = '#888';
+        Chart.defaults.font.family = "'DM Sans', 'Syne', sans-serif";
+        Chart.defaults.font.size = 11;
+
+        const LARANJA   = '#ff751f';
+        const LARANJA2  = '#ff9c5f';
+        const LARANJA3  = '#ffc09a';
+        const GRID_COLOR = 'rgba(255,255,255,0.06)';
+
+        /* -------------------------------------------------------
+           GRÁFICO DE LINHA — Receita
+        ------------------------------------------------------- */
+        const ctxLinha = document.getElementById('grafico-linha').getContext('2d');
+
+        const gradienteLinha = ctxLinha.createLinearGradient(0, 0, 0, 220);
+        gradienteLinha.addColorStop(0, 'rgba(255,117,31,0.28)');
+        gradienteLinha.addColorStop(1, 'rgba(255,117,31,0)');
+
+        let graficoLinha = new Chart(ctxLinha, {
+            type: 'line',
+            data: {
+                labels: dados[7].labels,
+                datasets: [{
+                    label: 'Receita (R$)',
+                    data: dados[7].receita,
+                    borderColor: LARANJA,
+                    backgroundColor: gradienteLinha,
+                    borderWidth: 2,
+                    pointBackgroundColor: LARANJA,
+                    pointRadius: 4,
+                    pointHoverRadius: 6,
+                    tension: 0.4,
+                    fill: true,
+                }],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#1a1a1a',
+                        borderColor: 'rgba(255,117,31,0.3)',
+                        borderWidth: 1,
+                        titleColor: '#fff',
+                        bodyColor: '#aaa',
+                        callbacks: {
+                            label: ctx => ` R$${ctx.parsed.y.toLocaleString('pt-BR', {minimumFractionDigits:2})}`,
+                        },
+                    },
+                },
+                scales: {
+                    x: {
+                        grid: { color: GRID_COLOR },
+                        border: { display: false },
+                        ticks: { color: '#666' },
+                    },
+                    y: {
+                        grid: { color: GRID_COLOR },
+                        border: { display: false },
+                        ticks: {
+                            color: '#666',
+                            callback: v => 'R$' + (v >= 1000 ? (v/1000).toFixed(1) + 'k' : v),
+                        },
+                    },
+                },
+            },
+        });
+
+        /* -------------------------------------------------------
+           GRÁFICO DE ROSCA — Categorias
+        ------------------------------------------------------- */
+        const ctxRosca = document.getElementById('grafico-rosca').getContext('2d');
+        const graficoRosca = new Chart(ctxRosca, {
+            type: 'doughnut',
+            data: {
+                labels: ['Chaveiros', 'Decorações', 'Utilidades'],
+                datasets: [{
+                    data: [45, 40, 15],
+                    backgroundColor: [LARANJA, LARANJA2, LARANJA3],
+                    borderWidth: 0,
+                    hoverOffset: 8,
+                }],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '72%',
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#1a1a1a',
+                        borderColor: 'rgba(255,117,31,0.3)',
+                        borderWidth: 1,
+                        titleColor: '#fff',
+                        bodyColor: '#aaa',
+                        callbacks: {
+                            label: ctx => ` ${ctx.label}: ${ctx.parsed}%`,
+                        },
+                    },
+                },
+            },
+        });
+
+        /* -------------------------------------------------------
+           GRÁFICO DE BARRAS — Pedidos por dia
+        ------------------------------------------------------- */
+        const ctxBarras = document.getElementById('grafico-barras').getContext('2d');
+        let graficoBarras = new Chart(ctxBarras, {
+            type: 'bar',
+            data: {
+                labels: dados[7].labels,
+                datasets: [{
+                    label: 'Pedidos',
+                    data: dados[7].pedidos,
+                    backgroundColor: 'rgba(255,117,31,0.75)',
+                    hoverBackgroundColor: LARANJA,
+                    borderRadius: 6,
+                    borderSkipped: false,
+                }],
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#1a1a1a',
+                        borderColor: 'rgba(255,117,31,0.3)',
+                        borderWidth: 1,
+                        titleColor: '#fff',
+                        bodyColor: '#aaa',
+                        callbacks: {
+                            label: ctx => ` ${ctx.parsed.y} pedidos`,
+                        },
+                    },
+                },
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        border: { display: false },
+                        ticks: { color: '#666' },
+                    },
+                    y: {
+                        grid: { color: GRID_COLOR },
+                        border: { display: false },
+                        ticks: { color: '#666' },
+                    },
+                },
+            },
+        });
+
+        /* -------------------------------------------------------
+           Atualização dinâmica ao trocar período
+        ------------------------------------------------------- */
+        function atualizarDashboard(periodo) {
+            const d = dados[periodo];
+            if (!d) return;
+
+            /* Atualiza gráfico de linha */
+            graficoLinha.data.labels = d.labels;
+            graficoLinha.data.datasets[0].data = d.receita;
+            graficoLinha.update();
+
+            /* Atualiza gráfico de barras */
+            graficoBarras.data.labels = d.labels;
+            graficoBarras.data.datasets[0].data = d.pedidos;
+            graficoBarras.update();
+
+            /* Atualiza cards */
+            const c = d.cards;
+
+            atualizarCard('val-receita',   'pct-receita',   c.receita,   c.pctReceita);
+            atualizarCard('val-pedidos',   'pct-pedidos',   c.pedidos,   c.pctPedidos);
+            atualizarCard('val-ticket',    'pct-ticket',    c.ticket,    c.pctTicket);
+            atualizarCard('val-devolucao', 'pct-devolucao', c.devolucao, c.pctDevolucao);
+        }
+
+        function atualizarCard(idValor, idPct, valor, pct) {
+            document.getElementById(idValor).textContent = valor;
+
+            const el = document.getElementById(idPct);
+            el.className = `porcentagem__card ${pct.classe}`;
+            el.innerHTML = `<i class="bi ${pct.icone}"></i> ${pct.valor}`;
+        }
+        </script>
     </body>
 </html>

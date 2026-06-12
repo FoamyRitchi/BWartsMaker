@@ -162,6 +162,29 @@ body{
 
 
 
+/* === FILTROS DALTONISMO === */
+/* Deuteranopia (vermelho-verde, mais comum) */
+[data-daltonismo="deuteranopia"] {
+    filter: url('#deuteranopia');
+}
+
+/* Protanopia (ausência de vermelho) */
+[data-daltonismo="protanopia"] {
+    filter: url('#protanopia');
+}
+
+/* Tritanopia (azul-amarelo) */
+[data-daltonismo="tritanopia"] {
+    filter: url('#tritanopia');
+}
+
+/* Alto contraste (para baixa visão) */
+[data-daltonismo="alto-contraste"] {
+    filter: contrast(1.8) saturate(0.5);
+}
+
+
+
 @media (max-width: 768px){
     .swiper-button-next,
     .swiper-button-prev{

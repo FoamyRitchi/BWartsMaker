@@ -3,8 +3,10 @@
 }
 
 .icone__meio__pagamento{
+    padding: 0;
+    margin: 0;
     max-width: 3rem;
-    height: auto;
+    height: 1.6rem;
 }
 
 /* Utiliza flexbox, coloca eles em direção de coluna e alinha os elementos no container */

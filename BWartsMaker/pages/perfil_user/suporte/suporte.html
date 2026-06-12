@@ -10,6 +10,7 @@
         
         <!-- Estilização -->
         <link rel="stylesheet" href="../../styles/perfil.css">
+        <link rel="stylesheet" href="suporte.css">
 
         <!-- Animação sidebar -->
         <script src="../../../js/global/recolherSidebar.js" defer></script>
@@ -58,8 +59,98 @@
             </nav>
 
             <!-- Dados do usuário -->
-            <main class="flex-grow-1 p-2 p-sm-5">
-                <h1 class="h3 fw-bold pb-1 divisoria__titulo">Perguntas frequentes</h1>
+             <main class="main-content">
+
+                <h1 class="h3 fw-bold section-title">Suporte ao usuário</h1>
+                <section class="py-4">
+                    <h1 class="h5 fw-bold">Perguntas frequentes</h1>
+
+                    <div class="accordion" id="faq">
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Como faço para rastrear meu pedido?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    Após a confirmação do envio, você receberá um código de rastreio por e-mail. 
+                                    Acesse a seção <strong>Minhas compras</strong> para acompanhar em tempo real.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Qual o prazo de entrega?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    O prazo varia conforme a sua região. Em geral, entregas são realizadas entre 
+                                    <strong>3 a 10 dias úteis</strong> após a confirmação do pagamento.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Como alterar meus dados cadastrais?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    Acesse <strong>Visão geral</strong>, no menu lateral, e clique em 
+                                    <strong>Editar perfil</strong> para atualizar seus dados pessoais e endereço.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Posso cancelar um pedido?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    Sim, pedidos podem ser cancelados até <strong>24 horas</strong> após a confirmação. 
+                                    Entre em contato com <strong>bwarts@gmail.com</strong>.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    Quais formas de pagamento são aceitas?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faq">
+                                <div class="accordion-body">
+                                    Aceitamos <strong>cartão de crédito</strong> (até 3x sem juros), 
+                                    <strong>cartão de débito</strong>, e <strong>PIX</strong>.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Realize sua pergunta -->
+                <h2 class="h5 fw-bold">Digite sua dúvida aqui</h2>
+                <section>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+
+                    <div class="d-flex justify-content-end mt-3">
+                        <button class="btn-editar">Enviar pergunta</button>
+                    </div>
+                </section>
             </main>
         </section>
 

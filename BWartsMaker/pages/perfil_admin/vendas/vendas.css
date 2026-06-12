@@ -33,3 +33,253 @@ h3 {
     font-size: 0.8rem;
 }
 
+/* ===== DASHBOARD VENDAS — BWarts ===== */
+
+:root {
+    --laranja--detalhes: #ff751f;
+    --laranja--claro: #ff9c5f;
+    --laranja--palido: #ffc09a;
+    --laranja--bg: rgba(255, 117, 31, 0.12);
+    --card-bg: #ffffff;
+    --card-border: rgba(255, 255, 255, 0.07);
+    --texto-muted: #666666;
+    --verde-positivo: #22c55e;
+    --vermelho-negativo: #ef4444;
+}
+
+/* ===== TIPOGRAFIA DOS CARDS ===== */
+.card-label {
+    margin: 0;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--texto-muted);
+    font-weight: 500;
+}
+
+.card-valor {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.2;
+}
+
+.card-subtitulo {
+    font-size: 0.72rem;
+    color: var(--texto-muted);
+    margin: 0;
+}
+
+/* ===== CARD BASE ===== */
+.bw-card {
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.164);
+    background: var(--card-bg);
+    border: 0.5px solid var(--card-border);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    height: 100%;
+}
+
+/* ===== ÍCONE DO CARD ===== */
+.icone__card {
+    font-size: 1.1rem;
+    border-radius: 10px;
+    padding: 0.3rem 0.55rem;
+    color: var(--laranja--detalhes);
+    background-color: var(--laranja--bg);
+    flex-shrink: 0;
+}
+
+/* ===== BADGE DE PORCENTAGEM ===== */
+.porcentagem__card {
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 8px;
+    border-radius: 20px;
+}
+
+.porcentagem__card.positivo {
+    color: var(--verde-positivo);
+    background: rgba(34, 197, 94, 0.1);
+}
+
+.porcentagem__card.negativo {
+    color: var(--vermelho-negativo);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+
+/* ===== SELECT PERÍODO ===== */
+.form-select {
+    font-size: 0.82rem;
+    color: #000000;
+    border: 0.5px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+}
+
+.form-select:focus {
+    box-shadow: 0 0 0 2px rgba(255, 117, 31, 0.35);
+    border-color: var(--laranja--detalhes);
+    color: #000000;
+}
+
+.form-select option {
+    color: #000000;
+}
+
+/* ===== CABEÇALHO DO CARD GRANDE ===== */
+.card-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* ===== WRAPPER DO GRÁFICO ===== */
+.chart-wrap {
+    position: relative;
+    width: 100%;
+}
+
+/* ===== LISTA DE CATEGORIAS ===== */
+.categorias__lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.categorias__lista li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    padding: 0.35rem 0;
+    border-bottom: 0.5px solid var(--card-border);
+    gap: 0.5rem;
+}
+
+.categorias__lista li:last-child {
+    border-bottom: none;
+}
+
+.cat-nome {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cat-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.cat-valor {
+    font-weight: 700;
+}
+
+/* ===== TABELA DE PEDIDOS RECENTES ===== */
+.tabela-wrap {
+    max-height: 260px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,117,31,0.3) transparent;
+}
+
+.tabela-wrap::-webkit-scrollbar {
+    width: 4px;
+}
+.tabela-wrap::-webkit-scrollbar-thumb {
+    background: rgba(255,117,31,0.3);
+    border-radius: 4px;
+}
+
+.bw-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+
+.bw-table thead th {
+    position: sticky;
+    top: 0;
+    background: var(--card-bg);
+    color: var(--texto-muted);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 0 0.75rem 0.6rem;
+    font-weight: 500;
+    box-shadow: 0 1px 0 var(--card-border);
+    white-space: nowrap;
+}
+
+.bw-table tbody td {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 0.5px solid var(--card-border);
+    vertical-align: middle;
+}
+
+.bw-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.bw-table tbody tr:hover td {
+    background: rgba(255,255,255,0.03);
+}
+
+/* Status badges na tabela */
+.badge-status {
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.badge-entregue {
+    background: rgba(34, 197, 94, 0.12);
+    color: #22c55e;
+}
+
+.badge-enviado {
+    background: rgba(59, 130, 246, 0.12);
+    color: #60a5fa;
+}
+
+.badge-pendente {
+    background: rgba(234, 179, 8, 0.12);
+    color: #facc15;
+}
+
+.badge-cancelado {
+    background: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
+}
+
+/* ===== MINI SPARKLINE ===== */
+.sparkline-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 0.5rem;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 576px) {
+    .card-valor {
+        font-size: 1.3rem;
+    }
+
+    .bw-card {
+        padding: 1rem 1.1rem;
+    }
+}

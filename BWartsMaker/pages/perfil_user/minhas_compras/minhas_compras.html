@@ -10,16 +10,22 @@
         
         <!-- Estilização -->
         <link rel="stylesheet" href="../../styles/perfil.css">
+        <link rel="stylesheet" href="../suporte/suporte.css">
 
         <!-- Animação sidebar -->
         <script src="../../../js/global/recolherSidebar.js" defer></script>
         <script src="../../../js/global/modalSairConta.js" defer></script>
+
+        <!-- Swiper -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+        <script src="../../../js/global/swiperCardsPerfil.js" defer></script>
     </head>
 
     <body>
-        <section id="header"></section>
+        <div id="header"></div>
 
-        <section class="d-flex" style="min-height: 100vh;">
+        <div class="page-wrapper">
+
             <!-- SIDEBAR -->
             <nav class="pt-4 d-flex flex-column align-items-center flex-shrink-0" id="sidebar">
                 <!-- Botão para recolher a sidebar -->
@@ -57,12 +63,164 @@
                 </ul>
             </nav>
 
-            <!-- Dados do usuário -->
-            <main class="flex-grow-1 p-2 p-sm-5">
-                <h1 class="h3 fw-bold pb-1 divisoria__titulo">Minhas compras</h1>
-            </main>
-        </section>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header fundo__escuro">
+                            <div class="d-flex justify-content-center modal-body">
+                                <img src="../../img/assets/Logo.svg" alt="Logo da BWarts" style="width: 13rem;">
+                            </div>
+                            <button type="button" class="btn-close" data-bs-theme="dark" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        
+                        <div class="modal-body d-flex flex-column align-items-center text-center px-4 py-4 gap-3">
+                            <!-- Ícone com fundo circular -->
+                            <div class="rounded-circle d-flex align-items-center justify-content-center"
+                                style="width:72px; height:72px; background:#fff5e6; border: 2px solid #FF8E1C;">
+                                <i class="bi bi-box-arrow-right" style="font-size:2rem; color:#FF8E1C;"></i>
+                            </div>
 
-        <section id="footer"></section>
+                            <div>
+                                <h1 class="fw-bold mb-1 fs-4" style="font-family:'Syne',sans-serif; color:#222;">
+                                    Sair da conta?
+                                </h1>
+                                <div class="modal-body">
+                                    <button id="sair_conta" type="button" class="btn btn-success" data-bs-dismiss="modal"><i class="bi bi-check-circle-fill"></i> Confirmar</button>
+                                    <button type="button" class="btn btn-outline-danger"><i class="bi bi-x-circle-fill"></i> Cancelar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ── CONTEÚDO PRINCIPAL ── -->
+            <main class="main-content">
+
+                <h1 class="h3 fw-bold section-title">Pedido atual</h1>
+
+                <section class="mb-5 d-flex flex-column flex-md-row  gap-4 align-items-center">
+                    <!-- Card do produto -->
+                    <div class="card py-1 card__produto" style="max-width: 13rem;">
+                        <a href="../../compras/compras.html">
+                            <img src="../../../img/assets/dinossauro_mdf.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                            <div class="card-body py-1">
+                                <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                <p class="text-black m-0 card__parcela">3x s/juros</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Andamento do pedido -->
+                    <div class="andamento__pedido flex-grow-1">
+                        <h3>Pedido saiu da distribuidora</h3>
+                        <p>Seu pedido saiu da distribuidora e em breve irá para seu endereço</p>
+
+                        <div class="timeline">
+                            <div class="etapa">
+                                <div class="ponto"></div>
+                                <div class="label">Pedido separado</div>
+                            </div>
+                            <div class="etapa">
+                                <div class="ponto"></div>
+                                <div class="label">Pedido chegou na distribuidora de Mogi</div>
+                            </div>
+                            <div class="etapa">
+                                <div class="ponto"></div>
+                                <div class="label">Pedido chegou na distribuidora de Poá</div>
+                            </div>
+                            <div class="etapa atual">
+                                <div class="ponto"></div>
+                                <div class="label">Pedido saiu da distribuidora</div>
+                            </div>
+                            <div class="etapa pendente">
+                                <div class="ponto"></div>
+                                <div class="label">Pedido saiu para seu endereço</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cards de formulários -->
+                <h2 class="h3 fw-bold section-title">Últimos pedidos</h2>
+                <div class="container-xxl swiper">
+                    <h2 class="text-white px-4"><b>Últimos lançamentos</b></h2>
+                    <div class="card-wrapper">
+                        <ul class="swiper-wrapper px-5">
+                            <li class="swiper-slide">
+                                <div class="card py-1 card__produto" style="max-width: 13rem;">
+                                    <a href="../../compras/compras.html">
+                                        <img src="../../../img/assets/produto.png" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1 card__produto" style="max-width: 13rem;">
+                                    <a href="../../compras/compras.html">
+                                        <img src="../../../img/assets/batman_chaveiro.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1 card__produto" style="max-width: 13rem;">
+                                    <a href="../../compras/compras.html">
+                                        <img src="../../../img/assets/dinossauro_mdf.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1 card__produto" style="max-width: 13rem;">
+                                    <a href="../../compras/compras.html">
+                                        <img src="../../../img/assets/produto.png" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="card py-1 card__produto" style="max-width: 13rem;">
+                                    <a href="../../compras/compras.html">
+                                        <img src="../../../img/assets/batman_chaveiro.jpg" class="card-img-top card__imagem" alt="Foto produto MDF">
+                                        <div class="card-body py-1">
+                                            <h5 class="text-black card__titulo">Produto legal de mdf com 21mm x 90mm</h5>
+                                            <p class="text-black m-0 card__preco"><b>R$100,00</b></p>
+                                            <p class="text-black m-0 card__parcela">3x s/juros</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- Configuração de paginação -->
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <div id="footer"></div>
     </body>
 </html>

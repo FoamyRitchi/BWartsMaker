@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <link rel="stylesheet" href="compras.css">
+
         <!-- Configurações iniciais -->
         <script src="../../js/global/fetch.js" defer></script>
         <script src="../../js/global/include.js" defer></script>
@@ -11,16 +13,13 @@
         <!-- Swiper -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
         <script src="../../js/global/swiperCards.js" defer></script>
+        <script src="../../js/API/produto/cards/carregarCardsCompras.js" defer></script>
 
         <!-- Seleção da imagem -->
         <script src="../../js/compras/selecionarFoto.js" defer></script>
-
-        <script src="../../js/API/produto/cards/carregarCardsCompras.js" defer></script>
         
         <!-- Validação do CEP -->
         <script src="../../js/validacoes/validacaoCepCompras.js" defer></script>        
-
-        <link rel="stylesheet" href="compras.css">
     </head>
 
     <body>    
@@ -69,18 +68,16 @@
                             
                             <!-- Botões  -->
                             <div class="d-grid gap-2">
-                                <button class="btn text-white border-3 botao__laranja" type="button">
-                                    <img src="../../img/compras/comprar.svg" alt="Ícone de sacola de dinheiro">
-                                    Comprar agora
+                                <button type="button" class="btn text-white border-3 botao__laranja"data-bs-toggle="modal" data-bs-target="#confirmarCompra">
+                                    <i class="bi bi-currency-dollar"></i> Comprar agora
                                 </button>
-                                <button class="btn text-white botao__preto" type="button">
-                                    <img src="../../img/header/carrinho.svg" alt="Ícone de carrinho de compras">
-                                    Adicionar ao carrinho
+                                <button type="button" class="btn text-white botao__preto" data-bs-toggle="modal" data-bs-target="#adicionarCarrinho">
+                                    <i class="bi bi-cart2"></i> Adicionar ao carrinho
                                 </button>
                             </div>
 
                             <!-- Quantidade -->
-                            <form class="row align-items-center justify-content-between mb-4 mt-2">
+                            <form class="row align-items-center justify-content-between mb-2 mt-3">
                                 <div class="d-flex col-auto pe-1">
                                     <label class="form-text col-form-label pe-2">Quantidade: </label>
                                     <input min="1" max="10" type="number" class="form-control form-control-sm" style="width: 3.1rem;">
@@ -92,10 +89,26 @@
                                 </div>
                             </form>
 
+                            <!-- Espessura -->
+                            <div class="my-4">
+                                <div class="d-flex flex-wrap gap-2">
+                                    <label class="form-text mb-2 d-block">Espessura:</label>
+                                    <input type="radio" class="btn-check" name="espessura" id="esp3" value="3mm" autocomplete="off" checked style="border: #222;">
+                                    <label class="btn btn-outline-dark btn-sm" for="esp3">3mm</label>
+
+                                    <input type="radio" class="btn-check" name="espessura" id="esp6" value="6mm" autocomplete="off">
+                                    <label class="btn btn-outline-dark btn-sm" for="esp6">6mm</label>
+
+                                    <input type="radio" class="btn-check" name="espessura" id="esp9" value="9mm" autocomplete="off">
+                                    <label class="btn btn-outline-dark btn-sm" for="esp9">9mm</label>
+                                </div>
+                            </div>
+
                             <!-- Calculadora de frete -->
+                            <label class="text-black-50" for="cep">Calcular frete</label>
                             <div class="input-group">
                                 <input type="tel" id="cep" class="form-control" placeholder="00000-000">
-                                <button class="btn text-white botao__preto" type="button">Calcular frete</button>
+                                <button class="btn text-white botao__preto" type="button">Calcular</button>
                             </div>
                             <span class="erro" id="erro_cep"></span>
                             <span class="erro" id="erro_cep_tamanho"></span>
@@ -222,7 +235,7 @@
                     </div>
                 </div>
             </section>
-
+            
             <!-- Seção Recomendações -->
             <section class="fundo__escuro">
                 <div class="container-xxl swiper pt-4 fundo__escuro">
@@ -238,10 +251,10 @@
                 </div>
             </section>
             
-            <!-- Seção Baseado em suas pesquisas -->
+            <!-- Seção Novidades -->
             <section class="fundo__escuro">
                 <div class="container-xxl swiper pt-4 fundo__escuro">
-                    <h2 class="text-white px-4 py-3"><b>Baseados em suas pesquisas</b></h2>
+                    <h2 class="text-white px-4 py-3"><b>Com base em suas pesquisas</b></h2>
                     <div class="card-wrapper">
                         <ul class="swiper-wrapper px-5" id="lista_pesquisas"></ul>
 
@@ -256,9 +269,72 @@
         
         <div id="footer"></div>
     </body>
+    
+    <!-- MODAL COMPRAR -->
+    <div class="modal fade" id="confirmarCompra" tabindex="-1" aria-labelledby="confirmarCompraLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header fundo__escuro">
+                    <div class="d-flex justify-content-center modal-body">
+                        <img src="../../img/assets/Logo.svg" alt="Logo da BWarts" style="width: 13rem;">
+                    </div>
+                    <button type="button" class="btn-close" data-bs-theme="dark" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex flex-column align-items-center text-center px-4 py-4 gap-3">
+                <!-- Ícone com fundo circular -->
+                <div class="rounded-circle d-flex align-items-center justify-content-center"
+                     style="width:72px; height:72px; background:#fff5e6; border: 2px solid #FF8E1C;">
+                    <i class="bi bi-bag-check" style="font-size:2rem; color:#FF8E1C;"></i>
+                </div>
 
-    <script>
-        
-    </script>   
+                <div>
+                    <h1 class="fw-bold mb-1 fs-4" style="font-family:'Syne',sans-serif; color:#222;">
+                        Compra realizada com sucesso!
+                    </h1>
+                </div>
+            </div>
+                <div class="modal-body">
+                    <span style="font-size: 0.8rem;">
+                        Para mais atualizações acesse <a href="../perfil_user/minhas_compras/minhas_compras.html"><strong>Minhas compras</strong>.</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL CARRINHO -->
+    <div class="modal fade" id="adicionarCarrinho" tabindex="-1" aria-labelledby="adicionarCarrinhoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+
+                <!-- Header -->
+                <div class="modal-header justify-content-between px-4 py-3 fundo__escuro">
+                    <img src="../../img/assets/Logo.svg" alt="Logo da BWarts" style="width: 10rem;">
+                    <button type="button" class="btn-close" data-bs-theme="dark" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Corpo -->
+                <div class="modal-body d-flex flex-column align-items-center text-center px-4 py-4 gap-3">
+                    <!-- Ícone com fundo circular -->
+                    <div class="rounded-circle d-flex align-items-center justify-content-center" style="width:72px; height:72px; background:#fff5e6; border: 2px solid #FF8E1C;">
+                        <i class="bi bi-cart-check" style="font-size:2rem; color:#FF8E1C;"></i>
+                    </div>
+
+                    <div>
+                        <h5 class="fw-bold mb-1" style="font-family:'Syne',sans-serif; color:#222;">
+                            Adicionado ao carrinho!
+                        </h5>
+                        <p class="text-muted mb-0" style="font-size:0.88rem;">
+                            O produto foi incluído com sucesso no seu carrinho.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <span style="font-size: 0.8rem;">
+                        Verifique no <a href="../carrinho/carrinho.html"><strong>Carrinho</strong></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
 </html>
-

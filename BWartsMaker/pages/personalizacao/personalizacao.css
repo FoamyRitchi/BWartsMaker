@@ -1,0 +1,243 @@
+:root {
+    --laranja:        #FF8E1C;
+    --laranja-escuro: #D96C00;
+    --laranja-claro:  #fff5e6;
+    --fundo:          #F5F5F2;
+    --escuro:         #2C2C2C;
+    --borda:          #E0E0E0;
+}
+
+/* ── TOPBAR ── */
+.topbar {
+    background: linear-gradient(135deg, var(--laranja), var(--laranja-escuro));
+    padding: 0.6rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-shrink: 0;
+    box-shadow: 0 2px 12px rgba(255,142,28,0.3);
+}
+
+.topbar-brand {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.topbar-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-top {
+    background: rgba(255,255,255,0.2);
+    border: 3px solid var(--laranja--detalhes);
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: background 0.2s;
+}
+
+
+.btn-top.destaque {
+    background: var(--cor--fundo--preto);
+    color: white;
+}
+
+.btn-top.destaque:hover { background: var(--laranja--detalhes); }
+
+/* ── LAYOUT PRINCIPAL ── */
+.editor-layout {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* ── SIDEBAR ESQUERDA (ferramentas) ── */
+.sidebar-tools {
+    width: 64px;
+    background: #fff;
+    border-right: 1px solid var(--borda);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem 0;
+    gap: 0.25rem;
+    flex-shrink: 0;
+}
+
+.tool-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    border: 1.5px solid transparent;
+    background: transparent;
+    color: #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    position: relative;
+}
+
+
+.tool-btn.ativo {
+    color: var(--laranja);
+    border-color: var(--laranja);
+}
+
+.tool-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--borda);
+    margin: 0.25rem 0;
+}
+
+/* Tooltip das ferramentas */
+.tool-btn::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--escuro);
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s;
+    z-index: 100;
+}
+
+.tool-btn:hover::after { opacity: 1; }
+
+/* ── CANVAS ÁREA ── */
+.canvas-area {
+    background-color: rgb(207, 207, 207) !important;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,142,28,0.04) 0%, transparent 50%),
+        repeating-linear-gradient(0deg, transparent, transparent 24px, rgba(0,0,0,0.04) 24px, rgba(0,0,0,0.04) 25px),
+        repeating-linear-gradient(90deg, transparent, transparent 24px, rgba(0,0,0,0.04) 24px, rgba(0,0,0,0.04) 25px);
+    overflow: hidden;
+    position: relative;
+}
+
+#canvas-principal {
+    background: #fff;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    display: block;
+    cursor: crosshair;
+}
+
+/* ── SIDEBAR DIREITA (propriedades) ── */
+.sidebar-props {
+    width: 230px;
+    background: #fff;
+    border-left: 1px solid var(--borda);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1.25rem;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.prop-section-title {
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.prop-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.prop-label {
+    color: #555;
+    white-space: nowrap;
+}
+
+.prop-input {
+    border: 1.5px solid var(--borda);
+    border-radius: 6px;
+    padding: 0.3rem 0.5rem;
+    width: 80px;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+.prop-input:focus { border-color: var(--laranja); }
+
+input[type="color"].prop-input {
+    padding: 2px;
+    width: 44px;
+    height: 32px;
+    cursor: pointer;
+}
+
+input[type="range"].prop-range {
+    width: 100%;
+    accent-color: var(--laranja);
+}
+
+.btn-prop {
+    width: 100%;
+    padding: 0.45rem;
+    border-radius: 8px;
+    border: 1.5px solid var(--borda);
+    background: transparent;
+    color: #444;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    transition: all 0.15s;
+}
+
+.btn-prop:hover {
+    border-color: var(--laranja);
+    color: var(--laranja);
+    background: var(--laranja-claro);
+}
+
+.btn-prop.perigo:hover {
+    border-color: #e53935;
+    color: #e53935;
+    background: #fff5f5;
+}
+
+/* Cores rápidas */
+.color-swatches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.swatch {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.15s, border-color 0.15s;
+}
+
+.swatch:hover, .swatch.ativo { transform: scale(1.2); border-color: #333; }

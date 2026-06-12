@@ -1,0 +1,419 @@
+:root {
+    --laranja:        #FF8E1C;
+    --laranja-escuro: #D96C00;
+    --laranja-hover:  #FFAE00;
+    --sidebar-width:  260px;
+    --sidebar-collapsed: 64px;
+}
+
+* { box-sizing: border-box; }
+
+
+/* ── LAYOUT ──────────────────────────────── */
+.page-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ── SIDEBAR ─────────────────────────────── */
+#sidebar {
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    min-height: 100vh;
+    background: linear-gradient(150deg, var(--laranja) 0%, var(--laranja-escuro) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.5rem;
+    transition: width 0.3s ease, min-width 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+#sidebar.collapsed {
+    width: var(--sidebar-collapsed);
+    min-width: var(--sidebar-collapsed);
+}
+
+/* Botão toggle */
+.sidebar-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 0.75rem;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    z-index: 5;
+    transition: background 0.2s;
+}
+
+.sidebar-toggle:hover {
+    background: rgba(255,255,255,0.35);
+}
+
+/* Avatar */
+.sidebar-avatar-wrapper {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    transition: opacity 0.2s, height 0.3s;
+}
+
+#sidebar.collapsed .sidebar-avatar-wrapper {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+}
+
+.sidebar-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--laranja);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+/* Nav links */
+.sidebar-nav {
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.7rem 1.5rem;
+    color: rgba(255,255,255,0.88);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.18s, color 0.18s;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-nav li a:hover {
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+}
+
+.sidebar-nav li a.active {
+    background: rgba(255,255,255,0.22);
+    color: #fff;
+    border-left-color: #fff;
+}
+
+.sidebar-nav li a i {
+    font-size: 1.15rem;
+    flex-shrink: 0;
+    width: 22px;
+    text-align: center;
+}
+
+.sidebar-nav .nav-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.87);
+    padding: 1.2rem 1.5rem 0.3rem;
+    transition: opacity 0.2s;
+}
+
+#sidebar.collapsed .nav-label,
+#sidebar.collapsed .nav-text {
+    opacity: 0;
+}
+
+/* ── CONTEÚDO PRINCIPAL ───────────────────── */
+.main-content {
+    flex: 1;
+    padding: 2rem 2.5rem;
+    overflow-y: auto;
+}
+
+.section-title {
+    color: #222;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid #E0E0E0;
+    margin-bottom: 1.5rem;
+}
+
+/* Avatar central */
+.profile-pic-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.profile-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--laranja);
+    box-shadow: 0 4px 20px rgba(255,142,28,0.3);
+}
+
+/* Cards de formulário */
+.form-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem 1.75rem;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    height: 100%;
+}
+
+.form-card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #333;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid #E8E8E8;
+    margin-bottom: 1.25rem;
+}
+
+.form-label {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.form-control:disabled {
+    background-color: #F0F0EE;
+    border-color: #E8E8E8;
+    color: #444;
+    font-size: 0.93rem;
+    cursor: default;
+}
+
+/* Nota LGPD */
+.lgpd-note {
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+
+/* Botão editar */
+.btn-editar {
+    background-color: #2C2C2C;
+    color: #fff;
+    border: 3px solid var(--laranja);
+    border-radius: 6px;
+    padding: 0.55rem 2.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-editar:hover {
+    background-color: var(--laranja);
+    color: #fff;
+    border-color: var(--laranja);
+}
+
+.card__produto {
+    box-shadow: 1px 1px 10px 0.5px rgb(186, 186, 186) !important;
+}
+
+/* ── MOBILE ──────────────────────────────── */
+@media (max-width: 991.98px) {
+    #sidebar {
+        width: var(--sidebar-collapsed);
+        min-width: var(--sidebar-collapsed);
+    }
+
+    #sidebar .sidebar-avatar-wrapper,
+    #sidebar .nav-label,
+    #sidebar .nav-text {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    #sidebar:not(.collapsed) {
+        width: var(--sidebar-width);
+        min-width: var(--sidebar-width);
+    }
+
+    #sidebar:not(.collapsed) .sidebar-avatar-wrapper {
+        opacity: 1;
+        height: auto;
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+        pointer-events: auto;
+    }
+
+    #sidebar:not(.collapsed) .nav-label,
+    #sidebar:not(.collapsed) .nav-text {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .main-content {
+        padding: 1.25rem 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* === MINHAS COMPRAS === */
+.minhas__compras{
+    gap: 10px;
+    padding: 1rem 0;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+/* === ANDAMENTO DO PEDIDO ATUAL === */
+.andamento__pedido {
+    width: 67%;
+    text-align: center;
+    border-radius: 20px;
+    padding: 3% 12px 54px;
+    box-shadow: 1px 1px 10px 0.5px rgb(186, 186, 186) !important;
+}
+
+.andamento__pedido h3 {
+    color: #111;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.andamento__pedido p{
+    color: #6b7280;
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+}
+
+.timeline {
+    display: grid;
+    padding: 0 8px;
+    position: relative;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.etapa {
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ponto {
+    z-index: 2;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: relative;
+    background-color: #f57c00;
+}
+
+.etapa.pendente .ponto {
+    background-color: #b8b8b8;
+}
+
+.etapa.atual .ponto {
+    margin: 2px;
+    width: 14px;
+    height: 14px;
+    background-color: #f57c00;
+    box-shadow: 
+        0 0 0 4px #fff, 
+        0 0 0 6px #f57c00;
+}
+
+.etapa:not(:last-child)::after {
+    top: 8px;
+    left: 50%;
+    width: 100%;
+    height: 1px;
+    content: "";
+    position: absolute;
+    background: #d4d4d4;
+}
+
+.etapa.atual:not(:last-child)::after {
+    top: 7px;
+    height: 1.5px;
+}
+
+.label {
+    font-size: 0.8rem;
+    color: #4b4b4b;
+    max-width: 140px;
+    margin: 15px 3px 0 3px;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--laranja) !important;
+    color: #fff !important;
+    box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+    filter: brightness(0) invert(1) !important;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 3px rgba(255, 142, 28, 0.3) !important;
+}
+
+.accordion-body {
+    background-color: #ffefe0 !important;
+}
+
+/* === HISTÓRICO DE COMPRA === */
+@media screen and (max-width: 1023px){
+    .andamento__pedido p{
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .andamento__pedido h3{
+        font-size: 1.2rem;
+    }
+
+    .timeline{
+        gap: 10px;
+        display: flex;
+        padding-left: 25%;
+        flex-direction: column;
+    }
+
+    .etapa{
+        flex-direction: row;
+    }
+
+    .label{
+        text-align: left;
+        margin: 0 0 0 6px;
+        font-size: 0.8rem;
+    }  
+
+    .etapa:not(:last-child)::after {
+        display: none;
+    }
+}

@@ -3,25 +3,34 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-        
     </head>
         
     <body>
         <!-- ACESSIBILIDADE -->
         <section class="cabecalho__acessibilidade">
             <div class="text-end container-xxl">
-                <button type="button" class="btn btn-outline-light" title="" id="alto_contraste"><img src="../../img/header/alto_contraste.svg" alt="Ícone de alto contraste"></button>
-                
                 <!-- Botões tamanho fonte -->
-                <button type="button" class="btn btn-outline-light" title="Diminuir fonte" id="diminuir_fonte"><img src="../../img/header/diminuir_fonte.svg" alt="Ícone de diminuir fonte"></button>
-                <button type="button" class="btn btn-outline-light" title="Retomar tamanho padrão da fonte" id="retomar_fonte"><img src="../../img/header/retomar_fonte.svg" alt="Ícone de retomar fonte"></button>
-                <button type="button" class="btn btn-outline-light" title="Aumentar fonte" id="aumentar_fonte"><img src="../../img/header/aumentar_fonte.svg" alt="Ícone de aumentar fonte"></button>
+                <button type="button" class="btn btn-outline-light fs-6" title="Diminuir fonte" id="diminuir_fonte" title="Diminuir fonte"><i class="bi bi-dash"></i></button>
+                <button type="button" class="btn btn-outline-light fs-6" title="Retomar tamanho padrão da fonte" id="retomar_fonte" title="Restaurar tamanho da fonte"><i class="bi bi-fonts"></i></button>
+                <button type="button" class="btn btn-outline-light fs-6" title="Aumentar fonte" id="aumentar_fonte" title="Aumentar fonte"><i class="bi bi-plus"></i></button>
                 
+                <!-- Dropbar alterar padrão de cores -->
+                <div class="btn-group" title="Padrões de cores">
+                    <button type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-palette"></i> Padrão de cores
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><button onclick="aplicarDaltonismo('normal')" class="dropdown-item">Normal</button></li>
+                        <li><button onclick="aplicarDaltonismo('deuteranopia')" class="dropdown-item">Deuteranopia</button></li>
+                        <li><button onclick="aplicarDaltonismo('protanopia')" class="dropdown-item">Protanopia</button></li>
+                        <li><button onclick="aplicarDaltonismo('tritanopia')" class="dropdown-item">Tritanopia</button></li>
+                    </ul>
+                </div>
+
                 <!-- Dropbar alterar estilo da fonte -->
                 <div class="btn-group" title="Alterar estilo da fonte">
-                    <button type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        Alterar fonte
+                    <button type="button" class="btn btn-outline-light dropdown-toggle fs-6" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-file-earmark-font"></i> Fonte
                     </button>
                     <ul class="dropdown-menu">
                         <li><button class="dropdown-item" type="button" id="fonte_padrao" style="font-family: sans-serif;">Padrão</button></li>
@@ -58,7 +67,7 @@
                     <div class="d-flex justify-content-end align-items-center my-2" style="flex: 1;">
 
                         <!-- Links visíveis só no desktop -->
-                        <ul class="navbar-nav d-none d-lg-flex">
+                        <ul class="navbar-nav d-none d-lg-flex align-items-center">
                             <li class="nav-item">
                                 <a class="nav-link active text-white cabecalho__link catalogo__selecionado" href="../catalogo/catalogo.html">Catálogo</a>
                             </li>
@@ -67,7 +76,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../carrinho/carrinho.html">
-                                    <img src="../../img/header/carrinho.svg" alt="Ícone de carrinho" class="cabecalho__icone">
+                                    <i class="bi bi-cart fs-3 text-white cabecalho__link"></i>
                                 </a>
                             </li>
                         </ul>
@@ -108,5 +117,38 @@
         </header> 
         
     </body>
+    
+    <!-- Filtros de daltonismo -->
+    <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <!-- Deuteranopia -->
+            <filter id="deuteranopia">
+                <feColorMatrix type="matrix" values="
+                    0.367  0.861 -0.228  0  0
+                    0.280  0.673  0.047  0  0
+                -0.012  0.043  0.969  0  0
+                    0      0      0      1  0"/>
+            </filter>
+
+            <!-- Protanopia -->
+            <filter id="protanopia">
+                <feColorMatrix type="matrix" values="
+                    0.152  1.053 -0.205  0  0
+                    0.115  0.786  0.099  0  0
+                -0.004 -0.048  1.052  0  0
+                    0      0      0      1  0"/>
+            </filter>
+
+            <!-- Tritanopia -->
+            <filter id="tritanopia">
+                <feColorMatrix type="matrix" values="
+                    1.256 -0.077 -0.179  0  0
+                -0.078  0.931  0.148  0  0
+                    0.005  0.691  0.304  0  0
+                    0      0      0      1  0"/>
+            </filter>
+        </defs>
+    </svg>
+
 </html>
 

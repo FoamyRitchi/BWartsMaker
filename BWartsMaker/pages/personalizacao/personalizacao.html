@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalização — BWarts</title>
+
+    <script src="../../js/global/fetch.js" defer></script>
+    <script src="../../js/global/include.js" defer></script>
+    <script src="../../js/personalizacao/personalizacao.js" defer></script>
+
+    <link rel="stylesheet" href="personalizacao.css">
+</head>
+<div id="header"></div>
+    <body>
+        <!-- ── TOPBAR ── -->
+        <div class="topbar">
+            <div class="topbar-brand">
+                <i class="bi bi-vector-pen"></i>
+                Personalização
+            </div>
+            <div class="topbar-actions">
+                <button class="btn-top destaque" onclick="exportarPNG()"><i class="bi bi-download"></i>Baixar PNG</button>
+                <button class="btn-top destaque" onclick=""><i class="bi bi-file-earmark-arrow-up"></i>Enviar Produto</button>
+            </div>
+        </div>
+        
+        <div class="editor-layout">
+                <!-- ── FERRAMENTAS ── -->
+                <div class="sidebar-tools">
+                    <button class="tool-btn ativo" id="tool-selecionar" data-tooltip="Selecionar" onclick="setFerramenta('selecionar')"><i class="bi bi-cursor"></i></button>
+                    <div class="tool-divider"></div>
+                    <button class="tool-btn" id="tool-lapis" data-tooltip="Desenho livre" onclick="setFerramenta('lapis')"><i class="bi bi-pencil"></i></button>
+                    <button class="tool-btn" id="tool-linha" data-tooltip="Linha" onclick="setFerramenta('linha')"><i class="bi bi-slash-lg"></i></button>
+                    <div class="tool-divider"></div>
+                    <button class="tool-btn" id="tool-retangulo" data-tooltip="Retângulo" onclick="setFerramenta('retangulo')"><i class="bi bi-square"></i></button>
+                    <button class="tool-btn" id="tool-circulo" data-tooltip="Círculo" onclick="setFerramenta('circulo')"><i class="bi bi-circle"></i></button>
+                    <button class="tool-btn" id="tool-triangulo" data-tooltip="Triângulo" onclick="setFerramenta('triangulo')"><i class="bi bi-triangle"></i></button>
+                <div class="tool-divider"></div>
+                <button class="tool-btn" id="tool-borracha" data-tooltip="Borracha" onclick="setFerramenta('borracha')"><i class="bi bi-eraser"></i></button>
+            </div>
+
+            <!-- ── CANVAS ── -->
+            <div class="canvas-area">
+                <canvas id="canvas-principal" width="800" height="560"></canvas>
+            </div>
+
+            <!-- ── PROPRIEDADES ── -->
+            <div class="sidebar-props" style="height: 100vh;">
+                <input hidden class="prop-input" id="cor-preenchimento" value="#ffffff">
+                <input type="color" hidden class="prop-input" id="cor-contorno" value="#2C2C2C">
+                <input hidden type="number" class="prop-input" id="tamanho-fonte" value="20" min="8" max="120">
+                <input hidden type="color" class="prop-input" id="cor-fundo" value="#ffffff">
+                
+                <div>
+                    <div class="prop-section-title">Contorno</div>
+                    <div class="prop-row">
+                        <input hidden type="range" class="prop-range" id="opacidade" min="10" max="100" value="100">
+                        <span class="prop-label">Espessura</span>
+                        <input type="number" class="prop-input" id="espessura" value="2" min="1" max="50">
+                    </div>
+                </div>
+                
+                <div style="display:flex; flex-direction:column; gap:0.5rem;">
+                    <div class="prop-section-title">Objeto selecionado</div>
+                    <button class="btn-top destaque d-flex justify-content-center" onclick="deletarSelecionado()"><i class="bi bi-trash3"></i> Deletar objeto</button>
+                </div>
+                
+            </div>
+        </div>
+
+
+    </body>
+
+    <div id="footer"></div>
+
+</html>
