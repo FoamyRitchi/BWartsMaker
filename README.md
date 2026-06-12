@@ -1,111 +1,109 @@
-![Logo da BWartsMaker](BWartsMaker/img/assets/Logo.svg)
+<div align="center">
+  <img src="BWartsMaker/img/assets/Logo.svg">
+  <h1>
+    E-commerce de Produtos em MDF
+  </h1>
+</div> 
 
-# BWartsMaker - E-commerce de Produtos em MDF
+Este projeto, desenvolvido por alunos da Fatec Ferraz de Vasconcelos, tem como objetivo atender às necessidades de um microempreendedor que possui uma máquina de corte a laser para MDF e busca ampliar sua receita.
 
-Este projeto, desenvolvido por alunos da Fatec Ferraz de Vasconcelos, tem como objetivo atender às necessidades de um microempreendedor que possui uma máquina de corte a laser para MDF e busca ampliar seu alcance no mercado e aumentar suas vendas.
-
-A proposta consiste no desenvolvimento de uma plataforma digital de e-commerce voltada para a comercialização de produtos em MDF, oferecendo como diferencial um sistema de personalização. Por meio dessa plataforma, os clientes poderão adquirir produtos prontos, personalizar modelos existentes ou criar peças totalmente originais de acordo com suas preferências.
+O projeto consiste no desenvolvimento de um e-commerce voltada para a comercialização de produtos em MDF, oferecendo como diferencial um sistema de personalização. Por meio dessa plataforma, os clientes poderão adquirir produtos prontos, personalizar modelos existentes ou criar peças totalmente originais de acordo com sua preferência.
 
 Dessa forma, o projeto agrega valor aos produtos oferecidos, melhora a experiência do cliente e fortalece a presença digital do empreendedor no mercado.
 
----
+## Índice
 
-# Índice
-
-- [Objetivo Específico](#objetivo-específico)
+- [Demonstrações](#demonstrações)
+- [Objetivos](#objetivos)
+- [Tecnologias](#tecnologias)
 - [Funcionalidades](#funcionalidades)
-- [Sobre os Integrantes](#sobre-os-integrantes)
-- [Tecnologias utilizadas](#tecnologias-utilizadas-no-projeto)
-- [Pré-requisitos](#pré-requisitos)
+- [Integrantes](#integrantes)
 
 ---
 
-# Objetivo Específico
+# Demonstrações
 
-Desenvolver uma plataforma de e-commerce especializada em produtos confeccionados em MDF, permitindo que os usuários:
+<div align="center">
+  <h2>Perfil usuário e admin</h2>
+  <img src="BWartsMaker/img/assets/logado.gif" width="800"></img>
+</div>
 
-- Comprem produtos prontos disponíveis no catálogo
-- Personalizem produtos já existentes
-- Criem peças totalmente originais
+<div align="center">
+  <h2>Página inicial</h2>
+  <img src="BWartsMaker/img/assets/home.gif" width="800"></img>
+</div>
 
-O sistema oferecerá ferramentas de personalização que possibilitam ao cliente definir detalhes como design, dimensões, gravações e acabamentos, proporcionando uma experiência de compra única e personalizada.
+# Objetivos
 
----
+Desenvolver uma plataforma de e-commerce especializada em produtos confeccionados em MDF e permitir que o usuário:
+
+- Compre produtos prontos disponíveis no catálogo;
+- Personalize produtos já existentes;
+- Crie peças totalmente originais.
+
+O sistema oferece ferramentas de personalização que permite o cliente definir detalhes como design, dimensões, gravações e acabamentos, proporcionando uma experiência de compra única e personalizada.
+
+# Tecnologias
+
+<p style="display: inline-block;" align="center">
+  <kbd margin-right="1">
+    <kbd>Front-end</kbd>
+    <br>
+    <br>
+    <img src="https://skillicons.dev/icons?i=html,css,js,bootstrap&perline=14" width="300"/>
+  </kbd>
+  <kbd>
+    <kbd>Back-end</kbd>
+    <br>
+    <br>
+    <img src="https://skillicons.dev/icons?i=java,spring&perline=14" width="150"/>
+  </kbd>
+  <kbd>
+    <kbd>Ferramentas</kbd>
+    <br>
+    <br>
+    <img src="https://skillicons.dev/icons?i=postman,git,github,figma,mysql,docker&perline=14" width="455"/>
+  </kbd>
+</p>
 
 # Funcionalidades
 
-- Catálogo de produtos em MDF
-- Sistema de compra online
-- Sistema de personalização de produtos único no mercado de MDF
-- Criação de peças personalizadas pelo usuário
-- Interface simples e acessível
+- [X] Catálogo de produtos em MDF;
+- [X] CRUD de produto;
+- [X] CRUD de usuário;
+- [ ] Sistema de compra online;
+- [ ] Criação de peças personalizadas pelo usuário;
 
----
+# Integrantes
 
-# Sobre os Integrantes
+<table border="0">
+<tr>
+  <td align="center" width="50%" style="border:none">
+    
+  <img src="https://github.com/pedypowgui.png" width="180px">
+  
+  ### Guilherme Brito dos Santos
+  
+  Desenvolvimento Full-stack • UI Design • Banco de Dados • Documentação
+  
+  <a href="https://github.com/pedypowgui"><img src="https://skillicons.dev/icons?i=github&perline=14" width="50px"/></a>
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <a href="https://www.linkedin.com/in/guilhermebritodossantos/"><img src="https://skillicons.dev/icons?i=linkedin&perline=14" width="50px"/></a>
+    
+  </td>
 
-## Guilherme Brito dos Santos
+  <td align="center" width="50%" style="border:none">
 
-3º semestre de Análise e Desenvolvimento de Sistemas na Fatec Ferraz de Vasconcelos. 
-
-### Funções no projeto
-
-- Desenvolvimento Full-stack
-- Organização do projeto (Trello)
-- Design da interface
-- Documentação
-- Modelagem e gerenciamento do banco de dados
-- Elaboração de diagramas
-
-Github: https://github.com/pedypowgui  
-LinkedIn: https://www.linkedin.com/in/guilhermebritodossantos/  
-Email: guidobritosantosss@gmail.com  
-
----
-
-## Robert Ritchi Alves da Silva
-
-Aluno do 3º semestre de Análise e Desenvolvimento de Sistemas na Fatec Ferraz de Vasconcelos.
-
-### Funções no projeto
-
-- Desenvolvimento Full-stack
-- Organização do projeto (Trello)
-- Elaboração de diagramas
-- Banco de dados
-- Documentação
-
-Github: https://github.com/FoamyRitchi  
-LinkedIn: https://www.linkedin.com/in/robertritchi/  
-Email: ritchierobert2017@gmail.com  
-
----
-
-# Tecnologias utilizadas no projeto
-
-As principais tecnologias utilizadas para o desenvolvimento desse projeto são
-
-## Desenvolvimento
-- **HTML5** - Estruturação do conteúdo das páginas web;
-- **CSS3** - Estilização das páginas web;
-- **JavaScript** - Interatividade com o sistema pela parte do cliente;
-- **Java SpringBoot** - Integração com o servidor, banco de dados e aplicação de APIs;
-
-## Prototipação/Design
-- **Figma** - Desenvolvimento do protótipo de alta e baixa fidelidade do projeto;
-- **Canva** - Elaboração de banners, logo e imagens para o projeto;
-
-## Gerenciamento de desenvolvimento
-- **Trello** - Atribuição de tarefas
-- **Drive** - Compartilhamento e armazenamento de arquivos relevantes ao projeto
-- **Git/Github** - Versionamento de código e hospedagem de testes
-- **Miro/BRmodelo/Astah** - Elaboração de diagramas e artefatos UML
-
-# Pré-requisitos
-
-Para acessar a plataforma, é necessário apenas um navegador web moderno, como:
-
-- Google Chrome
-- Microsoft Edge
-- Opera GX
-- Mozilla Firefox
+  <img src="https://github.com/FoamyRitchi.png" width="180px">
+  
+  ### Robert Ritchi Alves da Silva
+  
+  Desenvolvimento Full-Stack • Banco de Dados • Documentação • DevOps
+  
+  <a href="https://github.com/FoamyRitchi"><img src="https://skillicons.dev/icons?i=github&perline=14" width="50px"/></a>
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <a href="https://www.linkedin.com/in/robertritchi/"><img src="https://skillicons.dev/icons?i=linkedin&perline=14" width="50px"/></a>
+  
+  </td>
+</tr>
+</table>
